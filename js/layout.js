@@ -78,6 +78,11 @@ const FOOTER_HTML = `
         <p>Colorado</p>
         <p>Utah</p>
         <p style="margin-top:10px"><a href="/for-practices.html" class="lang-en">For practices →</a><a href="/for-practices.html" class="lang-es" style="display:none">Para consultorios →</a></p>
+        <div style="margin-top:16px">
+          <p style="font-size:10px;color:#8a6050;margin-bottom:8px" class="lang-en">Scan to visit on mobile</p>
+          <p style="font-size:10px;color:#8a6050;margin-bottom:8px" class="lang-es" style="display:none">Escanee para visitar</p>
+          <img src="/images/qr-code.png" alt="Florida Mobile Health QR Code" style="width:80px;height:80px;border-radius:6px;opacity:.85">
+        </div>
       </div>
     </div>
     <div style="border-top:0.5px solid #5a2818;padding:14px 0;margin-bottom:8px">
