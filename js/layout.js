@@ -9,6 +9,7 @@ const NAV_HTML = `
     </a>
     <div class="nav-links">
       <a href="/about.html">Nosotros</a>
+      <a href="/about.html" class="lang-en">About</a><a href="/about.html" class="lang-es" style="display:none">Nosotros</a>
       <a href="/services.html">Servicios</a>
       <a href="/programs.html">Programas</a>
       <a href="/shop.html">Videos</a>
