@@ -81,7 +81,7 @@ const FOOTER_HTML = `
     </div>
     <div style="border-top:0.5px solid #5a2818;padding:14px 0;margin-bottom:8px">
       <p style="font-size:11px;color:#c4a090;line-height:1.8;">
-        All services provided by Michele Li Causi, FNP-BC, RD, CDCES, licensed and authorized to practice independently in Florida, Arizona, Nevada, Colorado, New Mexico, and Utah. Services delivered within FNP scope of practice in each licensed state. Florida Mobile Health does not prescribe controlled substances. Mental health support provided within FNP scope — psychiatric diagnosis referred to appropriate specialists. Virtual services comply with telehealth laws of the state where the patient is located. This website does not constitute medical advice. For emergencies, call 911.
+        All services provided by Michele Li Causi, FNP-BC, RD, CDCES, licensed and authorized to practice independently in Florida, Arizona, Nevada, Colorado, New Mexico, and Utah. Services delivered within FNP scope of practice in each licensed state. Florida Mobile Health does not prescribe controlled substances including male testosterone (Schedule III). Mental health support provided within FNP scope — psychiatric diagnosis referred to appropriate specialists. Virtual services comply with telehealth laws of the state where the patient is located. This website does not constitute medical advice. For emergencies, call 911.
       </p>
     </div>
     <div class="footer-bottom">
