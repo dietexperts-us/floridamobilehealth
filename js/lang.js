@@ -31,6 +31,13 @@ function setLang(lang) {
   }
 
   document.documentElement.lang = lang;
+
+  // Switch page title
+  var titleEn = document.body.getAttribute('data-title-en');
+  var titleEs = document.body.getAttribute('data-title-es');
+  if (titleEn && titleEs) {
+    document.title = lang === 'en' ? titleEn : titleEs;
+  }
 }
 
 function toggleLang() {
