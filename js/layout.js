@@ -79,25 +79,9 @@ const FOOTER_HTML = `
         <p style="margin-top:10px"><a href="/for-practices.html">Para consultorios →</a></p>
       </div>
     </div>
-    <div style="border-top:0.5px solid #5a2818;padding:20px 0;margin-bottom:8px">
-      <p style="font-size:11px;color:#8a6050;font-weight:600;margin-bottom:8px;font-family:sans-serif">Licensing & Scope of Practice Disclosures</p>
-      <p style="font-size:10px;color:#6a3828;line-height:1.8;margin-bottom:8px">
-        <strong style="color:#8a6050">Florida:</strong> Michele Li Causi, FNP-BC practices under Florida Autonomous Advanced Practice Registered Nurse status pursuant to Section 464.0123, Florida Statutes. Autonomous practice license issued by the Florida Board of Nursing.
-      </p>
-      <p style="font-size:10px;color:#6a3828;line-height:1.8;margin-bottom:8px">
-        <strong style="color:#8a6050">Arizona · Nevada · Colorado · New Mexico · Utah:</strong> Full Practice Authority states. Michele Li Causi, FNP-BC is licensed and authorized to practice independently, diagnose, treat, and prescribe in accordance with each state's Nurse Practice Act and within her certified specialty as a Family Nurse Practitioner.
-      </p>
-      <p style="font-size:10px;color:#6a3828;line-height:1.8;margin-bottom:8px">
-        <strong style="color:#8a6050">Controlled Substances:</strong> Florida Mobile Health does not prescribe controlled substances (Schedule II–V medications including opioids, benzodiazepines, stimulants, or sleep medications).
-      </p>
-      <p style="font-size:10px;color:#6a3828;line-height:1.8;margin-bottom:8px">
-        <strong style="color:#8a6050">Mental Health:</strong> Mental health support, pharmacogenomic testing, and antidepressant medication management are provided within the FNP scope of practice. Florida Mobile Health does not provide psychiatric diagnoses or initiate psychiatric medication for conditions outside the FNP scope. Patients requiring psychiatric diagnosis or specialized psychiatric care will be referred to a licensed psychiatrist or mental health professional.
-      </p>
-      <p style="font-size:10px;color:#6a3828;line-height:1.8;margin-bottom:8px">
-        <strong style="color:#8a6050">Telehealth:</strong> Virtual services are provided in compliance with the telehealth laws and regulations of the state where the patient is physically located at the time of the visit. Patients must be located in a state where Michele Li Causi holds an active license.
-      </p>
+    <div style="border-top:0.5px solid #5a2818;padding:14px 0;margin-bottom:8px">
       <p style="font-size:10px;color:#6a3828;line-height:1.8;">
-        <strong style="color:#8a6050">General:</strong> This website does not constitute medical advice and does not establish a patient-provider relationship. For medical emergencies, call 911 or go to the nearest emergency room. All services provided by Michele Li Causi, FNP-BC, RD, CDCES, operating as Florida Mobile Health, PLLC.
+        All services provided by Michele Li Causi, FNP-BC, RD, CDCES, licensed and authorized to practice independently in Florida, Arizona, Nevada, Colorado, New Mexico, and Utah. Services delivered within FNP scope of practice in each licensed state. Florida Mobile Health does not prescribe controlled substances. Mental health support provided within FNP scope — psychiatric diagnosis referred to appropriate specialists. Virtual services comply with telehealth laws of the state where the patient is located. This website does not constitute medical advice. For emergencies, call 911.
       </p>
     </div>
     <div class="footer-bottom">
