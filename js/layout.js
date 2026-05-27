@@ -87,6 +87,7 @@ const FOOTER_HTML = `
     <div class="footer-bottom">
       <p>© 2025 Florida Mobile Health, PLLC · Todos los derechos reservados</p>
       <div style="display:flex;gap:16px">
+        <a href="/disclosures.html">Disclosures</a>
         <a href="/privacy.html">Privacidad</a>
         <a href="/terms.html">Términos</a>
         <p>HIPAA Compliant</p>
