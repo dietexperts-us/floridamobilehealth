@@ -8,8 +8,28 @@ function setLang(lang) {
   document.querySelectorAll('.lang-es').forEach(function(el) {
     el.style.display = lang === 'es' ? '' : 'none';
   });
+
+  // Update nav toggle button
   var btn = document.getElementById('lang-toggle-btn');
   if (btn) btn.textContent = lang === 'en' ? 'Español' : 'English';
+
+  // Update homepage selector buttons
+  var btnEn = document.getElementById('btn-en');
+  var btnEs = document.getElementById('btn-es');
+  if (btnEn && btnEs) {
+    if (lang === 'en') {
+      btnEn.style.background = 'var(--terra-500)';
+      btnEn.style.color = '#fff';
+      btnEs.style.background = '#fff';
+      btnEs.style.color = 'var(--terra-500)';
+    } else {
+      btnEs.style.background = 'var(--terra-500)';
+      btnEs.style.color = '#fff';
+      btnEn.style.background = '#fff';
+      btnEn.style.color = 'var(--terra-500)';
+    }
+  }
+
   document.documentElement.lang = lang;
 }
 
