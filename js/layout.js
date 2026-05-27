@@ -14,22 +14,24 @@ const NAV_HTML = `
       <a href="/shop.html">Videos</a>
       <a href="/pricing.html">Precios</a>
       <a href="/for-practices.html">Para Consultorios</a>
-      <a href="/book.html" class="nav-cta">Agendar cita</a>
+      <button id="lang-toggle-btn" onclick="toggleLang()" class="lang-toggle-btn">Español</button>
+      <a href="/book.html" class="nav-cta lang-en">Book a visit</a>
+      <a href="/book.html" class="nav-cta lang-es" style="display:none">Agendar cita</a>
     </div>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div class="nav-mobile" id="nav-mobile">
-    <a href="/index.html">Inicio · Home</a>
+    <a href="/index.html" class="lang-en">Home</a><a href="/index.html" class="lang-es" style="display:none">Inicio</a>
     <a href="/about.html">Nosotros · About us</a>
-    <a href="/services.html">Servicios · Services</a>
-    <a href="/programs.html">Programas · Programs</a>
+    <a href="/services.html" class="lang-en">Services</a><a href="/services.html" class="lang-es" style="display:none">Servicios</a>
+    <a href="/programs.html" class="lang-en">Care Programs</a><a href="/programs.html" class="lang-es" style="display:none">Programas</a>
     <a href="/shop.html">Videos</a>
-    <a href="/pricing.html">Precios · Pricing</a>
-    <a href="/for-practices.html">Para Consultorios · For Practices</a>
-    <a href="/book.html" style="color:#6b2518;font-weight:600">▶ Agendar cita · Book a visit</a>
-    <a href="/contact.html">Contacto · Contact</a>
+    <a href="/pricing.html" class="lang-en">Pricing</a><a href="/pricing.html" class="lang-es" style="display:none">Precios</a>
+    <a href="/for-practices.html" class="lang-en">For Practices</a><a href="/for-practices.html" class="lang-es" style="display:none">Para Consultorios</a>
+    <a href="/book.html" style="color:#6b2518;font-weight:600" class="lang-en">▶ Book a visit</a><a href="/book.html" style="color:#6b2518;font-weight:600" class="lang-es" style="display:none">▶ Agendar cita</a>
+    <a href="/contact.html" class="lang-en">Contact</a><a href="/contact.html" class="lang-es" style="display:none">Contacto</a>
   </div>
 </nav>`;
 
@@ -88,6 +90,7 @@ const FOOTER_HTML = `
   </div>
 </footer>`;
 
+// lang.js loaded separately
 document.addEventListener('DOMContentLoaded', function () {
   document.body.insertAdjacentHTML('afterbegin', NAV_HTML);
   document.body.insertAdjacentHTML('beforeend', FOOTER_HTML);
