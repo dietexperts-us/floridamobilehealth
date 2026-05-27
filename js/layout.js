@@ -8,6 +8,7 @@ const NAV_HTML = `
       <span class="nav-logo-sub">Salud Virtual · Virtual Care</span>
     </a>
     <div class="nav-links">
+      <a href="/about.html">Nosotros</a>
       <a href="/services.html">Servicios</a>
       <a href="/programs.html">Programas</a>
       <a href="/shop.html">Videos</a>
@@ -21,6 +22,7 @@ const NAV_HTML = `
   </div>
   <div class="nav-mobile" id="nav-mobile">
     <a href="/index.html">Inicio · Home</a>
+    <a href="/about.html">Nosotros · About us</a>
     <a href="/services.html">Servicios · Services</a>
     <a href="/programs.html">Programas · Programs</a>
     <a href="/shop.html">Videos</a>
