@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Videos de Salud en Español | Florida Mobile Health — Diabetes, Hormonas, GLP-1</title>
-  <meta name="description" content="Videos educativos de salud en español e inglés con Michele Li Causi FNP-BC, RD, CDCES. Diabetes, Ozempic, Mounjaro, menopausia, hormonas y más. Previews gratis.">
+  <title>Health Education Videos | Florida Mobile Health — Diabetes, Hormones, GLP-1</title>
+  <meta name="description" content="Health education videos in English and Spanish with Michele Li Causi FNP-BC, RD, CDCES. Diabetes, Ozempic, Mounjaro, menopause, hormones. Free previews available.">
   <link rel="canonical" href="https://www.floridamobilehealth.com/shop.html">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
@@ -15,167 +15,100 @@
 
 <div class="page-header dark">
   <div class="container">
-    <h1>Videos de salud con Michele</h1>
-    <p>Aprenda sobre su salud en español e inglés. Previews gratuitas — series completas disponibles.<br>Learn about your health in Spanish and English. Free previews — complete series available.</p>
+    <div class="lang-en"><h1>Health education videos</h1><p>Learn about your health in English and Spanish. Free previews — complete series available.</p></div>
+    <div class="lang-es" style="display:none"><h1>Videos de salud con Michele</h1><p>Aprenda sobre su salud en español e inglés. Previews gratuitas — series completas disponibles.</p></div>
   </div>
 </div>
 
 <section class="section">
   <div class="container">
-
     <div class="filter-bar">
-      <button class="filter-btn active" data-cat="all">Todo · All</button>
-      <button class="filter-btn" data-cat="free">Gratis · Free</button>
+      <button class="filter-btn active" data-cat="all"><span class="lang-en">All</span><span class="lang-es" style="display:none">Todo</span></button>
+      <button class="filter-btn" data-cat="free"><span class="lang-en">Free</span><span class="lang-es" style="display:none">Gratis</span></button>
       <button class="filter-btn" data-cat="diabetes">Diabetes</button>
-      <button class="filter-btn" data-cat="hormones">Hormonas · Hormones</button>
-      <button class="filter-btn" data-cat="nutrition">Nutrición</button>
-      <button class="filter-btn" data-cat="bundle">Paquetes · Bundles</button>
+      <button class="filter-btn" data-cat="hormones"><span class="lang-en">Hormones</span><span class="lang-es" style="display:none">Hormonas</span></button>
+      <button class="filter-btn" data-cat="nutrition"><span class="lang-en">Nutrition</span><span class="lang-es" style="display:none">Nutrición</span></button>
+      <button class="filter-btn" data-cat="bundle"><span class="lang-en">Bundles</span><span class="lang-es" style="display:none">Paquetes</span></button>
     </div>
 
     <div class="grid-4">
 
       <div class="video-card" data-cat="free diabetes">
-        <div class="video-thumb" style="background:#e8c4b4;cursor:pointer" onclick="playVideo(this,'https://www.youtube.com/embed/REPLACE_VIDEO_ID')">▶
-          <span class="video-badge free">Gratis</span>
-        </div>
+        <div class="video-thumb" style="background:#e8c4b4;cursor:pointer">▶<span class="video-badge free"><span class="lang-en">Free</span><span class="lang-es" style="display:none">Gratis</span></span></div>
         <div class="video-info">
-          <h4>¿Qué es la resistencia a la insulina?</h4>
-          <p class="video-meta italic-sub">What is insulin resistance?</p>
-          <p class="video-meta">12 min · Diabetes · EN/ES</p>
-          <p class="video-price">Gratis · Free</p>
-          <button class="btn btn-olive btn-sm btn-full" style="margin-top:8px" onclick="playVideo(document.querySelector('[data-cat=\'free diabetes\'] .video-thumb'),'https://www.youtube.com/embed/REPLACE_VIDEO_ID')">Ver ahora · Watch</button>
+          <div class="lang-en"><h4>What is insulin resistance?</h4><p class="video-meta">12 min · Diabetes · EN/ES</p><p class="video-price">Free</p><button class="btn btn-olive btn-sm btn-full" style="margin-top:8px">Watch now</button></div>
+          <div class="lang-es" style="display:none"><h4>¿Qué es la resistencia a la insulina?</h4><p class="video-meta">12 min · Diabetes · EN/ES</p><p class="video-price">Gratis</p><button class="btn btn-olive btn-sm btn-full" style="margin-top:8px">Ver ahora</button></div>
         </div>
       </div>
 
       <div class="video-card" data-cat="diabetes">
-        <div class="video-thumb" style="background:#d4c4a0">▶
-          <span class="video-badge paid">$19</span>
-        </div>
+        <div class="video-thumb" style="background:#d4c4a0">▶<span class="video-badge paid">$19</span></div>
         <div class="video-info">
-          <h4>Cómo funciona Ozempic y Mounjaro</h4>
-          <p class="video-meta italic-sub">How Ozempic & Mounjaro work</p>
-          <p class="video-meta">28 min · Diabetes · EN/ES</p>
-          <p class="video-price">$19</p>
-          <button class="btn btn-primary btn-sm btn-full" style="margin-top:8px" data-stripe="#">Comprar · Buy</button>
+          <div class="lang-en"><h4>How Ozempic & Mounjaro work</h4><p class="video-meta">28 min · Diabetes · EN/ES</p><p class="video-price">$19</p><button class="btn btn-primary btn-sm btn-full" style="margin-top:8px" data-stripe="#">Buy</button></div>
+          <div class="lang-es" style="display:none"><h4>Cómo funciona Ozempic y Mounjaro</h4><p class="video-meta">28 min · Diabetes · EN/ES</p><p class="video-price">$19</p><button class="btn btn-primary btn-sm btn-full" style="margin-top:8px" data-stripe="#">Comprar</button></div>
         </div>
       </div>
 
       <div class="video-card" data-cat="bundle diabetes" style="border:2px solid #3a5420">
-        <div class="video-thumb" style="background:#c4d0b8">▶
-          <span class="video-badge bundle">Paquete</span>
-        </div>
+        <div class="video-thumb" style="background:#c4d0b8">▶<span class="video-badge bundle"><span class="lang-en">Bundle</span><span class="lang-es" style="display:none">Paquete</span></span></div>
         <div class="video-info">
-          <h4>Serie completa: Diabetes & GLP-1</h4>
-          <p class="video-meta italic-sub">Complete Diabetes & GLP-1 series</p>
-          <p class="video-meta">4 videos · 90 min · EN/ES</p>
-          <p class="video-price"><span class="orig">$76</span>$49 — ahorra $27</p>
-          <button class="btn btn-olive btn-sm btn-full" style="margin-top:8px" data-stripe="#">Comprar serie</button>
+          <div class="lang-en"><h4>Complete Diabetes & GLP-1 Series</h4><p class="video-meta">4 videos · 90 min · EN/ES</p><p class="video-price"><span class="orig">$76</span>$49 — save $27</p><button class="btn btn-olive btn-sm btn-full" style="margin-top:8px" data-stripe="#">Buy series</button></div>
+          <div class="lang-es" style="display:none"><h4>Serie completa: Diabetes & GLP-1</h4><p class="video-meta">4 videos · 90 min · EN/ES</p><p class="video-price"><span class="orig">$76</span>$49 — ahorra $27</p><button class="btn btn-olive btn-sm btn-full" style="margin-top:8px" data-stripe="#">Comprar serie</button></div>
         </div>
       </div>
 
       <div class="video-card" data-cat="free">
-        <div class="video-thumb" style="background:#c8c0b4;cursor:pointer">▶
-          <span class="video-badge free">Gratis</span>
-        </div>
+        <div class="video-thumb" style="background:#c8c0b4;cursor:pointer">▶<span class="video-badge free"><span class="lang-en">Free</span><span class="lang-es" style="display:none">Gratis</span></span></div>
         <div class="video-info">
-          <h4>Cómo leer sus resultados de laboratorio</h4>
-          <p class="video-meta italic-sub">Reading your lab results</p>
-          <p class="video-meta">18 min · Atención primaria · EN/ES</p>
-          <p class="video-price">Gratis · Free</p>
-          <button class="btn btn-olive btn-sm btn-full" style="margin-top:8px">Ver ahora · Watch</button>
+          <div class="lang-en"><h4>Reading your lab results</h4><p class="video-meta">18 min · Primary care · EN/ES</p><p class="video-price">Free</p><button class="btn btn-olive btn-sm btn-full" style="margin-top:8px">Watch now</button></div>
+          <div class="lang-es" style="display:none"><h4>Cómo leer sus resultados de laboratorio</h4><p class="video-meta">18 min · Atención primaria · EN/ES</p><p class="video-price">Gratis</p><button class="btn btn-olive btn-sm btn-full" style="margin-top:8px">Ver ahora</button></div>
         </div>
       </div>
 
       <div class="video-card" data-cat="hormones">
-        <div class="video-thumb" style="background:#d0c4d8">▶
-          <span class="video-badge paid">$29</span>
-        </div>
+        <div class="video-thumb" style="background:#d0c4d8">▶<span class="video-badge paid">$29</span></div>
         <div class="video-info">
-          <h4>Menopausia: lo que nadie le explica</h4>
-          <p class="video-meta italic-sub">Menopause: what nobody explains</p>
-          <p class="video-meta">35 min · Hormonas · EN/ES</p>
-          <p class="video-price">$29</p>
-          <button class="btn btn-primary btn-sm btn-full" style="margin-top:8px" data-stripe="#">Comprar · Buy</button>
+          <div class="lang-en"><h4>Menopause: what nobody explains</h4><p class="video-meta">35 min · Hormones · EN/ES</p><p class="video-price">$29</p><button class="btn btn-primary btn-sm btn-full" style="margin-top:8px" data-stripe="#">Buy</button></div>
+          <div class="lang-es" style="display:none"><h4>Menopausia: lo que nadie le explica</h4><p class="video-meta">35 min · Hormonas · EN/ES</p><p class="video-price">$29</p><button class="btn btn-primary btn-sm btn-full" style="margin-top:8px" data-stripe="#">Comprar</button></div>
         </div>
       </div>
 
       <div class="video-card" data-cat="hormones">
-        <div class="video-thumb" style="background:#c4d4c0">▶
-          <span class="video-badge paid">$29</span>
-        </div>
+        <div class="video-thumb" style="background:#c4d4c0">▶<span class="video-badge paid">$29</span></div>
         <div class="video-info">
-          <h4>Terapia hormonal: riesgos y beneficios</h4>
-          <p class="video-meta italic-sub">HRT: risks and benefits</p>
-          <p class="video-meta">30 min · Hormonas · EN/ES</p>
-          <p class="video-price">$29</p>
-          <button class="btn btn-primary btn-sm btn-full" style="margin-top:8px" data-stripe="#">Comprar · Buy</button>
+          <div class="lang-en"><h4>HRT: risks and benefits</h4><p class="video-meta">30 min · Hormones · EN/ES</p><p class="video-price">$29</p><button class="btn btn-primary btn-sm btn-full" style="margin-top:8px" data-stripe="#">Buy</button></div>
+          <div class="lang-es" style="display:none"><h4>Terapia hormonal: riesgos y beneficios</h4><p class="video-meta">30 min · Hormonas · EN/ES</p><p class="video-price">$29</p><button class="btn btn-primary btn-sm btn-full" style="margin-top:8px" data-stripe="#">Comprar</button></div>
         </div>
       </div>
 
       <div class="video-card" data-cat="bundle hormones" style="border:2px solid #3a5420">
-        <div class="video-thumb" style="background:#d8c8b4">▶
-          <span class="video-badge bundle">Paquete</span>
-        </div>
+        <div class="video-thumb" style="background:#d8c8b4">▶<span class="video-badge bundle"><span class="lang-en">Bundle</span><span class="lang-es" style="display:none">Paquete</span></span></div>
         <div class="video-info">
-          <h4>Serie completa: Hormonas & Menopausia</h4>
-          <p class="video-meta italic-sub">Complete Hormones & Menopause series</p>
-          <p class="video-meta">3 videos · 95 min · EN/ES</p>
-          <p class="video-price"><span class="orig">$87</span>$59 — ahorra $28</p>
-          <button class="btn btn-olive btn-sm btn-full" style="margin-top:8px" data-stripe="#">Comprar serie</button>
+          <div class="lang-en"><h4>Complete Hormones & Menopause Series</h4><p class="video-meta">3 videos · 95 min · EN/ES</p><p class="video-price"><span class="orig">$87</span>$59 — save $28</p><button class="btn btn-olive btn-sm btn-full" style="margin-top:8px" data-stripe="#">Buy series</button></div>
+          <div class="lang-es" style="display:none"><h4>Serie completa: Hormonas & Menopausia</h4><p class="video-meta">3 videos · 95 min · EN/ES</p><p class="video-price"><span class="orig">$87</span>$59 — ahorra $28</p><button class="btn btn-olive btn-sm btn-full" style="margin-top:8px" data-stripe="#">Comprar serie</button></div>
         </div>
       </div>
 
       <div class="video-card" data-cat="nutrition">
-        <div class="video-thumb" style="background:#c8d0d8">▶
-          <span class="video-badge paid">$19</span>
-        </div>
+        <div class="video-thumb" style="background:#c8d0d8">▶<span class="video-badge paid">$19</span></div>
         <div class="video-info">
-          <h4>Nutrición anti-inflamatoria</h4>
-          <p class="video-meta italic-sub">Anti-inflammatory nutrition</p>
-          <p class="video-meta">22 min · Nutrición · EN/ES</p>
-          <p class="video-price">$19</p>
-          <button class="btn btn-primary btn-sm btn-full" style="margin-top:8px" data-stripe="#">Comprar · Buy</button>
+          <div class="lang-en"><h4>Anti-inflammatory nutrition</h4><p class="video-meta">22 min · Nutrition · EN/ES</p><p class="video-price">$19</p><button class="btn btn-primary btn-sm btn-full" style="margin-top:8px" data-stripe="#">Buy</button></div>
+          <div class="lang-es" style="display:none"><h4>Nutrición anti-inflamatoria</h4><p class="video-meta">22 min · Nutrición · EN/ES</p><p class="video-price">$19</p><button class="btn btn-primary btn-sm btn-full" style="margin-top:8px" data-stripe="#">Comprar</button></div>
         </div>
       </div>
 
     </div>
 
     <div style="margin-top:36px;background:#faf8f4;border:.5px solid var(--border);border-radius:12px;padding:24px;text-align:center">
-      <h3 style="font-size:18px;margin-bottom:6px">Acceso completo a toda la biblioteca</h3>
-      <p class="italic-sub">Full library access — all current + future videos</p>
-      <p style="font-size:14px;margin:10px 0 16px">Todos los videos actuales y futuros — acceso por 1 año completo.</p>
-      <p style="font-size:28px;font-weight:400;font-family:Georgia,serif;color:#6b2518;margin-bottom:16px">$99 <span style="font-size:16px;color:var(--text-light)">/año</span></p>
-      <button class="btn btn-primary" data-stripe="#">Acceso completo · Full access</button>
+      <div class="lang-en"><h3 style="font-size:18px;margin-bottom:6px">Full library access</h3><p style="font-size:14px;margin:10px 0 16px">All current and future videos — 1 year access.</p></div>
+      <div class="lang-es" style="display:none"><h3 style="font-size:18px;margin-bottom:6px">Acceso completo a toda la biblioteca</h3><p style="font-size:14px;margin:10px 0 16px">Todos los videos actuales y futuros — acceso por 1 año completo.</p></div>
+      <p style="font-size:28px;font-weight:400;font-family:Georgia,serif;color:#6b2518;margin-bottom:16px">$99 <span style="font-size:16px;color:var(--text-light)">/yr</span></p>
+      <button class="btn btn-primary" data-stripe="#"><span class="lang-en">Full access</span><span class="lang-es" style="display:none">Acceso completo</span></button>
     </div>
 
   </div>
 </section>
 
-<div id="video-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);z-index:999;align-items:center;justify-content:center">
-  <div style="position:relative;width:90%;max-width:700px">
-    <button onclick="closeVideo()" style="position:absolute;top:-36px;right:0;background:none;border:none;color:#fff;font-size:24px;cursor:pointer">✕</button>
-    <iframe id="video-iframe" width="100%" height="394" frameborder="0" allowfullscreen style="border-radius:8px"></iframe>
-  </div>
-</div>
-
 <script src="/js/main.js"></script>
-<script>
-function playVideo(el, url) {
-  if (!url || url.includes('REPLACE')) {
-    alert('Video coming soon. Call 352-399-8874 for information.');
-    return;
-  }
-  document.getElementById('video-iframe').src = url + '?autoplay=1';
-  const modal = document.getElementById('video-modal');
-  modal.style.display = 'flex';
-}
-function closeVideo() {
-  document.getElementById('video-modal').style.display = 'none';
-  document.getElementById('video-iframe').src = '';
-}
-document.getElementById('video-modal').addEventListener('click', function(e) {
-  if (e.target === this) closeVideo();
-});
-</script>
 </body>
 </html>
