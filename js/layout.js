@@ -43,6 +43,11 @@ const FOOTER_HTML = `
         <p style="margin-top:10px;color:#c4a090">352-399-8874</p>
         <p><a href="mailto:info@floridamobilehealth.com">info@floridamobilehealth.com</a></p>
         <p style="margin-top:10px;color:#f0cfc4;font-weight:600">Se habla español</p>
+        <div style="display:flex;gap:14px;margin-top:12px">
+          <a href="https://www.facebook.com/floridamobilehealth" target="_blank" rel="noopener" style="color:#f0cfc4;font-size:13px;display:flex;align-items:center;gap:5px;text-decoration:none">
+            <i class="ti ti-brand-facebook" style="font-size:20px"></i> Facebook
+          </a>
+        </div>
       </div>
       <div class="footer-col">
         <h4>Servicios</h4>
