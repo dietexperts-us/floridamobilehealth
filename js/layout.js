@@ -79,6 +79,11 @@ const FOOTER_HTML = `
         <p style="margin-top:10px"><a href="/for-practices.html">Para consultorios →</a></p>
       </div>
     </div>
+    <div style="border-top:0.5px solid #5a2818;padding:16px 0;margin-bottom:8px">
+      <p style="font-size:10px;color:#6a3828;line-height:1.7">
+        <strong style="color:#8a6050">Scope of Practice Notice:</strong> Services provided by Michele Li Causi, FNP-BC, RD, CDCES, within her licensed scope of practice in each state. Florida services provided under Florida autonomous practice authority (Chapter 464, Florida Statutes). Full practice authority in AZ, NV, CO, NM, and UT. Telehealth services comply with the laws of the state where the patient is located at the time of the visit. This website does not constitute medical advice. In case of emergency, call 911.
+      </p>
+    </div>
     <div class="footer-bottom">
       <p>© 2025 Florida Mobile Health, PLLC · Todos los derechos reservados</p>
       <div style="display:flex;gap:16px">
