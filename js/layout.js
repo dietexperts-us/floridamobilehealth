@@ -101,7 +101,7 @@ const FOOTER_HTML = `
       </p>
     </div>
     <div class="footer-bottom">
-      <p class="lang-en">© 2025 Florida Mobile Health, PLLC · All rights reserved</p><p class="lang-es lang-hidden" >© 2025 Florida Mobile Health, PLLC · Todos los derechos reservados</p>
+      <p class="lang-en">© 2026 Florida Mobile Health, PLLC · All rights reserved · MetabolicRx™ is a trademark of Florida Mobile Health, PLLC</p><p class="lang-es lang-hidden" >© 2026 Florida Mobile Health, PLLC · Todos los derechos reservados · MetabolicRx™ es marca registrada de Florida Mobile Health, PLLC</p>
       <div style="display:flex;gap:16px">
         <a href="/disclosures.html">Disclosures</a>
         <a href="/privacy.html">Privacidad</a>
