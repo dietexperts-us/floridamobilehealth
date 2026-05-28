@@ -12,7 +12,7 @@ const NAV_HTML = `
       <a href="/services.html" class="lang-en">Services</a><a href="/services.html" class="lang-es lang-hidden">Servicios</a>
       <a href="/programs.html" class="lang-en">Programs</a><a href="/programs.html" class="lang-es lang-hidden">Programas</a>
       <a href="/community.html" class="lang-en" style="color:var(--olive-500);font-weight:600">Community</a><a href="/community.html" class="lang-es lang-hidden" style="color:var(--olive-500);font-weight:600">Comunidad</a>
-      <a href="/metabolic-health.html" class="lang-en" style="color:var(--terra-500);font-weight:600">DietExpertNPRx™</a><a href="/metabolic-health.html" class="lang-es lang-hidden" style="color:var(--terra-500);font-weight:600">DietExpertNPRx™</a>
+      <a href="/metabolic-health.html" class="lang-en" style="color:var(--terra-500);font-weight:600">DietExpert NP Rx™</a><a href="/metabolic-health.html" class="lang-es lang-hidden" style="color:var(--terra-500);font-weight:600">DietExpert NP Rx™</a>
     <a href="/menopause-diabetes.html" class="lang-en" style="color:#8a2040;font-weight:600">MenopauseRx™ — Menopause + Diabetes</a><a href="/menopause-diabetes.html" class="lang-es lang-hidden" style="color:#8a2040;font-weight:600">MenopauseRx™ — Menopausia + Diabetes</a>
       <a href="/menopause-diabetes.html" class="lang-en" style="color:#8a2040;font-weight:600">MenopauseRx™</a><a href="/menopause-diabetes.html" class="lang-es lang-hidden" style="color:#8a2040;font-weight:600">MenopauseRx™</a>
       <a href="/shop.html" class="lang-en">Videos</a><a href="/shop.html" class="lang-es lang-hidden">Videos</a>
@@ -33,7 +33,7 @@ const NAV_HTML = `
     <a href="/services.html" class="lang-en">Services</a><a href="/services.html" class="lang-es lang-hidden">Servicios</a>
     <a href="/programs.html" class="lang-en">Care Programs</a><a href="/programs.html" class="lang-es lang-hidden">Programas</a>
     <a href="/community.html" class="lang-en" style="color:var(--olive-500);font-weight:600">Community Programs</a><a href="/community.html" class="lang-es lang-hidden" style="color:var(--olive-500);font-weight:600">Programas Comunitarios</a>
-    <a href="/metabolic-health.html" class="lang-en" style="color:var(--terra-500);font-weight:600">DietExpertNPRx™</a><a href="/metabolic-health.html" class="lang-es lang-hidden" style="color:var(--terra-500);font-weight:600">DietExpertNPRx™</a>
+    <a href="/metabolic-health.html" class="lang-en" style="color:var(--terra-500);font-weight:600">DietExpert NP Rx™</a><a href="/metabolic-health.html" class="lang-es lang-hidden" style="color:var(--terra-500);font-weight:600">DietExpert NP Rx™</a>
       <a href="/menopause-diabetes.html" class="lang-en" style="color:#8a2040;font-weight:600">MenopauseRx™</a><a href="/menopause-diabetes.html" class="lang-es lang-hidden" style="color:#8a2040;font-weight:600">MenopauseRx™</a>
     <a href="/shop.html" class="lang-en">Videos</a><a href="/shop.html" class="lang-es lang-hidden">Videos</a>
     <a href="/pricing.html" class="lang-en">Pricing</a><a href="/pricing.html" class="lang-es lang-hidden">Precios</a>
@@ -104,7 +104,7 @@ const FOOTER_HTML = `
       </p>
     </div>
     <div class="footer-bottom">
-      <p class="lang-en">© 2026 Florida Mobile Health, PLLC · All rights reserved · DietExpertNPRx™ is a trademark of Florida Mobile Health, PLLC</p><p class="lang-es lang-hidden" >© 2026 Florida Mobile Health, PLLC · Todos los derechos reservados · DietExpertNPRx™ es marca registrada de Florida Mobile Health, PLLC</p>
+      <p class="lang-en">© 2026 Florida Mobile Health, PLLC · All rights reserved · DietExpert NP Rx™ is a trademark of Florida Mobile Health, PLLC</p><p class="lang-es lang-hidden" >© 2026 Florida Mobile Health, PLLC · Todos los derechos reservados · DietExpert NP Rx™ es marca registrada de Florida Mobile Health, PLLC</p>
       <div style="display:flex;gap:16px">
         <a href="/disclosures.html">Disclosures</a>
         <a href="/privacy.html">Privacidad</a>
