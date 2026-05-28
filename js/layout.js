@@ -19,6 +19,7 @@ const NAV_HTML = `
           <a href="/menopause-diabetes.html" class="lang-en" style="color:#8a2040;font-weight:600">MenopauseRx&#8482;</a><a href="/menopause-diabetes.html" class="lang-es lang-hidden" style="color:#8a2040;font-weight:600">MenopauseRx&#8482;</a>
           <a href="/community.html" class="lang-en" style="color:var(--olive-500)">Community programs</a><a href="/community.html" class="lang-es lang-hidden" style="color:var(--olive-500)">Programas comunitarios</a>
           <a href="/shop.html" class="lang-en">Videos &amp; education</a><a href="/shop.html" class="lang-es lang-hidden">Videos y educacion</a>
+          <a href="/local-visits.html" class="lang-en">Local in-person visits</a><a href="/local-visits.html" class="lang-es lang-hidden">Visitas en persona locales</a>
           <a href="/resources.html" class="lang-en" style="color:var(--olive-500)">Free health guides</a><a href="/resources.html" class="lang-es lang-hidden" style="color:var(--olive-500)">Guías gratuitas de salud</a>
         </div>
       </div>
@@ -39,6 +40,7 @@ const NAV_HTML = `
     <a href="/metabolic-health.html" class="lang-en" style="color:var(--terra-500);font-weight:600;padding-left:28px">&#8212; DietexpertNP Rx™</a><a href="/metabolic-health.html" class="lang-es lang-hidden" style="color:var(--terra-500);font-weight:600;padding-left:28px">&#8212; DietexpertNP Rx™</a>
     <a href="/menopause-diabetes.html" class="lang-en" style="color:#8a2040;font-weight:600;padding-left:28px">&#8212; MenopauseRx&#8482;</a><a href="/menopause-diabetes.html" class="lang-es lang-hidden" style="color:#8a2040;font-weight:600;padding-left:28px">&#8212; MenopauseRx&#8482;</a>
     <a href="/community.html" class="lang-en" style="color:var(--olive-500);padding-left:28px">&#8212; Community programs</a><a href="/community.html" class="lang-es lang-hidden" style="color:var(--olive-500);padding-left:28px">&#8212; Programas comunitarios</a>
+    <a href="/local-visits.html" class="lang-en">Local in-person visits (SW Florida)</a><a href="/local-visits.html" class="lang-es lang-hidden">Visitas en persona (Suroeste FL)</a>
     <a href="/shop.html" class="lang-en">Videos</a><a href="/shop.html" class="lang-es lang-hidden">Videos</a>
         <a href="/resources.html" class="lang-en">Free health guides</a><a href="/resources.html" class="lang-es lang-hidden">Guías gratuitas</a>
     <a href="/resources.html" class="lang-en">Free health guides</a><a href="/resources.html" class="lang-es lang-hidden">Guías gratuitas de salud</a>

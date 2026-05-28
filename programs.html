@@ -58,6 +58,12 @@
           </ul>
           <button class="btn btn-primary btn-full" data-stripe="#">Start program</button>
           <p style="font-size:11px;color:var(--text-light);text-align:center;margin-top:8px">One-time payment · HSA/FSA accepted</p>
+          <div class="vote-bar">
+            <span class="vote-label lang-en">Interested in this program?</span>
+            <span class="vote-label lang-es lang-hidden">¿Le interesa este programa?</span>
+            <button class="vote-btn" id="up_diabetes-reset" onclick="vote('diabetes-reset','up')">👍 0</button>
+            <button class="vote-btn" id="down_diabetes-reset" onclick="vote('diabetes-reset','down')">👎 0</button>
+          </div>
         </div>
         <div class="lang-es lang-hidden" >
           <h3>Programa Diabetes Reset</h3>
@@ -93,6 +99,12 @@
           </ul>
           <button class="btn btn-primary btn-full" data-stripe="#">Start program</button>
           <p style="font-size:11px;color:var(--text-light);text-align:center;margin-top:8px">One-time payment · HSA/FSA accepted</p>
+          <div class="vote-bar">
+            <span class="vote-label lang-en">Interested in this program?</span>
+            <span class="vote-label lang-es lang-hidden">¿Le interesa este programa?</span>
+            <button class="vote-btn" id="up_glp1-starter" onclick="vote('glp1-starter','up')">👍 0</button>
+            <button class="vote-btn" id="down_glp1-starter" onclick="vote('glp1-starter','down')">👎 0</button>
+          </div>
         </div>
         <div class="lang-es lang-hidden" >
           <h3>Programa GLP-1 Inicio</h3>
@@ -128,6 +140,12 @@
           </ul>
           <button class="btn btn-olive btn-full" data-stripe="#">Buy package</button>
           <p style="font-size:11px;color:var(--text-light);text-align:center;margin-top:8px">One-time payment · HSA/FSA accepted</p>
+          <div class="vote-bar">
+            <span class="vote-label lang-en">Interested in this program?</span>
+            <span class="vote-label lang-es lang-hidden">¿Le interesa este programa?</span>
+            <button class="vote-btn" id="up_annual-health" onclick="vote('annual-health','up')">👍 0</button>
+            <button class="vote-btn" id="down_annual-health" onclick="vote('annual-health','down')">👎 0</button>
+          </div>
         </div>
         <div class="lang-es lang-hidden" >
           <h3>Paquete Salud Anual</h3>
@@ -162,6 +180,12 @@
           </ul>
           <button class="btn btn-olive btn-full" data-stripe="#">Buy family program</button>
           <p style="font-size:11px;color:var(--text-light);text-align:center;margin-top:8px">One-time payment · HSA/FSA accepted</p>
+          <div class="vote-bar">
+            <span class="vote-label lang-en">Interested in this program?</span>
+            <span class="vote-label lang-es lang-hidden">¿Le interesa este programa?</span>
+            <button class="vote-btn" id="up_family-pack" onclick="vote('family-pack','up')">👍 0</button>
+            <button class="vote-btn" id="down_family-pack" onclick="vote('family-pack','down')">👎 0</button>
+          </div>
         </div>
         <div class="lang-es lang-hidden" >
           <h3>Programa Familiar</h3>
@@ -193,5 +217,47 @@
 </section>
 
 <script src="/js/main.js"></script>
+
+<style>
+.vote-bar{display:flex;align-items:center;gap:10px;margin-top:14px;padding-top:12px;border-top:.5px solid var(--border)}
+.vote-btn{display:inline-flex;align-items:center;gap:6px;background:var(--bg-alt,#faf8f4);border:.5px solid var(--border);border-radius:20px;padding:5px 14px;font-size:12px;font-family:sans-serif;cursor:pointer;transition:.15s;color:var(--text-muted)}
+.vote-btn:hover{background:var(--terra-50,#fdf2ef);border-color:#c88878}
+.vote-btn.voted-up{background:#eaf3de;border-color:#3a5420;color:#3a5420}
+.vote-btn.voted-down{background:#fdf2ef;border-color:#6b2518;color:#6b2518}
+.vote-label{font-size:11px;color:var(--text-light);font-family:sans-serif}
+</style>
+<script>
+function vote(programId, dir) {
+  var key = 'vote_' + programId;
+  var countKey = 'count_' + programId + '_' + dir;
+  var prev = localStorage.getItem(key);
+  if (prev === dir) return;
+  if (prev) {
+    var prevCount = parseInt(localStorage.getItem('count_' + programId + '_' + prev) || '0');
+    if (prevCount > 0) localStorage.setItem('count_' + programId + '_' + prev, prevCount - 1);
+  }
+  var count = parseInt(localStorage.getItem(countKey) || '0') + 1;
+  localStorage.setItem(countKey, count);
+  localStorage.setItem(key, dir);
+  renderVotes(programId);
+}
+function renderVotes(programId) {
+  var upCount = parseInt(localStorage.getItem('count_' + programId + '_up') || '0');
+  var downCount = parseInt(localStorage.getItem('count_' + programId + '_down') || '0');
+  var voted = localStorage.getItem('vote_' + programId);
+  var upBtn = document.getElementById('up_' + programId);
+  var downBtn = document.getElementById('down_' + programId);
+  if (!upBtn) return;
+  upBtn.innerHTML = '👍 ' + upCount;
+  downBtn.innerHTML = '👎 ' + downCount;
+  upBtn.className = 'vote-btn' + (voted === 'up' ? ' voted-up' : '');
+  downBtn.className = 'vote-btn' + (voted === 'down' ? ' voted-down' : '');
+}
+document.addEventListener('DOMContentLoaded', function() {
+  var programs = ['diabetes-reset','glp1-starter','annual-health','family-pack','messaging-basic','messaging-plus','messaging-family'];
+  programs.forEach(function(id) { renderVotes(id); });
+});
+</script>
+
 </body>
 </html>
