@@ -94,7 +94,7 @@ ul { list-style: none; }
 
 /* ── TRUST BAR ── */
 .trust-bar { background: var(--terra-500); padding: 13px 24px; display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; }
-.trust-item { display: flex; align-items: center; gap: 7px; color: #f0cfc4; font-size: 12px; }
+.trust-item { display: flex; align-items: center; gap: 7px; color: #fff; font-size: 12px; }
 .trust-item strong { color: #fff; }
 .trust-dot { width: 5px; height: 5px; border-radius: 50%; background: #f5a08a; flex-shrink: 0; }
 
@@ -259,7 +259,7 @@ ul { list-style: none; }
 .page-header.terra { background: var(--cream); }
 .page-header.dark { background: var(--terra-800); }
 .page-header.dark h1, .page-header.dark p { color: #fff; }
-.page-header.dark p { color: #c4a090 !important; }
+.page-header.dark p { color: rgba(255,255,255,.92) !important; }
 .page-header.olive { background: var(--olive-500); }
 .page-header.olive h1, .page-header.olive p { color: #fff; }
 .page-header.olive p { color: #c0d8a8 !important; }
