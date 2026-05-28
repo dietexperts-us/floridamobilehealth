@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Patient Intake Form | Florida Mobile Health</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    .intake-wrap{max-width:720px;margin:0 auto;padding:24px 16px 48px}
+    .progress-bar-wrap{background:#e8ddd5;border-radius:20px;height:6px;margin-bottom:8px;overflow:hidden}
+    .progress-bar-fill{background:#6b2518;height:6px;border-radius:20px;transition:.4s}
+    .step-label{font-size:11px;color:var(--text-light);font-family:sans-serif;margin-bottom:20px;text-align:center}
+    .step{display:none}.step.active{display:block}
+    .step-title{font-family:Georgia,serif;font-size:22px;color:#6b2518;margin-bottom:4px}
+    .step-sub{font-size:14px;color:var(--text-muted);margin-bottom:24px;line-height:1.6}
+    .field{margin-bottom:18px}
+    .field label{display:block;font-size:13px;font-weight:600;color:#333;margin-bottom:5px;font-family:sans-serif}
+    .field label .req{color:#c44040}
+    .field input,.field select,.field textarea{width:100%;padding:10px 12px;border:.5px solid #c8b8b0;border-radius:8px;font-size:14px;font-family:sans-serif;background:#fff;transition:.15s;color:#333}
+    .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:#6b2518;box-shadow:0 0 0 3px rgba(107,37,24,.08)}
+    .field textarea{min-height:90px;resize:vertical}
+    .field-note{font-size:11px;color:var(--text-light);margin-top:4px;font-family:sans-serif}
+    .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .field-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+    .consent-box{background:#fdf2ef;border:.5px solid #d8a898;border-radius:12px;padding:20px;margin-bottom:18px}
+    .consent-title{font-size:14px;font-weight:700;color:#6b2518;margin-bottom:10px;font-family:sans-serif}
+    .consent-text{font-size:12px;color:#444;line-height:1.7;margin-bottom:12px;max-height:160px;overflow-y:auto;padding-right:8px}
+    .consent-text::-webkit-scrollbar{width:4px}.consent-text::-webkit-scrollbar-track{background:#f0e0d8}.consent-text::-webkit-scrollbar-thumb{background:#c88878;border-radius:4px}
+    .consent-check{display:flex;align-items:flex-start;gap:10px;cursor:pointer}
+    .consent-check input[type=checkbox]{width:16px;height:16px;margin-top:1px;accent-color:#6b2518;flex-shrink:0;cursor:pointer}
+    .consent-check span{font-size:13px;color:#333;font-family:sans-serif;line-height:1.5}
+    .pay-card{background:#fff;border:.5px solid var(--border);border-radius:12px;padding:18px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:flex-start}
+    .pay-card.selected{border-color:#6b2518;background:#fdf2ef}
+    .pay-label{font-size:14px;font-weight:600;color:#333;margin-bottom:3px}
+    .pay-desc{font-size:12px;color:var(--text-muted);line-height:1.5}
+    .pay-price{font-size:18px;font-weight:700;color:#6b2518;font-family:Georgia,serif;white-space:nowrap;margin-left:12px}
+    .check-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+    .check-item{display:flex;align-items:center;gap:8px;font-size:13px;color:#333;font-family:sans-serif;padding:6px 0}
+    .check-item input{accent-color:#6b2518;width:14px;height:14px;flex-shrink:0}
+    .btn-row{display:flex;gap:12px;margin-top:28px;justify-content:flex-end}
+    .btn-next{background:#6b2518;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:sans-serif;transition:.15s}
+    .btn-next:hover{background:#5a1e12}
+    .btn-back{background:#fff;color:#6b2518;border:1.5px solid #6b2518;padding:12px 24px;border-radius:8px;font-size:14px;cursor:pointer;font-family:sans-serif;transition:.15s}
+    .btn-back:hover{background:#fdf2ef}
+    .sig-box{border:.5px solid #c8b8b0;border-radius:8px;padding:14px;background:#fff;margin-top:6px}
+    .sig-name{font-family:Georgia,serif;font-size:22px;color:#6b2518;min-height:32px;border-bottom:1px solid #c8b8b0;padding-bottom:4px}
+    .section-divider{border:none;border-top:.5px solid var(--border);margin:20px 0}
+    .security-badge{background:#e8edf4;border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:8px;font-size:12px;color:#555;font-family:sans-serif;margin-bottom:20px}
+    .alert-box{background:#fff5f5;border:1px solid #e87070;border-radius:8px;padding:14px;font-size:13px;color:#c44040;font-family:sans-serif;margin-bottom:16px;display:none}
+    .state-disclosure{display:none}
+    @media(max-width:600px){.field-row,.field-row-3{grid-template-columns:1fr}.check-grid{grid-template-columns:1fr}.btn-row{flex-direction:column-reverse}.btn-next,.btn-back{width:100%;text-align:center}}
+  </style>
+</head>
+<body style="background:#faf8f4">
+<div style="background:#6b2518;padding:14px 24px;text-align:center">
+  <p style="color:#fff;font-family:Georgia,serif;font-size:16px;margin:0">FLORIDA MOBILE HEALTH</p>
+  <p style="color:rgba(255,255,255,.7);font-size:11px;font-family:sans-serif;margin:2px 0 0;letter-spacing:.06em">PATIENT INTAKE FORM · CONFIDENTIAL</p>
+</div>
+
+<div class="intake-wrap">
+  <div class="security-badge">
+    <i class="ti ti-lock" style="color:#1a2e4a;font-size:18px"></i>
+    <span>This form is transmitted securely over HTTPS. Do not complete this form on a public or shared device. <strong>Michele Li Causi FNP-BC, RD, CDCES</strong> — info@floridamobilehealth.com</span>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill" style="width:11%"></div></div>
+  <div class="step-label" id="stepLabel">Step 1 of 9</div>
+  <div class="alert-box" id="alertBox">Please complete all required fields before continuing.</div>
+
+  <form id="intakeForm" novalidate>
+    <!-- hidden fields sent to server -->
+    <input type="hidden" name="_subject" value="NEW PATIENT INTAKE FORM — Florida Mobile Health">
+    <input type="hidden" name="_from" value="Intake Form">
+    <input type="hidden" name="formVersion" value="2026-v1">
+
+    <!-- ===== STEP 1: SERVICE SELECTION & PAYMENT ===== -->
+    <div class="step active" id="step1">
+      <p class="step-title">Service selection & payment</p>
+      <p class="step-sub">Select the service you are booking. <strong>Payment is required in full before your visit is confirmed.</strong> All services are self-pay — no insurance billed directly.</p>
+
+      <div class="field">
+        <label>Select the service you are booking <span class="req">*</span></label>
+        <p style="font-size:12px;color:var(--text-muted);margin-bottom:10px">Select one. Additional services may be added at your visit.</p>
+
+        <div class="pay-card" onclick="selectService(this,'New Patient Visit — 60 min','$200')">
+          <div><div class="pay-label">New Patient Visit <span style="font-size:11px;font-weight:400;color:#888">· 60 minutes</span></div><div class="pay-desc">Initial comprehensive evaluation. History, physical exam, lab review, medication reconciliation, care plan. Diabetes, GLP-1, hormones, or primary care.</div></div>
+          <div class="pay-price">$200</div>
+        </div>
+        <div class="pay-card" onclick="selectService(this,'Follow-Up Visit — 30 min','$120')">
+          <div><div class="pay-label">Follow-Up Visit <span style="font-size:11px;font-weight:400;color:#888">· 30 minutes</span></div><div class="pay-desc">Established patients only. Lab results review, medication adjustments, ongoing chronic disease management.</div></div>
+          <div class="pay-price">$120</div>
+        </div>
+        <div class="pay-card" onclick="selectService(this,'Brief Visit — 15 min','$75')">
+          <div><div class="pay-label">Brief Visit <span style="font-size:11px;font-weight:400;color:#888">· 15 minutes</span></div><div class="pay-desc">Established patients. Single focused issue — prescription renewal, single question, minor medication change only.</div></div>
+          <div class="pay-price">$75</div>
+        </div>
+        <div class="pay-card" onclick="selectService(this,'Diabetes / GLP-1 Consultation — 60 min','$200')">
+          <div><div class="pay-label">Diabetes / GLP-1 Consultation <span style="font-size:11px;font-weight:400;color:#888">· 60 minutes</span></div><div class="pay-desc">Comprehensive diabetes evaluation OR initial GLP-1 consultation (Ozempic, Mounjaro, Wegovy). Includes CGM recommendation, nutrition plan, prescriptions as appropriate.</div></div>
+          <div class="pay-price">$200</div>
+        </div>
+        <div class="pay-card" onclick="selectService(this,'Hormone / Menopause Consultation — 60 min','$200')">
+          <div><div class="pay-label">Hormone / Menopause Consultation <span style="font-size:11px;font-weight:400;color:#888">· 60 minutes</span></div><div class="pay-desc">HRT evaluation, perimenopause/menopause management, thyroid, hormonal imbalance. Lab review included.</div></div>
+          <div class="pay-price">$200</div>
+        </div>
+        <div class="pay-card" onclick="selectService(this,'Nutrition Consultation — 60 min (RD)','$150')">
+          <div><div class="pay-label">Nutrition Consultation <span style="font-size:11px;font-weight:400;color:#888">· 60 minutes · RD</span></div><div class="pay-desc">Registered Dietitian nutrition assessment. Personalized meal planning, GLP-1 side effect nutrition, metabolic health. HSA/FSA eligible.</div></div>
+          <div class="pay-price">$150</div>
+        </div>
+        <input type="hidden" name="serviceSelected" id="serviceSelected" required>
+        <input type="hidden" name="serviceFee" id="serviceFee">
+      </div>
+
+      <div class="consent-box" style="background:#f0f8e8;border-color:#3a5420">
+        <div class="consent-title" style="color:#3a5420">Payment & financial policy acknowledgment</div>
+        <div class="consent-text">
+          <strong>Payment is due in full before your visit is confirmed.</strong> Florida Mobile Health is a self-pay, direct-care practice. We do not bill insurance directly.<br><br>
+          <strong>What this means for you:</strong> You pay us directly at the time of booking or before your visit. We will provide you with a detailed Superbill (itemized receipt with CPT codes and diagnosis codes) that you can submit to your insurance company for possible out-of-network reimbursement. We cannot guarantee reimbursement from your insurance.<br><br>
+          <strong>HSA/FSA:</strong> All services are eligible for Health Savings Account (HSA) and Flexible Spending Account (FSA) payment.<br><br>
+          <strong>Cancellation policy:</strong> Cancellations with less than 24 hours notice are subject to a $50 late cancellation fee. No-shows are charged the full visit fee. To cancel or reschedule, contact us at 352-399-8874 or info@floridamobilehealth.com.<br><br>
+          <strong>Scope of practice:</strong> As a Florida-licensed FNP-BC, Michele Li Causi does NOT prescribe controlled substances (Schedule II–V), testosterone, or other controlled medications. If you require these medications, you must maintain a separate prescribing relationship with another provider.<br><br>
+          <strong>Emergency care:</strong> Florida Mobile Health is not an emergency service. In a medical emergency, call 911 or go to your nearest emergency room. Response to messages is during business hours only.
+        </div>
+        <label class="consent-check">
+          <input type="checkbox" id="payCheck" name="paymentAcknowledged" value="Yes" required>
+          <span>I understand and agree to the payment and financial policy. I understand payment is required before my visit is confirmed and that this is a self-pay practice. <span class="req">*</span></span>
+        </label>
+      </div>
+
+      <div class="btn-row"><button type="button" class="btn-next" onclick="nextStep(1)">Continue →</button></div>
+    </div>
+
+    <!-- ===== STEP 2: STATE & TELEHEALTH CONSENT ===== -->
+    <div class="step" id="step2">
+      <p class="step-title">State & telehealth consent</p>
+      <p class="step-sub">Select your state of residence. Your state determines the specific telehealth consent disclosures required by law. You must read and agree to all disclosures before proceeding.</p>
+
+      <div class="field">
+        <label>What state are you physically located in when receiving care? <span class="req">*</span></label>
+        <select name="patientState" id="patientState" required onchange="showStateDisclosure()">
+          <option value="">— Select your state —</option>
+          <option value="FL">Florida</option>
+          <option value="AZ">Arizona</option>
+          <option value="NV">Nevada</option>
+          <option value="CO">Colorado</option>
+          <option value="NM">New Mexico</option>
+          <option value="UT">Utah</option>
+        </select>
+        <p class="field-note">Michele Li Causi FNP-BC is licensed in FL, AZ, NV, CO, NM, and UT only. If you are located in another state, we cannot provide care to you at this time.</p>
+      </div>
+
+      <!-- UNIVERSAL TELEHEALTH CONSENT (all states) -->
+      <div class="consent-box" id="universalConsent" style="display:none">
+        <div class="consent-title">Universal Telehealth Informed Consent</div>
+        <div class="consent-text">
+          <strong>What is telehealth?</strong> Telehealth involves the use of electronic communications to enable healthcare providers at different locations to share individual patient medical information for the purpose of improving patient care. Technologies may include video conferencing, telephone, electronic messaging (text/email), and file sharing platforms.<br><br>
+          <strong>Provider identification:</strong> Michele Li Causi, FNP-BC, RD, CDCES — Family Nurse Practitioner, Registered Dietitian, Certified Diabetes Care and Education Specialist. Licensed in Florida, Arizona, Nevada, Colorado, New Mexico, and Utah. Employer: Florida Mobile Health, PLLC. Contact: 352-399-8874 · info@floridamobilehealth.com.<br><br>
+          <strong>Benefits of telehealth:</strong> Improved access to care without travel; ability to receive care in your home; access to a specialist provider not available locally; reduced exposure to illness; greater convenience and scheduling flexibility.<br><br>
+          <strong>Limitations and risks of telehealth:</strong> Telehealth has technical limitations. If a physical examination is needed that cannot be performed remotely, you may be referred for in-person care. Technical failures (poor connection, audio/video issues) may disrupt your visit. In such cases, we will attempt to reschedule or continue by telephone. Michele Li Causi is NOT a primary emergency provider — in a life-threatening emergency, call 911 immediately.<br><br>
+          <strong>Privacy:</strong> All telehealth sessions are conducted in compliance with HIPAA. Please conduct your session in a private location. If you are using a shared device or network, your privacy cannot be fully guaranteed. Florida Mobile Health uses HIPAA-compliant platforms for all communications.<br><br>
+          <strong>Alternative to telehealth:</strong> You have the right to refuse telehealth services at any time and may request in-person care. This will not affect your right to future care from Florida Mobile Health.<br><br>
+          <strong>No recording:</strong> You may not record your telehealth visit without the explicit written consent of the provider. The provider will not record visits without your explicit consent.<br><br>
+          <strong>Identity verification:</strong> You agree that your identity will be verified prior to your visit and that you will provide accurate identification upon request.
+        </div>
+        <label class="consent-check">
+          <input type="checkbox" name="universalConsentAgreed" value="Yes" required>
+          <span>I have read, understand, and consent to receive telehealth services as described above. <span class="req">*</span></span>
+        </label>
+      </div>
+
+      <!-- STATE-SPECIFIC DISCLOSURES -->
+      <div class="state-disclosure consent-box" id="disc-FL" style="background:#e8f0f8;border-color:#1a2e4a">
+        <div class="consent-title" style="color:#1a2e4a">Florida — State-Specific Telehealth Disclosure (§456.47, F.S.)</div>
+        <div class="consent-text">
+          Pursuant to Florida Statute §456.47, you are hereby informed that: (1) Your telehealth provider, Michele Li Causi FNP-BC, is licensed to practice in Florida and will comply with all applicable Florida standards of care; (2) In Florida, an autonomous Advanced Practice Registered Nurse (APRN) may provide telehealth services without physician supervision; (3) You have the right to request an in-person evaluation at any time; (4) Florida Mobile Health does not prescribe controlled substances via telehealth; (5) Your health information will be maintained in accordance with Florida and federal privacy laws; (6) You have the right to receive a copy of your medical records upon written request; (7) This consent applies to all current and future telehealth encounters with Florida Mobile Health unless revoked in writing.
+        </div>
+        <label class="consent-check">
+          <input type="checkbox" name="stateConsentFL" value="Yes">
+          <span>I acknowledge receipt of the Florida telehealth disclosure and consent to receive telehealth services from a Florida-licensed APRN. <span class="req">*</span></span>
+        </label>
+      </div>
+
+      <div class="state-disclosure consent-box" id="disc-AZ" style="background:#e8f0f8;border-color:#1a2e4a">
+        <div class="consent-title" style="color:#1a2e4a">Arizona — State-Specific Telehealth Disclosure (A.R.S. §36-3601 et seq.)</div>
+        <div class="consent-text">
+          Pursuant to Arizona Revised Statutes §36-3601 et seq., you are hereby informed that: (1) Any additional fees for telehealth services — and how payment shall be made — are disclosed in the financial policy you agreed to in Step 1; (2) To whom your protected health information (PHI) may be disclosed and for what purpose: your PHI will not be disclosed to any third party except as required by law, for care coordination, or with your explicit written consent; (3) Telehealth services at Florida Mobile Health meet HIPAA and HITECH security standards; (4) There is a potential risk of lost information due to technical failure — you authorize Florida Mobile Health to be held harmless for loss of information due to unavoidable technical failures; (5) Florida Mobile Health's website is operated by Florida Mobile Health, PLLC, located in Florida, reachable at 352-399-8874; (6) Prior to each initial encounter and at least annually, this consent must be renewed; (7) You may refuse telehealth services at any time without affecting your right to future care; (8) Your physical location (city and state) will be verified at the start of each encounter.
+        </div>
+        <label class="consent-check">
+          <input type="checkbox" name="stateConsentAZ" value="Yes">
+          <span>I acknowledge receipt of the Arizona telehealth disclosure and consent to receive telehealth services in compliance with Arizona law. <span class="req">*</span></span>
+        </label>
+      </div>
+
+      <div class="state-disclosure consent-box" id="disc-NV" style="background:#e8f0f8;border-color:#1a2e4a">
+        <div class="consent-title" style="color:#1a2e4a">Nevada — State-Specific Telehealth Disclosure (NRS 629.515)</div>
+        <div class="consent-text">
+          Pursuant to Nevada Revised Statutes §629.515, you are hereby informed that: (1) Michele Li Causi FNP-BC holds a valid Nevada nursing license and is authorized to provide telehealth services to patients physically located in Nevada; (2) The standard of care applicable to in-person services in Nevada also applies to telehealth services; (3) You have the right to refuse telehealth services at any time and to request in-person care; (4) Your confidentiality will be protected under all applicable Nevada and federal privacy laws; (5) A complete medical record of your telehealth encounter will be maintained; (6) In an emergency, you should call 911 or go to the nearest emergency room — Florida Mobile Health does not provide emergency services; (7) You have the right to know the qualifications and credentials of your provider: Michele Li Causi is a Board-Certified Family Nurse Practitioner (FNP-BC), Registered Dietitian (RD), and Certified Diabetes Care and Education Specialist (CDCES).
+        </div>
+        <label class="consent-check">
+          <input type="checkbox" name="stateConsentNV" value="Yes">
+          <span>I acknowledge receipt of the Nevada telehealth disclosure and consent to receive telehealth services in compliance with Nevada law. <span class="req">*</span></span>
+        </label>
+      </div>
+
+      <div class="state-disclosure consent-box" id="disc-CO" style="background:#e8f0f8;border-color:#1a2e4a">
+        <div class="consent-title" style="color:#1a2e4a">Colorado — Required Telehealth Consent (C.R.S. §12-30-124)</div>
+        <div class="consent-text">
+          Pursuant to Colorado Revised Statutes §12-30-124 and Colorado Medical Board Policy 40-27, you are hereby informed that: (1) You may refuse telehealth services at any time, without loss or withdrawal of treatment; (2) All applicable confidentiality protections provided by Colorado and federal law apply to this telehealth service; (3) You have a right to access your own medical information and copies of your medical records in accordance with applicable law; (4) Dissemination of any patient identifiable images or information from this telehealth interaction to other entities requires your consent; (5) There are potential risks to privacy associated with electronic communications that exist regardless of security measures; (6) Michele Li Causi FNP-BC holds a valid Colorado nursing license; (7) The services provided comply with all professional practice standards and laws applicable to Colorado healthcare; (8) This consent is documented in your medical record as required by Colorado law.
+        </div>
+        <label class="consent-check">
+          <input type="checkbox" name="stateConsentCO" value="Yes">
+          <span>I have read, understood, and consent to the Colorado-required telehealth disclosures. I understand I may refuse services at any time without loss of care. <span class="req">*</span></span>
+        </label>
+      </div>
+
+      <div class="state-disclosure consent-box" id="disc-NM" style="background:#e8f0f8;border-color:#1a2e4a">
+        <div class="consent-title" style="color:#1a2e4a">New Mexico — State-Specific Telehealth Disclosure (NMSA §61-6-14.2)</div>
+        <div class="consent-text">
+          Pursuant to New Mexico Statutes Annotated §61-6-14.2 and the New Mexico Board of Nursing regulations, you are hereby informed that: (1) Michele Li Causi FNP-BC holds a valid New Mexico nursing license and is authorized to provide telehealth services to patients physically located in New Mexico; (2) The same standards of professional practice that apply to in-person care apply to telehealth services; (3) You have the right to refuse telehealth services and to request referral for in-person care; (4) Your PHI will be protected under all applicable New Mexico and federal privacy laws; (5) A complete record of your telehealth encounter will be maintained; (6) The provider will verify your identity and location at the start of each encounter; (7) The provider's credentials will be made available to you upon request; (8) This consent covers all telehealth encounters with Florida Mobile Health unless revoked in writing.
+        </div>
+        <label class="consent-check">
+          <input type="checkbox" name="stateConsentNM" value="Yes">
+          <span>I acknowledge receipt of the New Mexico telehealth disclosure and consent to receive telehealth services in compliance with New Mexico law. <span class="req">*</span></span>
+        </label>
+      </div>
+
+      <div class="state-disclosure consent-box" id="disc-UT" style="background:#e8f0f8;border-color:#1a2e4a">
+        <div class="consent-title" style="color:#1a2e4a">Utah — Required Telehealth Consent (Utah Admin. Rules R156-31b)</div>
+        <div class="consent-text">
+          Pursuant to Utah Administrative Rules R156-31b and Utah Code §26B-4-803, you are hereby informed that: (1) Any additional fees for telehealth services are disclosed in the financial policy you agreed to in Step 1; (2) To whom your PHI may be disclosed and for what purpose: only as required by law, for care coordination, or with your explicit written consent; (3) Your rights regarding your PHI are protected under HIPAA and Utah law; (4) Florida Mobile Health's telehealth services meet industry security and privacy standards, and comply with HIPAA and HITECH; (5) There is a potential risk of lost information due to technical failure — you authorize Florida Mobile Health to be held harmless for such unavoidable loss; (6) This consent must be renewed at least annually; (7) Your physical location (city and state) will be verified at the start of each encounter; (8) You have the right to refuse telehealth at any time; (9) Michele Li Causi FNP-BC holds a valid Utah nursing license.
+        </div>
+        <label class="consent-check">
+          <input type="checkbox" name="stateConsentUT" value="Yes">
+          <span>I acknowledge receipt of the Utah telehealth disclosure, including disclosure of fees, PHI policy, security standards, and technical failure risks, and consent to receive telehealth services in compliance with Utah law. <span class="req">*</span></span>
+        </label>
+      </div>
+
+      <div class="btn-row">
+        <button type="button" class="btn-back" onclick="prevStep(2)">← Back</button>
+        <button type="button" class="btn-next" onclick="nextStep(2)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- ===== STEP 3: HIPAA & PRACTICE POLICIES ===== -->
+    <div class="step" id="step3">
+      <p class="step-title">HIPAA notice & practice policies</p>
+      <p class="step-sub">You must acknowledge the following before your visit.</p>
+
+      <div class="consent-box">
+        <div class="consent-title">HIPAA Notice of Privacy Practices</div>
+        <div class="consent-text">
+          <strong>Your rights under HIPAA:</strong> You have the right to: (1) Get a copy of your health information; (2) Correct your health information; (3) Request confidential communications; (4) Ask us to limit what we use or share; (5) Get a list of those with whom we've shared your information; (6) Get a copy of this privacy notice; (7) Choose someone to act for you; (8) File a complaint if you believe your privacy rights have been violated.<br><br>
+          <strong>How we use your information:</strong> Florida Mobile Health uses your health information for: treatment and care coordination; payment processing; healthcare operations; and as required by law. We will not sell your information or use it for marketing without your written authorization.<br><br>
+          <strong>Business Associates:</strong> We may share your information with business associates (such as billing services, IT providers) who are bound by HIPAA-compliant business associate agreements.<br><br>
+          <strong>Minimum Necessary:</strong> We use and disclose only the minimum necessary health information to accomplish the intended purpose.<br><br>
+          <strong>Contact for Privacy Questions:</strong> Michele Li Causi FNP-BC · 352-399-8874 · info@floridamobilehealth.com
+        </div>
+        <label class="consent-check">
+          <input type="checkbox" name="hipaaAcknowledged" value="Yes" required>
+          <span>I acknowledge that I have received and understand the HIPAA Notice of Privacy Practices for Florida Mobile Health, PLLC. <span class="req">*</span></span>
+        </label>
+      </div>
+
+      <div class="consent-box" style="background:#fff5f5;border-color:#e87070">
+        <div class="consent-title" style="color:#c44040">Scope of practice & prescription policy</div>
+        <div class="consent-text">
+          <strong>Michele Li Causi FNP-BC DOES NOT and WILL NOT prescribe:</strong><br>
+          • Controlled substances (Schedule II–V), including but not limited to opioids, benzodiazepines, stimulants, and sleep medications<br>
+          • Testosterone or anabolic steroids<br>
+          • Any medication outside the scope of the following specialties: primary care, diabetes management, metabolic health, nutrition, and women's hormonal health<br><br>
+          If you require controlled substances or medications outside this scope, you must maintain a separate prescribing relationship with another provider. Florida Mobile Health CANNOT replace this relationship.<br><br>
+          <strong>GLP-1 medications</strong> (Ozempic, Mounjaro, Wegovy, etc.) ARE within scope and may be prescribed at the provider's clinical discretion, subject to appropriate evaluation and monitoring.
+        </div>
+        <label class="consent-check">
+          <input type="checkbox" name="scopeAcknowledged" value="Yes" required>
+          <span>I understand and accept the scope of practice and prescription policy of Florida Mobile Health. I understand that controlled substances will not be prescribed. <span class="req">*</span></span>
+        </label>
+      </div>
+
+      <div class="consent-box">
+        <div class="consent-title">Superbill & insurance</div>
+        <div class="consent-text">
+          Florida Mobile Health does not bill insurance directly. After your visit, you will receive a detailed Superbill containing: date of service, CPT (procedure) codes, ICD-10 (diagnosis) codes, provider NPI, and all information needed for you to submit a reimbursement claim to your insurance company. Florida Mobile Health makes no guarantees regarding insurance reimbursement. All costs are your responsibility regardless of your insurance coverage.
+        </div>
+        <label class="consent-check">
+          <input type="checkbox" name="superbillAcknowledged" value="Yes" required>
+          <span>I understand that Florida Mobile Health is a self-pay practice and will provide a Superbill for potential insurance reimbursement. I am responsible for all charges. <span class="req">*</span></span>
+        </label>
+      </div>
+
+      <div class="btn-row">
+        <button type="button" class="btn-back" onclick="prevStep(3)">← Back</button>
+        <button type="button" class="btn-next" onclick="nextStep(3)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- ===== STEP 4: PATIENT INFORMATION ===== -->
+    <div class="step" id="step4">
+      <p class="step-title">Patient information</p>
+      <p class="step-sub">Basic demographic information required for your medical record.</p>
+
+      <div class="field-row">
+        <div class="field"><label>First name <span class="req">*</span></label><input type="text" name="firstName" placeholder="First name" required></div>
+        <div class="field"><label>Last name <span class="req">*</span></label><input type="text" name="lastName" placeholder="Last name" required></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Date of birth <span class="req">*</span></label><input type="date" name="dob" required></div>
+        <div class="field"><label>Sex assigned at birth <span class="req">*</span></label>
+          <select name="sexAtBirth" required>
+            <option value="">— Select —</option>
+            <option>Male</option><option>Female</option><option>Intersex</option><option>Prefer not to say</option>
+          </select>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Gender identity</label>
+          <select name="genderIdentity">
+            <option value="">— Select —</option>
+            <option>Woman/Girl</option><option>Man/Boy</option><option>Non-binary</option><option>Transgender woman</option><option>Transgender man</option><option>Prefer not to say</option><option>Not listed</option>
+          </select>
+        </div>
+        <div class="field"><label>Preferred pronouns</label><input type="text" name="pronouns" placeholder="e.g. she/her, he/him, they/them"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Phone number <span class="req">*</span></label><input type="tel" name="phone" placeholder="(555) 555-5555" required></div>
+        <div class="field"><label>Email address <span class="req">*</span></label><input type="email" name="email" placeholder="your@email.com" required></div>
+      </div>
+      <div class="field"><label>Home address <span class="req">*</span></label><input type="text" name="address" placeholder="Street address" required></div>
+      <div class="field-row-3">
+        <div class="field"><label>City <span class="req">*</span></label><input type="text" name="city" required></div>
+        <div class="field"><label>State <span class="req">*</span></label><input type="text" name="addressState" required></div>
+        <div class="field"><label>ZIP <span class="req">*</span></label><input type="text" name="zip" required></div>
+      </div>
+      <div class="field"><label>Preferred language</label>
+        <select name="preferredLanguage">
+          <option>English</option><option>Spanish / Español</option><option>Both / Ambos</option><option>Other</option>
+        </select>
+      </div>
+      <hr class="section-divider">
+      <div class="field-row">
+        <div class="field"><label>Emergency contact name <span class="req">*</span></label><input type="text" name="emergencyName" required></div>
+        <div class="field"><label>Emergency contact phone <span class="req">*</span></label><input type="tel" name="emergencyPhone" required></div>
+      </div>
+      <div class="field"><label>Emergency contact relationship</label><input type="text" name="emergencyRelation" placeholder="e.g. Spouse, Parent, Sibling"></div>
+      <hr class="section-divider">
+      <div class="field"><label>How did you hear about Florida Mobile Health?</label>
+        <select name="referralSource">
+          <option value="">— Select —</option>
+          <option>Google search</option><option>Facebook</option><option>Instagram</option><option>Friend or family referral</option><option>Doctor referral</option><option>Dexcom / CGM program</option><option>Pharmacy</option><option>Other</option>
+        </select>
+      </div>
+
+      <div class="btn-row">
+        <button type="button" class="btn-back" onclick="prevStep(4)">← Back</button>
+        <button type="button" class="btn-next" onclick="nextStep(4)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- ===== STEP 5: CHIEF COMPLAINT & GOALS ===== -->
+    <div class="step" id="step5">
+      <p class="step-title">Chief complaint & care goals</p>
+      <p class="step-sub">Tell Michele why you are here and what you want to accomplish. Be as specific as possible — this shapes your entire visit.</p>
+
+      <div class="field">
+        <label>What is the main reason for your visit today? <span class="req">*</span></label>
+        <textarea name="chiefComplaint" placeholder="Describe in your own words why you are seeking care. Example: 'My A1C has been high for 2 years. I'm on Metformin but it's not working. I want to try a CGM and discuss GLP-1 options.'" required></textarea>
+      </div>
+      <div class="field">
+        <label>What are your health goals? What do you want to accomplish with Michele? <span class="req">*</span></label>
+        <textarea name="healthGoals" placeholder="Example: 'Get my A1C below 7%, lose 20 lbs, understand my CGM data, get off insulin if possible, feel less tired after meals.'" required></textarea>
+      </div>
+      <div class="field">
+        <label>What have you already tried for this issue?</label>
+        <textarea name="previousTreatments" placeholder="Medications tried, diets attempted, other providers seen, things that helped or didn't help."></textarea>
+      </div>
+      <div class="field">
+        <label>How long has this been a concern?</label>
+        <input type="text" name="symptomDuration" placeholder="e.g. '6 months', '2 years', 'since I started menopause'">
+      </div>
+      <div class="field">
+        <label>Is there anything else Michele should know before your visit?</label>
+        <textarea name="additionalContext" placeholder="Anything important — life circumstances, barriers to care, specific questions you need answered, fears or concerns."></textarea>
+      </div>
+      <div class="field">
+        <label>Are you interested in any of these services? (select all that apply)</label>
+        <div class="check-grid" style="margin-top:6px">
+          <label class="check-item"><input type="checkbox" name="interests" value="CGM / Dexcom Stelo"> CGM / Dexcom monitoring</label>
+          <label class="check-item"><input type="checkbox" name="interests" value="GLP-1 (Ozempic / Mounjaro / Wegovy)"> GLP-1 prescribing</label>
+          <label class="check-item"><input type="checkbox" name="interests" value="Hormone therapy / HRT"> Hormone therapy / HRT</label>
+          <label class="check-item"><input type="checkbox" name="interests" value="Nutrition / RD counseling"> Nutrition / RD counseling</label>
+          <label class="check-item"><input type="checkbox" name="interests" value="Diabetes education (CDCES)"> Diabetes education (CDCES)</label>
+          <label class="check-item"><input type="checkbox" name="interests" value="Lab work review"> Lab work review</label>
+          <label class="check-item"><input type="checkbox" name="interests" value="Weight management"> Weight management</label>
+          <label class="check-item"><input type="checkbox" name="interests" value="Mensural / menopause care"> Menopause care</label>
+          <label class="check-item"><input type="checkbox" name="interests" value="Primary care / annual physical"> Primary care / annual physical</label>
+          <label class="check-item"><input type="checkbox" name="interests" value="Prescription renewal"> Prescription renewal</label>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button type="button" class="btn-back" onclick="prevStep(5)">← Back</button>
+        <button type="button" class="btn-next" onclick="nextStep(5)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- ===== STEP 6: MEDICAL HISTORY ===== -->
+    <div class="step" id="step6">
+      <p class="step-title">Medical history</p>
+      <p class="step-sub">Check all conditions that apply to you. This is not exhaustive — you can add details in the notes fields.</p>
+
+      <div class="field">
+        <label>Current or past medical conditions (check all that apply)</label>
+        <div class="check-grid">
+          <label class="check-item"><input type="checkbox" name="pmh" value="Type 2 Diabetes"> Type 2 Diabetes</label>
+          <label class="check-item"><input type="checkbox" name="pmh" value="Type 1 Diabetes"> Type 1 Diabetes</label>
+          <label class="check-item"><input type="checkbox" name="pmh" value="Prediabetes"> Prediabetes</label>
+          <label class="check-item"><input type="checkbox" name="pmh" value="High blood pressure"> High blood pressure</label>
+          <label class="check-item"><input type="checkbox" name="pmh" value="High cholesterol"> High cholesterol</label>
+          <label class="check-item"><input type="checkbox" name="pmh" value="Heart disease / Heart attack"> Heart disease / MI</label>
+          <label class="check-item"><input type="checkbox" name="pmh" value="Stroke / TIA"> Stroke / TIA</label>
+          <label class="check-item"><input type="checkbox" name="pmh" value="Obesity / Overweight"> Obesity / Overweight</label>
+          <label class="check-item"><input type="checkbox" name="pmh" value="Thyroid disorder"> Thyroid disorder</label>
+          <label class="check-item"><input type="checkbox" name="pmh" value="PCOS"> PCOS</label>
+          <label class="check-item"><input type="checkbox" name="pmh" value="Menopause / Perimenopause"> Menopause / Perimenopause</label>
+          <label class="check-item"><input type="checkbox" name="pmh" value="Kidney disease"> Kidney disease</label>
+          <label class="check-item"><input type="checkbox" name="pmh" value="Liver disease"> Liver disease</label>
+          <label class="check-item"><input type="checkbox" name="pmh" value="Asthma / COPD"> Asthma / COPD</label>
+          <label class="check-item"><input type="checkbox" name="pmh" value="Sleep apnea"> Sleep apnea</label>
+          <label class="check-item"><input type="checkbox" name="pmh" value="Depression / Anxiety"> Depression / Anxiety</label>
+          <label class="check-item"><input type="checkbox" name="pmh" value="Neuropathy"> Neuropathy</label>
+          <label class="check-item"><input type="checkbox" name="pmh" value="Osteoporosis / Osteopenia"> Osteoporosis / Osteopenia</label>
+          <label class="check-item"><input type="checkbox" name="pmh" value="Autoimmune disorder"> Autoimmune disorder</label>
+          <label class="check-item"><input type="checkbox" name="pmh" value="Cancer (past or present)"> Cancer</label>
+          <label class="check-item"><input type="checkbox" name="pmh" value="Eating disorder (past or present)"> Eating disorder</label>
+          <label class="check-item"><input type="checkbox" name="pmh" value="GERD / Acid reflux"> GERD / Acid reflux</label>
+        </div>
+      </div>
+      <div class="field"><label>Other medical conditions not listed</label><textarea name="pmhOther" placeholder="List any other conditions, including dates if relevant."></textarea></div>
+      <div class="field"><label>Past surgeries or hospitalizations</label><textarea name="surgicalHistory" placeholder="Include procedure name and approximate year. Example: 'Appendectomy 2015, Cesarean section 2018.'"></textarea></div>
+      <div class="field-row">
+        <div class="field"><label>Height</label><input type="text" name="height" placeholder="e.g. 5'6&quot; or 168 cm"></div>
+        <div class="field"><label>Weight</label><input type="text" name="weight" placeholder="e.g. 165 lbs or 75 kg"></div>
+      </div>
+      <div class="field">
+        <label>Do you have any recent lab results? (A1C, cholesterol, thyroid, etc.)</label>
+        <select name="recentLabs">
+          <option value="">— Select —</option>
+          <option>Yes — I will bring them to my visit</option>
+          <option>Yes — I have them in an online portal</option>
+          <option>No recent labs</option>
+          <option>Not sure</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Most recent A1C (if known)</label>
+        <input type="text" name="lastA1C" placeholder="e.g. 7.2% — tested 3 months ago">
+      </div>
+      <div class="field">
+        <label>Family medical history (check all that apply to biological parents or siblings)</label>
+        <div class="check-grid">
+          <label class="check-item"><input type="checkbox" name="familyHx" value="Diabetes (family)"> Diabetes</label>
+          <label class="check-item"><input type="checkbox" name="familyHx" value="Heart disease (family)"> Heart disease</label>
+          <label class="check-item"><input type="checkbox" name="familyHx" value="High blood pressure (family)"> High blood pressure</label>
+          <label class="check-item"><input type="checkbox" name="familyHx" value="Stroke (family)"> Stroke</label>
+          <label class="check-item"><input type="checkbox" name="familyHx" value="Cancer (family)"> Cancer</label>
+          <label class="check-item"><input type="checkbox" name="familyHx" value="Thyroid disorder (family)"> Thyroid disorder</label>
+          <label class="check-item"><input type="checkbox" name="familyHx" value="Obesity (family)"> Obesity</label>
+          <label class="check-item"><input type="checkbox" name="familyHx" value="Mental illness (family)"> Mental illness</label>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button type="button" class="btn-back" onclick="prevStep(6)">← Back</button>
+        <button type="button" class="btn-next" onclick="nextStep(6)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- ===== STEP 7: MEDICATIONS & ALLERGIES ===== -->
+    <div class="step" id="step7">
+      <p class="step-title">Medications & allergies</p>
+      <p class="step-sub">List all current medications, supplements, and vitamins. Include dose and frequency if known.</p>
+
+      <div class="field">
+        <label>Current medications, dosages, and frequency <span class="req">*</span></label>
+        <textarea name="medications" style="min-height:120px" placeholder="Example:&#10;Metformin 1000mg — twice daily&#10;Lisinopril 10mg — once daily&#10;Vitamin D 2000 IU — daily&#10;Fish oil 1000mg — daily&#10;&#10;If no medications, type 'None'" required></textarea>
+      </div>
+      <div class="field">
+        <label>Current insulin use</label>
+        <select name="insulinUse">
+          <option value="">— Select —</option>
+          <option>No insulin</option>
+          <option>Basal insulin (long-acting) — type and dose</option>
+          <option>Bolus insulin (short-acting) — type and dose</option>
+          <option>Insulin pump</option>
+          <option>Both basal and bolus</option>
+        </select>
+      </div>
+      <div class="field"><label>Insulin details (if applicable)</label><input type="text" name="insulinDetails" placeholder="e.g. Lantus 20 units at bedtime"></div>
+      <div class="field">
+        <label>Current GLP-1 or diabetes medications</label>
+        <div class="check-grid">
+          <label class="check-item"><input type="checkbox" name="diabetesMeds" value="Ozempic (semaglutide)"> Ozempic (semaglutide)</label>
+          <label class="check-item"><input type="checkbox" name="diabetesMeds" value="Mounjaro (tirzepatide)"> Mounjaro (tirzepatide)</label>
+          <label class="check-item"><input type="checkbox" name="diabetesMeds" value="Wegovy"> Wegovy</label>
+          <label class="check-item"><input type="checkbox" name="diabetesMeds" value="Zepbound"> Zepbound</label>
+          <label class="check-item"><input type="checkbox" name="diabetesMeds" value="Metformin"> Metformin</label>
+          <label class="check-item"><input type="checkbox" name="diabetesMeds" value="Jardiance (empagliflozin)"> Jardiance</label>
+          <label class="check-item"><input type="checkbox" name="diabetesMeds" value="Farxiga (dapagliflozin)"> Farxiga</label>
+          <label class="check-item"><input type="checkbox" name="diabetesMeds" value="Trulicity (dulaglutide)"> Trulicity</label>
+          <label class="check-item"><input type="checkbox" name="diabetesMeds" value="Victoza (liraglutide)"> Victoza</label>
+          <label class="check-item"><input type="checkbox" name="diabetesMeds" value="Glipizide / Glyburide"> Glipizide / Glyburide</label>
+        </div>
+      </div>
+      <hr class="section-divider">
+      <div class="field">
+        <label>Drug allergies <span class="req">*</span></label>
+        <textarea name="drugAllergies" placeholder="List each drug and the reaction. Example:&#10;Penicillin — rash&#10;Sulfa drugs — hives&#10;&#10;If no known drug allergies, type 'NKDA'" required></textarea>
+      </div>
+      <div class="field">
+        <label>Food or other allergies</label>
+        <textarea name="otherAllergies" placeholder="Food, latex, dyes, environmental, etc. Include reaction if known."></textarea>
+      </div>
+
+      <div class="btn-row">
+        <button type="button" class="btn-back" onclick="prevStep(7)">← Back</button>
+        <button type="button" class="btn-next" onclick="nextStep(7)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- ===== STEP 8: SOCIAL & LIFESTYLE HISTORY ===== -->
+    <div class="step" id="step8">
+      <p class="step-title">Social & lifestyle history</p>
+      <p class="step-sub">This information helps Michele understand your lifestyle and design a realistic, personalized care plan.</p>
+
+      <div class="field-row">
+        <div class="field"><label>Smoking / tobacco use</label>
+          <select name="smoking">
+            <option value="">— Select —</option>
+            <option>Never smoked</option><option>Current smoker (daily)</option><option>Current smoker (occasional)</option><option>Former smoker — quit</option><option>Vaping / e-cigarette</option><option>Chewing tobacco / snuff</option>
+          </select>
+        </div>
+        <div class="field"><label>Alcohol use</label>
+          <select name="alcohol">
+            <option value="">— Select —</option>
+            <option>None / Never</option><option>Rarely (special occasions)</option><option>Socially (1–3 drinks/week)</option><option>Moderate (4–7 drinks/week)</option><option>Heavy (8+ drinks/week)</option><option>Former drinker — quit</option>
+          </select>
+        </div>
+      </div>
+      <div class="field"><label>Physical activity level</label>
+        <select name="activityLevel">
+          <option value="">— Select —</option>
+          <option>Sedentary (no regular exercise)</option><option>Light (walking 1–2x/week)</option><option>Moderate (exercise 3–4x/week)</option><option>Active (exercise 5+ days/week)</option><option>Very active (daily vigorous exercise)</option>
+        </select>
+      </div>
+      <div class="field"><label>Describe your typical diet / eating pattern</label>
+        <textarea name="dietPattern" placeholder="Example: 'I eat mostly processed food, skip breakfast, drink 2 sodas a day, eat late at night. I've tried keto but couldn't stick with it.'"></textarea>
+      </div>
+      <div class="field"><label>Typical sleep — hours per night</label>
+        <select name="sleepHours">
+          <option value="">— Select —</option>
+          <option>Less than 5 hours</option><option>5–6 hours</option><option>6–7 hours</option><option>7–8 hours</option><option>8+ hours</option>
+        </select>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Occupation / type of work</label><input type="text" name="occupation" placeholder="e.g. Nurse, retired, construction, office work"></div>
+        <div class="field"><label>Work schedule</label>
+          <select name="workSchedule">
+            <option value="">— Select —</option>
+            <option>Day shift (regular hours)</option><option>Night shift</option><option>Rotating shifts</option><option>Retired / Not working</option><option>Remote / Work from home</option><option>Part-time</option>
+          </select>
+        </div>
+      </div>
+      <div class="field"><label>Living situation</label>
+        <select name="livingSituation">
+          <option value="">— Select —</option>
+          <option>Alone</option><option>With spouse / partner</option><option>With family (multiple generations)</option><option>With children</option><option>With roommates</option><option>Assisted living / care facility</option>
+        </select>
+      </div>
+      <div class="field"><label>Stress level (1 = very low, 10 = very high)</label>
+        <select name="stressLevel">
+          <option value="">— Select —</option>
+          <option>1–2 (very low)</option><option>3–4 (low)</option><option>5–6 (moderate)</option><option>7–8 (high)</option><option>9–10 (very high)</option>
+        </select>
+      </div>
+
+      <!-- OB/GYN for female patients -->
+      <div id="obgynSection">
+        <hr class="section-divider">
+        <p style="font-size:13px;font-weight:600;color:#333;margin-bottom:12px">OB/GYN history (female patients)</p>
+        <div class="field-row">
+          <div class="field"><label>Are you currently pregnant?</label>
+            <select name="pregnant">
+              <option value="">— Select —</option>
+              <option>No</option><option>Yes — currently pregnant</option><option>Possibly</option><option>N/A</option>
+            </select>
+          </div>
+          <div class="field"><label>Menstrual status</label>
+            <select name="menstrualStatus">
+              <option value="">— Select —</option>
+              <option>Regular cycles</option><option>Irregular cycles</option><option>Perimenopausal</option><option>Postmenopausal</option><option>Surgically menopausal</option><option>N/A</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label>Current contraception</label><input type="text" name="contraception" placeholder="e.g. None, oral contraceptive pill, IUD, condom, sterilization"></div>
+        <div class="field-row">
+          <div class="field"><label>Number of pregnancies</label><input type="number" name="gravida" min="0" placeholder="0"></div>
+          <div class="field"><label>Number of live births</label><input type="number" name="para" min="0" placeholder="0"></div>
+        </div>
+        <div class="field"><label>Date of last Pap smear</label><input type="text" name="lastPap" placeholder="Approximate year — e.g. 2023"></div>
+        <div class="field"><label>Date of last mammogram (if 40+)</label><input type="text" name="lastMammogram" placeholder="Approximate year — or 'not yet' / 'N/A'"></div>
+      </div>
+
+      <div class="btn-row">
+        <button type="button" class="btn-back" onclick="prevStep(8)">← Back</button>
+        <button type="button" class="btn-next" onclick="nextStep(8)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- ===== STEP 9: SIGNATURE & SUBMIT ===== -->
+    <div class="step" id="step9">
+      <p class="step-title">Electronic signature & submission</p>
+      <p class="step-sub">By signing below, you confirm that all information provided is accurate and complete to the best of your knowledge, and that you have read and agreed to all disclosures in this form.</p>
+
+      <div class="consent-box">
+        <div class="consent-title">Summary of agreements</div>
+        <div class="consent-text">
+          By submitting this form, I confirm that I have read, understood, and agreed to all of the following:<br><br>
+          ✓ Payment and financial policy — payment required before visit; self-pay practice<br>
+          ✓ Universal telehealth informed consent<br>
+          ✓ State-specific telehealth consent for my state<br>
+          ✓ HIPAA Notice of Privacy Practices<br>
+          ✓ Scope of practice and prescription policy (no controlled substances)<br>
+          ✓ Superbill and insurance policy<br><br>
+          I certify that I am the patient or the legal guardian/authorized representative of the patient named in this form. I certify that all information provided is accurate and complete to the best of my knowledge. I understand that providing false information may affect my care and may result in termination of the care relationship.
+        </div>
+        <label class="consent-check">
+          <input type="checkbox" name="finalAgreement" value="Yes" required id="finalAgreementCheck">
+          <span>I certify that all information is accurate and I have read and agreed to all disclosures in this intake form. <span class="req">*</span></span>
+        </label>
+      </div>
+
+      <div class="field">
+        <label>Electronic signature — type your full legal name <span class="req">*</span></label>
+        <p class="field-note" style="margin-bottom:6px">Typing your full legal name below constitutes your electronic signature and has the same legal effect as a handwritten signature.</p>
+        <div class="sig-box">
+          <input type="text" name="electronicSignature" id="sigInput" placeholder="Type your full legal name" required style="border:none;outline:none;width:100%;font-family:Georgia,serif;font-size:20px;color:#6b2518;padding:4px 0;background:transparent" oninput="updateSigPreview(this.value)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;padding-top:8px;border-top:.5px solid #c8b8b0">
+            <span style="font-size:11px;color:var(--text-light);font-family:sans-serif">Electronic Signature</span>
+            <span style="font-size:11px;color:var(--text-light);font-family:sans-serif" id="sigDateDisplay"></span>
+          </div>
+        </div>
+      </div>
+      <div class="field"><label>Today's date <span class="req">*</span></label><input type="date" name="signatureDate" id="signatureDate" required></div>
+      <div class="field"><label>Relationship to patient <span class="req">*</span></label>
+        <select name="signerRelationship" required>
+          <option value="">— Select —</option>
+          <option value="Self — I am the patient">Self — I am the patient</option>
+          <option value="Parent / Legal guardian">Parent / Legal guardian</option>
+          <option value="Legal representative (power of attorney)">Legal representative / POA</option>
+        </select>
+      </div>
+
+      <div style="background:#f0f8e8;border:.5px solid #3a5420;border-radius:10px;padding:14px;margin-bottom:20px">
+        <p style="font-size:12px;color:#3a5420;font-family:sans-serif;margin:0;line-height:1.6"><strong>What happens next:</strong> After you submit this form, Michele's team will review it and contact you within 1 business day to confirm your appointment and process payment. Payment must be received before your visit is confirmed. You will receive a confirmation email at the address you provided.</p>
+      </div>
+
+      <div id="submitError" style="display:none;background:#fff5f5;border:1px solid #e87070;border-radius:8px;padding:12px;font-size:13px;color:#c44040;font-family:sans-serif;margin-bottom:14px"></div>
+      <div id="submitSuccess" style="display:none;background:#f0f8e8;border:1px solid #3a5420;border-radius:8px;padding:20px;font-family:sans-serif;text-align:center">
+        <p style="font-size:18px;color:#3a5420;font-weight:600;margin-bottom:8px">✓ Intake form submitted successfully</p>
+        <p style="font-size:14px;color:#555;line-height:1.6">Thank you, <span id="successName"></span>. Michele's team will contact you within 1 business day to confirm your appointment and process payment.<br><br>
+        If you have urgent questions, call <strong>352-399-8874</strong> or email <strong>info@floridamobilehealth.com</strong>.</p>
+      </div>
+
+      <div class="btn-row" id="submitRow">
+        <button type="button" class="btn-back" onclick="prevStep(9)">← Back</button>
+        <button type="button" class="btn-next" id="submitBtn" onclick="submitForm()" style="background:#3a5420;min-width:180px">Submit intake form</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script>
+var currentStep = 1;
+var totalSteps = 9;
+var steps = [11, 22, 33, 44, 55, 66, 77, 88, 100];
+
+function showStep(n) {
+  document.querySelectorAll('.step').forEach(function(s) { s.classList.remove('active'); });
+  document.getElementById('step' + n).classList.add('active');
+  document.getElementById('progressFill').style.width = steps[n-1] + '%';
+  document.getElementById('stepLabel').textContent = 'Step ' + n + ' of ' + totalSteps;
+  document.getElementById('alertBox').style.display = 'none';
+  window.scrollTo(0, 0);
+  currentStep = n;
+}
+
+function nextStep(from) {
+  if (!validateStep(from)) {
+    document.getElementById('alertBox').style.display = 'block';
+    document.getElementById('alertBox').textContent = 'Please complete all required fields before continuing.';
+    return;
+  }
+  showStep(from + 1);
+}
+
+function prevStep(from) { showStep(from - 1); }
+
+function validateStep(n) {
+  var step = document.getElementById('step' + n);
+  var required = step.querySelectorAll('[required]');
+  var valid = true;
+  required.forEach(function(el) {
+    el.style.borderColor = '';
+    if (el.type === 'checkbox') {
+      if (!el.checked) { valid = false; }
+    } else if (!el.value.trim()) {
+      el.style.borderColor = '#c44040';
+      valid = false;
+    }
+  });
+  // Step 1: service must be selected
+  if (n === 1 && !document.getElementById('serviceSelected').value) {
+    valid = false;
+    document.getElementById('alertBox').textContent = 'Please select a service before continuing.';
+  }
+  // Step 2: state-specific checkbox
+  if (n === 2) {
+    var state = document.getElementById('patientState').value;
+    if (state) {
+      var stateCheck = document.querySelector('#disc-' + state + ' input[type=checkbox]');
+      if (stateCheck && !stateCheck.checked) { valid = false; }
+    }
+  }
+  return valid;
+}
+
+function selectService(card, name, price) {
+  document.querySelectorAll('.pay-card').forEach(function(c) { c.classList.remove('selected'); });
+  card.classList.add('selected');
+  document.getElementById('serviceSelected').value = name;
+  document.getElementById('serviceFee').value = price;
+}
+
+function showStateDisclosure() {
+  var state = document.getElementById('patientState').value;
+  document.querySelectorAll('.state-disclosure').forEach(function(d) { d.style.display = 'none'; });
+  document.getElementById('universalConsent').style.display = state ? 'block' : 'none';
+  if (state) { document.getElementById('disc-' + state).style.display = 'block'; }
+}
+
+function updateSigPreview(val) {
+  document.getElementById('sigDateDisplay').textContent = val ? new Date().toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'}) : '';
+}
+
+// Set today's date for signature
+window.onload = function() {
+  var today = new Date().toISOString().split('T')[0];
+  document.getElementById('signatureDate').value = today;
+  document.getElementById('signatureDate').min = today;
+};
+
+function submitForm() {
+  if (!validateStep(9)) {
+    document.getElementById('alertBox').style.display = 'block';
+    return;
+  }
+
+  var btn = document.getElementById('submitBtn');
+  btn.textContent = 'Submitting...';
+  btn.disabled = true;
+
+  var form = document.getElementById('intakeForm');
+  var data = {};
+  var formData = new FormData(form);
+  
+  // Collect checkboxes as arrays
+  var checkboxGroups = {};
+  form.querySelectorAll('input[type=checkbox]:checked').forEach(function(cb) {
+    if (cb.name !== 'hipaaAcknowledged' && cb.name !== 'paymentAcknowledged' && 
+        cb.name !== 'universalConsentAgreed' && cb.name !== 'scopeAcknowledged' && 
+        cb.name !== 'superbillAcknowledged' && cb.name !== 'finalAgreement' &&
+        !cb.name.startsWith('stateCons')) {
+      if (!checkboxGroups[cb.name]) checkboxGroups[cb.name] = [];
+      checkboxGroups[cb.name].push(cb.value);
+    }
+  });
+
+  formData.forEach(function(val, key) { data[key] = val; });
+  Object.keys(checkboxGroups).forEach(function(k) { data[k] = checkboxGroups[k].join('; '); });
+  data.submittedAt = new Date().toISOString();
+  data.ipNote = 'Submitted via secure HTTPS form';
+
+  fetch('/api/intake', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(res) {
+    if (res.success) {
+      document.getElementById('submitRow').style.display = 'none';
+      document.getElementById('submitSuccess').style.display = 'block';
+      document.getElementById('successName').textContent = (data.firstName || '') + ' ' + (data.lastName || '');
+      document.getElementById('alertBox').style.display = 'none';
+    } else {
+      throw new Error(res.message || 'Submission failed');
+    }
+  })
+  .catch(function(err) {
+    document.getElementById('submitError').style.display = 'block';
+    document.getElementById('submitError').textContent = 'Submission error: ' + err.message + '. Please call 352-399-8874 or email info@floridamobilehealth.com.';
+    btn.textContent = 'Submit intake form';
+    btn.disabled = false;
+  });
+}
+</script>
+</body>
+</html>
