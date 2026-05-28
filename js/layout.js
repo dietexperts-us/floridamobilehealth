@@ -10,16 +10,19 @@ const NAV_HTML = `
     <div class="nav-links">
       <a href="/about.html" class="lang-en">About</a><a href="/about.html" class="lang-es lang-hidden">Nosotros</a>
       <a href="/services.html" class="lang-en">Services</a><a href="/services.html" class="lang-es lang-hidden">Servicios</a>
-      <a href="/programs.html" class="lang-en">Programs</a><a href="/programs.html" class="lang-es lang-hidden">Programas</a>
-      <a href="/community.html" class="lang-en" style="color:var(--olive-500);font-weight:600">Community</a><a href="/community.html" class="lang-es lang-hidden" style="color:var(--olive-500);font-weight:600">Comunidad</a>
-      <a href="/metabolic-health.html" class="lang-en" style="color:var(--terra-500);font-weight:600">DietExpert NP Rx™</a><a href="/metabolic-health.html" class="lang-es lang-hidden" style="color:var(--terra-500);font-weight:600">DietExpert NP Rx™</a>
-    <a href="/menopause-diabetes.html" class="lang-en" style="color:#8a2040;font-weight:600">MenopauseRx™ — Menopause + Diabetes</a><a href="/menopause-diabetes.html" class="lang-es lang-hidden" style="color:#8a2040;font-weight:600">MenopauseRx™ — Menopausia + Diabetes</a>
-      <a href="/menopause-diabetes.html" class="lang-en" style="color:#8a2040;font-weight:600">MenopauseRx™</a><a href="/menopause-diabetes.html" class="lang-es lang-hidden" style="color:#8a2040;font-weight:600">MenopauseRx™</a>
-      <a href="/shop.html" class="lang-en">Videos</a><a href="/shop.html" class="lang-es lang-hidden">Videos</a>
+      <div class="nav-dropdown">
+        <span class="nav-dropdown-trigger lang-en">Programs &#9662;</span>
+        <span class="nav-dropdown-trigger lang-es lang-hidden">Programas &#9662;</span>
+        <div class="nav-dropdown-menu">
+          <a href="/programs.html" class="lang-en">All care programs</a><a href="/programs.html" class="lang-es lang-hidden">Todos los programas</a>
+          <a href="/metabolic-health.html" class="lang-en" style="color:var(--terra-500);font-weight:600">DietExpert NP Rx&#8482;</a><a href="/metabolic-health.html" class="lang-es lang-hidden" style="color:var(--terra-500);font-weight:600">DietExpert NP Rx&#8482;</a>
+          <a href="/menopause-diabetes.html" class="lang-en" style="color:#8a2040;font-weight:600">MenopauseRx&#8482;</a><a href="/menopause-diabetes.html" class="lang-es lang-hidden" style="color:#8a2040;font-weight:600">MenopauseRx&#8482;</a>
+          <a href="/community.html" class="lang-en" style="color:var(--olive-500)">Community programs</a><a href="/community.html" class="lang-es lang-hidden" style="color:var(--olive-500)">Programas comunitarios</a>
+          <a href="/shop.html" class="lang-en">Videos &amp; education</a><a href="/shop.html" class="lang-es lang-hidden">Videos y educacion</a>
+        </div>
+      </div>
       <a href="/pricing.html" class="lang-en">Pricing</a><a href="/pricing.html" class="lang-es lang-hidden">Precios</a>
-      <a href="/for-practices.html" class="lang-en">For Practices</a><a href="/for-practices.html" class="lang-es lang-hidden">Para Consultorios</a>
-      <a href="/partners.html" class="lang-en">Partners</a><a href="/partners.html" class="lang-es lang-hidden">Socios</a>
-      <button id="lang-toggle-btn" onclick="toggleLang()" class="lang-toggle-btn">Español</button>
+      <button id="lang-toggle-btn" onclick="toggleLang()" class="lang-toggle-btn">Espanol</button>
       <a href="/book.html" class="nav-cta lang-en">Book a visit</a>
       <a href="/book.html" class="nav-cta lang-es lang-hidden">Agendar cita</a>
     </div>
@@ -31,20 +34,18 @@ const NAV_HTML = `
     <a href="/index.html" class="lang-en">Home</a><a href="/index.html" class="lang-es lang-hidden">Inicio</a>
     <a href="/about.html" class="lang-en">About</a><a href="/about.html" class="lang-es lang-hidden">Nosotros</a>
     <a href="/services.html" class="lang-en">Services</a><a href="/services.html" class="lang-es lang-hidden">Servicios</a>
-    <a href="/programs.html" class="lang-en">Care Programs</a><a href="/programs.html" class="lang-es lang-hidden">Programas</a>
-    <a href="/community.html" class="lang-en" style="color:var(--olive-500);font-weight:600">Community Programs</a><a href="/community.html" class="lang-es lang-hidden" style="color:var(--olive-500);font-weight:600">Programas Comunitarios</a>
-    <a href="/metabolic-health.html" class="lang-en" style="color:var(--terra-500);font-weight:600">DietExpert NP Rx™</a><a href="/metabolic-health.html" class="lang-es lang-hidden" style="color:var(--terra-500);font-weight:600">DietExpert NP Rx™</a>
-      <a href="/menopause-diabetes.html" class="lang-en" style="color:#8a2040;font-weight:600">MenopauseRx™</a><a href="/menopause-diabetes.html" class="lang-es lang-hidden" style="color:#8a2040;font-weight:600">MenopauseRx™</a>
+    <a href="/programs.html" class="lang-en">Care programs</a><a href="/programs.html" class="lang-es lang-hidden">Programas de salud</a>
+    <a href="/metabolic-health.html" class="lang-en" style="color:var(--terra-500);font-weight:600;padding-left:28px">&#8212; DietExpert NP Rx&#8482;</a><a href="/metabolic-health.html" class="lang-es lang-hidden" style="color:var(--terra-500);font-weight:600;padding-left:28px">&#8212; DietExpert NP Rx&#8482;</a>
+    <a href="/menopause-diabetes.html" class="lang-en" style="color:#8a2040;font-weight:600;padding-left:28px">&#8212; MenopauseRx&#8482;</a><a href="/menopause-diabetes.html" class="lang-es lang-hidden" style="color:#8a2040;font-weight:600;padding-left:28px">&#8212; MenopauseRx&#8482;</a>
+    <a href="/community.html" class="lang-en" style="color:var(--olive-500);padding-left:28px">&#8212; Community programs</a><a href="/community.html" class="lang-es lang-hidden" style="color:var(--olive-500);padding-left:28px">&#8212; Programas comunitarios</a>
     <a href="/shop.html" class="lang-en">Videos</a><a href="/shop.html" class="lang-es lang-hidden">Videos</a>
     <a href="/pricing.html" class="lang-en">Pricing</a><a href="/pricing.html" class="lang-es lang-hidden">Precios</a>
     <a href="/for-practices.html" class="lang-en">For Practices</a><a href="/for-practices.html" class="lang-es lang-hidden">Para Consultorios</a>
     <a href="/partners.html" class="lang-en">Partners</a><a href="/partners.html" class="lang-es lang-hidden">Socios</a>
-    <a href="/book.html" style="color:#6b2518;font-weight:600" class="lang-en">&#9654; Book a visit</a><a href="/book.html" style="color:#6b2518;font-weight:600" class="lang-es lang-hidden">&#9654; Agendar cita</a>
     <a href="/contact.html" class="lang-en">Contact</a><a href="/contact.html" class="lang-es lang-hidden">Contacto</a>
+    <a href="/book.html" style="color:#6b2518;font-weight:600" class="lang-en">&#9654; Book a visit</a><a href="/book.html" style="color:#6b2518;font-weight:600" class="lang-es lang-hidden">&#9654; Agendar cita</a>
   </div>
-</nav>`;
-
-
+</nav>
 
 const FOOTER_HTML = `
 <footer class="footer">
