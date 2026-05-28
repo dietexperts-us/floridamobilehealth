@@ -11,6 +11,7 @@ const NAV_HTML = `
       <a href="/about.html" class="lang-en">About</a><a href="/about.html" class="lang-es lang-hidden">Nosotros</a>
       <a href="/services.html" class="lang-en">Services</a><a href="/services.html" class="lang-es lang-hidden">Servicios</a>
       <a href="/programs.html" class="lang-en">Programs</a><a href="/programs.html" class="lang-es lang-hidden">Programas</a>
+      <a href="/metabolic-health.html" class="lang-en" style="color:var(--terra-500);font-weight:600">MetabolicRx™</a><a href="/metabolic-health.html" class="lang-es lang-hidden" style="color:var(--terra-500);font-weight:600">MetabolicRx™</a>
       <a href="/shop.html" class="lang-en">Videos</a><a href="/shop.html" class="lang-es lang-hidden">Videos</a>
       <a href="/pricing.html" class="lang-en">Pricing</a><a href="/pricing.html" class="lang-es lang-hidden">Precios</a>
       <a href="/for-practices.html" class="lang-en">For Practices</a><a href="/for-practices.html" class="lang-es lang-hidden">Para Consultorios</a>
@@ -28,6 +29,7 @@ const NAV_HTML = `
     <a href="/about.html" class="lang-en">About</a><a href="/about.html" class="lang-es lang-hidden">Nosotros</a>
     <a href="/services.html" class="lang-en">Services</a><a href="/services.html" class="lang-es lang-hidden">Servicios</a>
     <a href="/programs.html" class="lang-en">Care Programs</a><a href="/programs.html" class="lang-es lang-hidden">Programas</a>
+    <a href="/metabolic-health.html" class="lang-en" style="color:var(--terra-500);font-weight:600">MetabolicRx™</a><a href="/metabolic-health.html" class="lang-es lang-hidden" style="color:var(--terra-500);font-weight:600">MetabolicRx™</a>
     <a href="/shop.html" class="lang-en">Videos</a><a href="/shop.html" class="lang-es lang-hidden">Videos</a>
     <a href="/pricing.html" class="lang-en">Pricing</a><a href="/pricing.html" class="lang-es lang-hidden">Precios</a>
     <a href="/for-practices.html" class="lang-en">For Practices</a><a href="/for-practices.html" class="lang-es lang-hidden">Para Consultorios</a>
