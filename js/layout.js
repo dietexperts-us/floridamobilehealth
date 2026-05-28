@@ -46,6 +46,7 @@ const NAV_HTML = `
     <a href="/book.html" style="color:#6b2518;font-weight:600" class="lang-en">&#9654; Book a visit</a><a href="/book.html" style="color:#6b2518;font-weight:600" class="lang-es lang-hidden">&#9654; Agendar cita</a>
   </div>
 </nav>
+`;
 
 const FOOTER_HTML = `
 <footer class="footer">
