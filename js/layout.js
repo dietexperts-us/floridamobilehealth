@@ -131,6 +131,20 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   const path = window.location.pathname.split('/').pop() || 'index.html';
+  // Dropdown click toggle
+  document.querySelectorAll('.nav-dropdown-trigger').forEach(function(trigger) {
+    trigger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var dropdown = trigger.closest('.nav-dropdown');
+      var isOpen = dropdown.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown').forEach(function(d) { d.classList.remove('open'); });
+      if (!isOpen) dropdown.classList.add('open');
+    });
+  });
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.nav-dropdown').forEach(function(d) { d.classList.remove('open'); });
+  });
+
   document.querySelectorAll('.nav-links a, .nav-mobile a').forEach(function (a) {
     const href = a.getAttribute('href').replace('/', '');
     if (href === path || (path === '' && href === 'index.html')) {
