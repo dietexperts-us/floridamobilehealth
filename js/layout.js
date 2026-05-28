@@ -50,6 +50,9 @@ const FOOTER_HTML = `
           <a href="https://www.facebook.com/profile.php?id=56789241306672" target="_blank" rel="noopener" style="color:#f0cfc4;font-size:13px;display:flex;align-items:center;gap:5px;text-decoration:none">
             <i class="ti ti-brand-facebook" style="font-size:20px"></i> Facebook
           </a>
+          <a href="https://www.linkedin.com/in/michelesilano" target="_blank" rel="noopener" style="color:#f0cfc4;font-size:13px;display:flex;align-items:center;gap:5px;text-decoration:none;margin-top:8px">
+            <i class="ti ti-brand-linkedin" style="font-size:20px"></i> LinkedIn
+          </a>
         </div>
       </div>
       <div class="footer-col">
