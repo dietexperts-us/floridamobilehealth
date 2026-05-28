@@ -326,3 +326,6 @@ ul { list-style: none; }
 .lang-toggle-btn:hover {
   background: var(--terra-50);
 }
+
+/* ── LANGUAGE TOGGLE VISIBILITY ── */
+.lang-hidden { display: none !important; }
