@@ -5,36 +5,39 @@ const NAV_HTML = `
   <div class="nav-inner">
     <a href="/index.html" class="nav-logo">
       <span class="nav-logo-main">FLORIDA MOBILE HEALTH</span>
-      <span class="nav-logo-sub lang-en">Virtual Care</span><span class="nav-logo-sub lang-es lang-hidden" >Salud Virtual</span>
+      <span class="nav-logo-sub lang-en">Virtual Care</span><span class="nav-logo-sub lang-es lang-hidden">Salud Virtual</span>
     </a>
     <div class="nav-links">
-      <a href="/about.html">Nosotros</a>
-      <a href="/about.html" class="lang-en">About</a><a href="/about.html" class="lang-es lang-hidden" >Nosotros</a>
-      <a href="/services.html">Servicios</a>
-      <a href="/programs.html">Programas</a>
-      <a href="/shop.html">Videos</a>
-      <a href="/pricing.html">Precios</a>
-      <a href="/for-practices.html">Para Consultorios</a>
+      <a href="/about.html" class="lang-en">About</a><a href="/about.html" class="lang-es lang-hidden">Nosotros</a>
+      <a href="/services.html" class="lang-en">Services</a><a href="/services.html" class="lang-es lang-hidden">Servicios</a>
+      <a href="/programs.html" class="lang-en">Programs</a><a href="/programs.html" class="lang-es lang-hidden">Programas</a>
+      <a href="/shop.html" class="lang-en">Videos</a><a href="/shop.html" class="lang-es lang-hidden">Videos</a>
+      <a href="/pricing.html" class="lang-en">Pricing</a><a href="/pricing.html" class="lang-es lang-hidden">Precios</a>
+      <a href="/for-practices.html" class="lang-en">For Practices</a><a href="/for-practices.html" class="lang-es lang-hidden">Para Consultorios</a>
+      <a href="/partners.html" class="lang-en">Partners</a><a href="/partners.html" class="lang-es lang-hidden">Socios</a>
       <button id="lang-toggle-btn" onclick="toggleLang()" class="lang-toggle-btn">Español</button>
       <a href="/book.html" class="nav-cta lang-en">Book a visit</a>
-      <a href="/book.html" class="nav-cta lang-es lang-hidden" >Agendar cita</a>
+      <a href="/book.html" class="nav-cta lang-es lang-hidden">Agendar cita</a>
     </div>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div class="nav-mobile" id="nav-mobile">
-    <a href="/index.html" class="lang-en">Home</a><a href="/index.html" class="lang-es lang-hidden" >Inicio</a>
-    <a href="/about.html">Nosotros · About us</a>
-    <a href="/services.html" class="lang-en">Services</a><a href="/services.html" class="lang-es lang-hidden" >Servicios</a>
-    <a href="/programs.html" class="lang-en">Care Programs</a><a href="/programs.html" class="lang-es lang-hidden" >Programas</a>
-    <a href="/shop.html">Videos</a>
-    <a href="/pricing.html" class="lang-en">Pricing</a><a href="/pricing.html" class="lang-es lang-hidden" >Precios</a>
-    <a href="/for-practices.html" class="lang-en">For Practices</a><a href="/for-practices.html" class="lang-es lang-hidden" >Para Consultorios</a>
-    <a href="/book.html" style="color:#6b2518;font-weight:600" class="lang-en">▶ Book a visit</a><a href="/book.html" style="color:#6b2518;font-weight:600" class="lang-es lang-hidden" >▶ Agendar cita</a>
-    <a href="/contact.html" class="lang-en">Contact</a><a href="/contact.html" class="lang-es lang-hidden" >Contacto</a>
+    <a href="/index.html" class="lang-en">Home</a><a href="/index.html" class="lang-es lang-hidden">Inicio</a>
+    <a href="/about.html" class="lang-en">About</a><a href="/about.html" class="lang-es lang-hidden">Nosotros</a>
+    <a href="/services.html" class="lang-en">Services</a><a href="/services.html" class="lang-es lang-hidden">Servicios</a>
+    <a href="/programs.html" class="lang-en">Care Programs</a><a href="/programs.html" class="lang-es lang-hidden">Programas</a>
+    <a href="/shop.html" class="lang-en">Videos</a><a href="/shop.html" class="lang-es lang-hidden">Videos</a>
+    <a href="/pricing.html" class="lang-en">Pricing</a><a href="/pricing.html" class="lang-es lang-hidden">Precios</a>
+    <a href="/for-practices.html" class="lang-en">For Practices</a><a href="/for-practices.html" class="lang-es lang-hidden">Para Consultorios</a>
+    <a href="/partners.html" class="lang-en">Partners</a><a href="/partners.html" class="lang-es lang-hidden">Socios</a>
+    <a href="/book.html" style="color:#6b2518;font-weight:600" class="lang-en">&#9654; Book a visit</a><a href="/book.html" style="color:#6b2518;font-weight:600" class="lang-es lang-hidden">&#9654; Agendar cita</a>
+    <a href="/contact.html" class="lang-en">Contact</a><a href="/contact.html" class="lang-es lang-hidden">Contacto</a>
   </div>
 </nav>`;
+
+
 
 const FOOTER_HTML = `
 <footer class="footer">
