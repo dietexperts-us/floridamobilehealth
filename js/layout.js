@@ -13,6 +13,8 @@ const NAV_HTML = `
       <a href="/programs.html" class="lang-en">Programs</a><a href="/programs.html" class="lang-es lang-hidden">Programas</a>
       <a href="/community.html" class="lang-en" style="color:var(--olive-500);font-weight:600">Community</a><a href="/community.html" class="lang-es lang-hidden" style="color:var(--olive-500);font-weight:600">Comunidad</a>
       <a href="/metabolic-health.html" class="lang-en" style="color:var(--terra-500);font-weight:600">MetabolicRx™</a><a href="/metabolic-health.html" class="lang-es lang-hidden" style="color:var(--terra-500);font-weight:600">MetabolicRx™</a>
+    <a href="/menopause-diabetes.html" class="lang-en" style="color:#8a2040;font-weight:600">PausaVida™ — Menopause + Diabetes</a><a href="/menopause-diabetes.html" class="lang-es lang-hidden" style="color:#8a2040;font-weight:600">PausaVida™ — Menopausia + Diabetes</a>
+      <a href="/menopause-diabetes.html" class="lang-en" style="color:#8a2040;font-weight:600">PausaVida™</a><a href="/menopause-diabetes.html" class="lang-es lang-hidden" style="color:#8a2040;font-weight:600">PausaVida™</a>
       <a href="/shop.html" class="lang-en">Videos</a><a href="/shop.html" class="lang-es lang-hidden">Videos</a>
       <a href="/pricing.html" class="lang-en">Pricing</a><a href="/pricing.html" class="lang-es lang-hidden">Precios</a>
       <a href="/for-practices.html" class="lang-en">For Practices</a><a href="/for-practices.html" class="lang-es lang-hidden">Para Consultorios</a>
@@ -32,6 +34,7 @@ const NAV_HTML = `
     <a href="/programs.html" class="lang-en">Care Programs</a><a href="/programs.html" class="lang-es lang-hidden">Programas</a>
     <a href="/community.html" class="lang-en" style="color:var(--olive-500);font-weight:600">Community Programs</a><a href="/community.html" class="lang-es lang-hidden" style="color:var(--olive-500);font-weight:600">Programas Comunitarios</a>
     <a href="/metabolic-health.html" class="lang-en" style="color:var(--terra-500);font-weight:600">MetabolicRx™</a><a href="/metabolic-health.html" class="lang-es lang-hidden" style="color:var(--terra-500);font-weight:600">MetabolicRx™</a>
+      <a href="/menopause-diabetes.html" class="lang-en" style="color:#8a2040;font-weight:600">PausaVida™</a><a href="/menopause-diabetes.html" class="lang-es lang-hidden" style="color:#8a2040;font-weight:600">PausaVida™</a>
     <a href="/shop.html" class="lang-en">Videos</a><a href="/shop.html" class="lang-es lang-hidden">Videos</a>
     <a href="/pricing.html" class="lang-en">Pricing</a><a href="/pricing.html" class="lang-es lang-hidden">Precios</a>
     <a href="/for-practices.html" class="lang-en">For Practices</a><a href="/for-practices.html" class="lang-es lang-hidden">Para Consultorios</a>
