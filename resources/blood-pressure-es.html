@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Guía de Presión Arterial | Florida Mobile Health</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:system-ui,sans-serif;background:#fff;width:800px;margin:0 auto}
+  .header{background:#1a2e4a;padding:32px 40px 24px;color:#fff}
+  .logo-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+  .logo-name{font-family:Georgia,serif;font-size:22px;font-weight:400}
+  .logo-sub{font-size:11px;opacity:.75;letter-spacing:.06em;text-transform:uppercase;margin-top:2px}
+  .creds{font-size:11px;opacity:.7;text-align:right;line-height:1.6}
+  .topic-pill{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:11px;padding:4px 14px;border-radius:20px;display:inline-block;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+  .header h1{font-family:Georgia,serif;font-size:32px;font-weight:400;line-height:1.2;margin-bottom:8px}
+  .header h1 span{color:#85b7eb}
+  .header p{font-size:14px;opacity:.8;line-height:1.6;max-width:560px}
+  .body{padding:32px 40px}
+  .section-title{font-size:13px;font-weight:700;color:#1a2e4a;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;padding-bottom:6px;border-bottom:2px solid #e8edf4}
+  .bp-row{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+  .bp-label{width:150px;font-size:12px;color:#333;font-weight:600}
+  .bp-bar{height:32px;border-radius:6px;display:flex;align-items:center;padding:0 12px;font-size:11px;font-weight:600;color:#fff;white-space:nowrap}
+  .bp-value{width:120px;font-size:11px;color:#555;flex-shrink:0}
+  .tips{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px}
+  .tip{background:#f0f4f8;border-radius:8px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;border:0.5px solid #d0dce8}
+  .tip-icon{width:28px;height:28px;background:#1a2e4a;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;flex-shrink:0}
+  .tip-text{font-size:13px;color:#333;line-height:1.5}
+  .tip-text strong{color:#1a2e4a;display:block;font-size:12px;margin-bottom:2px}
+  .myth-box{background:#f0f4f8;border-radius:10px;padding:16px;margin-bottom:24px;border-left:4px solid #1a2e4a}
+  .myth-title{font-size:12px;font-weight:700;color:#1a2e4a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+  .myth-row{display:flex;gap:10px;margin-bottom:8px;font-size:12px}
+  .myth-x{color:#c44040;font-weight:700;font-size:14px;flex-shrink:0}
+  .myth-check{color:#3a7d3a;font-weight:700;font-size:14px;flex-shrink:0}
+  .cta-box{background:#1a2e4a;border-radius:12px;padding:20px 24px;display:flex;justify-content:space-between;align-items:center}
+  .cta-left{color:#fff}
+  .cta-left p{font-size:11px;opacity:.75;margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em}
+  .cta-left h3{font-family:Georgia,serif;font-size:17px;font-weight:400}
+  .cta-right{text-align:right;color:#fff}
+  .cta-right p{font-size:12px;opacity:.75;margin-bottom:2px}
+  .cta-right strong{font-size:14px;display:block}
+  .footer{background:#e8edf4;padding:12px 40px;display:flex;justify-content:space-between;align-items:center}
+  .footer-left{font-size:10px;color:#888;line-height:1.5}
+  .footer-right{font-size:10px;color:#888;text-align:right}
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo-row">
+      <div><div class="logo-name">FLORIDA MOBILE HEALTH</div><div class="logo-sub">Atención Virtual · floridamobilehealth.com</div></div>
+      <div class="creds">Michele Li Causi<br>FNP-BC · RD · CDCES<br>Hablo español</div>
+    </div>
+    <div class="topic-pill">Guía de Salud Gratuita</div>
+    <h1>Comprender la <span>Presión Arterial</span><br>Conozca sus números. Conozca su riesgo.</h1>
+    <p>La presión alta afecta a 1 de cada 2 adultos — y la mayoría no lo sabe. Esto es lo que significan sus números y qué hacer al respecto.</p>
+  </div>
+  <div class="body">
+    <div style="margin-bottom:24px">
+      <div class="section-title">Categorías de presión arterial</div>
+      <div class="bp-row"><div class="bp-label">Normal</div><div class="bp-bar" style="background:#3a7d3a;width:190px">Menos de 120/80</div><div class="bp-value" style="color:#3a7d3a;font-weight:600">Meta óptima</div></div>
+      <div class="bp-row"><div class="bp-label">Elevada</div><div class="bp-bar" style="background:#78a83a;width:220px">120–129 / menos de 80</div><div class="bp-value">Cambios de estilo de vida</div></div>
+      <div class="bp-row"><div class="bp-label">Alta — Etapa 1</div><div class="bp-bar" style="background:#c8930a;width:260px">130–139 / 80–89</div><div class="bp-value">Puede necesitar medicamento</div></div>
+      <div class="bp-row"><div class="bp-label">Alta — Etapa 2</div><div class="bp-bar" style="background:#d46020;width:300px">140+ / 90+</div><div class="bp-value">Ver proveedor pronto</div></div>
+      <div class="bp-row"><div class="bp-label">Crisis</div><div class="bp-bar" style="background:#c44040;width:320px">Más de 180 / más de 120</div><div class="bp-value" style="color:#c44040;font-weight:600">Urgencias inmediato</div></div>
+    </div>
+
+    <div style="margin-bottom:24px">
+      <div class="section-title">6 cambios de estilo de vida que bajan la presión</div>
+      <div class="tips">
+        <div class="tip"><div class="tip-icon">🧂</div><div class="tip-text"><strong>Reducir sodio</strong>Menos de 2,300mg/día. Los alimentos procesados contienen el 70% del sodio dietético</div></div>
+        <div class="tip"><div class="tip-icon">🚶</div><div class="tip-text"><strong>Moverse diariamente</strong>30 min de ejercicio moderado 5x/semana baja la PA 5–8 mmHg. Caminar cuenta</div></div>
+        <div class="tip"><div class="tip-icon">🥦</div><div class="tip-text"><strong>Dieta DASH</strong>Rica en potasio, magnesio y fibra. Frutas, vegetales, granos enteros, lácteos bajos en grasa</div></div>
+        <div class="tip"><div class="tip-icon">🍷</div><div class="tip-text"><strong>Limitar alcohol</strong>No más de 1 copa/día para mujeres, 2 para hombres. El alcohol eleva la PA significativamente</div></div>
+        <div class="tip"><div class="tip-icon">😴</div><div class="tip-text"><strong>Dormir 7–9 horas</strong>La apnea del sueño es una causa oculta importante de presión alta. Hágase una evaluación</div></div>
+        <div class="tip"><div class="tip-icon">🧘</div><div class="tip-text"><strong>Manejar el estrés</strong>El estrés crónico mantiene la PA elevada. Ejercicio, oración, conexión — encuentre lo que funciona</div></div>
+      </div>
+    </div>
+
+    <div class="myth-box">
+      <div class="myth-title">Mitos vs hechos</div>
+      <div class="myth-row"><div class="myth-x">✗</div><div>"Me siento bien, así que mi presión está bien" — la hipertensión NO tiene síntomas hasta que causa un derrame o ataque cardíaco</div></div>
+      <div class="myth-row"><div class="myth-x">✗</div><div>"Solo tomo mi medicamento cuando me siento mal" — el medicamento para la PA debe tomarse diariamente</div></div>
+      <div class="myth-row"><div class="myth-check">✓</div><div>El monitoreo en casa es preciso — mídase a la misma hora, sentada y tranquila por 5 minutos antes</div></div>
+      <div class="myth-row"><div class="myth-check">✓</div><div>La diabetes duplica su riesgo cardiovascular — tratar ambas es esencial, no opcional</div></div>
+    </div>
+
+    <div class="cta-box">
+      <div class="cta-left">
+        <p>Atención primaria virtual</p>
+        <h3>Reserve una llamada gratuita de 20 min</h3>
+      </div>
+      <div class="cta-right">
+        <p>Virtual · FL · AZ · NV · CO · NM · UT</p>
+        <strong>352-399-8874</strong>
+        <p style="font-size:11px;margin-top:2px">floridamobilehealth.com</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer-left">© 2026 Florida Mobile Health, PLLC · Michele Li Causi FNP-BC, RD, CDCES<br>Esta guía es solo para fines educativos y no constituye asesoramiento médico.</div>
+    <div class="footer-right">Libre para compartir · floridamobilehealth.com<br>Atención bilingüe · 352-399-8874</div>
+  </div>
+</body>
+</html>

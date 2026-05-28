@@ -19,6 +19,7 @@ const NAV_HTML = `
           <a href="/menopause-diabetes.html" class="lang-en" style="color:#8a2040;font-weight:600">MenopauseRx&#8482;</a><a href="/menopause-diabetes.html" class="lang-es lang-hidden" style="color:#8a2040;font-weight:600">MenopauseRx&#8482;</a>
           <a href="/community.html" class="lang-en" style="color:var(--olive-500)">Community programs</a><a href="/community.html" class="lang-es lang-hidden" style="color:var(--olive-500)">Programas comunitarios</a>
           <a href="/shop.html" class="lang-en">Videos &amp; education</a><a href="/shop.html" class="lang-es lang-hidden">Videos y educacion</a>
+          <a href="/resources.html" class="lang-en" style="color:var(--olive-500)">Free health guides</a><a href="/resources.html" class="lang-es lang-hidden" style="color:var(--olive-500)">Guías gratuitas de salud</a>
         </div>
       </div>
       <a href="/pricing.html" class="lang-en">Pricing</a><a href="/pricing.html" class="lang-es lang-hidden">Precios</a>
@@ -39,6 +40,8 @@ const NAV_HTML = `
     <a href="/menopause-diabetes.html" class="lang-en" style="color:#8a2040;font-weight:600;padding-left:28px">&#8212; MenopauseRx&#8482;</a><a href="/menopause-diabetes.html" class="lang-es lang-hidden" style="color:#8a2040;font-weight:600;padding-left:28px">&#8212; MenopauseRx&#8482;</a>
     <a href="/community.html" class="lang-en" style="color:var(--olive-500);padding-left:28px">&#8212; Community programs</a><a href="/community.html" class="lang-es lang-hidden" style="color:var(--olive-500);padding-left:28px">&#8212; Programas comunitarios</a>
     <a href="/shop.html" class="lang-en">Videos</a><a href="/shop.html" class="lang-es lang-hidden">Videos</a>
+        <a href="/resources.html" class="lang-en">Free health guides</a><a href="/resources.html" class="lang-es lang-hidden">Guías gratuitas</a>
+    <a href="/resources.html" class="lang-en">Free health guides</a><a href="/resources.html" class="lang-es lang-hidden">Guías gratuitas de salud</a>
     <a href="/pricing.html" class="lang-en">Pricing</a><a href="/pricing.html" class="lang-es lang-hidden">Precios</a>
     <a href="/for-practices.html" class="lang-en">For Practices</a><a href="/for-practices.html" class="lang-es lang-hidden">Para Consultorios</a>
     <a href="/partners.html" class="lang-en">Partners</a><a href="/partners.html" class="lang-es lang-hidden">Socios</a>

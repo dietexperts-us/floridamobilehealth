@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Blood Pressure Guide | Florida Mobile Health</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:system-ui,sans-serif;background:#fff;width:800px;margin:0 auto}
+  .card{width:800px;min-height:1100px;background:#fff}
+  .header{background:#1a2e4a;padding:32px 40px 24px;color:#fff}
+  .logo-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+  .logo-name{font-family:Georgia,serif;font-size:22px;font-weight:400;letter-spacing:.02em}
+  .logo-sub{font-size:11px;opacity:.75;letter-spacing:.06em;text-transform:uppercase;margin-top:2px}
+  .creds{font-size:11px;opacity:.7;text-align:right;line-height:1.6}
+  .topic-pill{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:11px;padding:4px 14px;border-radius:20px;display:inline-block;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+  .header h1{font-family:Georgia,serif;font-size:34px;font-weight:400;line-height:1.2;margin-bottom:8px}
+  .header h1 span{color:#85b7eb}
+  .header p{font-size:14px;opacity:.8;line-height:1.6;max-width:560px}
+  .body{padding:32px 40px}
+  .bp-chart{margin-bottom:28px}
+  .bp-row{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+  .bp-label{width:140px;font-size:12px;color:#333;font-weight:600}
+  .bp-bar{height:32px;border-radius:6px;display:flex;align-items:center;padding:0 12px;font-size:12px;font-weight:600;color:#fff;white-space:nowrap}
+  .bp-value{width:110px;font-size:11px;color:#555;flex-shrink:0}
+  .section{margin-bottom:24px}
+  .section-title{font-size:13px;font-weight:700;color:#1a2e4a;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;padding-bottom:6px;border-bottom:2px solid #e8edf4}
+  .tips{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .tip{background:#f0f4f8;border-radius:8px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;border:0.5px solid #d0dce8}
+  .tip-icon{width:28px;height:28px;background:#1a2e4a;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;flex-shrink:0}
+  .tip-text{font-size:13px;color:#333;line-height:1.5}
+  .tip-text strong{color:#1a2e4a;display:block;font-size:12px;margin-bottom:2px}
+  .myth-box{background:#f0f4f8;border-radius:10px;padding:16px;margin-bottom:24px;border-left:4px solid #1a2e4a}
+  .myth-title{font-size:12px;font-weight:700;color:#1a2e4a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+  .myth-row{display:flex;gap:10px;margin-bottom:8px;font-size:12px}
+  .myth-x{color:#c44040;font-weight:700;font-size:14px;flex-shrink:0}
+  .myth-check{color:#3a7d3a;font-weight:700;font-size:14px;flex-shrink:0}
+  .cta-box{background:#1a2e4a;border-radius:12px;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+  .cta-left{color:#fff}
+  .cta-left p{font-size:11px;opacity:.75;margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em}
+  .cta-left h3{font-family:Georgia,serif;font-size:17px;font-weight:400}
+  .cta-right{text-align:right;color:#fff}
+  .cta-right p{font-size:12px;opacity:.75;margin-bottom:2px}
+  .cta-right strong{font-size:14px;display:block}
+  .footer{background:#e8edf4;padding:12px 40px;display:flex;justify-content:space-between;align-items:center}
+  .footer-left{font-size:10px;color:#888;line-height:1.5}
+  .footer-right{font-size:10px;color:#888;text-align:right}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="header">
+    <div class="logo-row">
+      <div>
+        <div class="logo-name">FLORIDA MOBILE HEALTH</div>
+        <div class="logo-sub">Virtual Care · floridamobilehealth.com</div>
+      </div>
+      <div class="creds">Michele Li Causi<br>FNP-BC · RD · CDCES<br>Se habla español</div>
+    </div>
+    <div class="topic-pill">Free Health Guide</div>
+    <h1>Understanding <span>Blood Pressure</span><br>Know your numbers. Know your risk.</h1>
+    <p>High blood pressure affects 1 in 2 adults — and most don't know they have it. Here's what your numbers actually mean and what to do about them.</p>
+  </div>
+  <div class="body">
+    <div class="bp-chart">
+      <div class="section-title">Blood pressure categories</div>
+      <div class="bp-row"><div class="bp-label">Normal</div><div class="bp-bar" style="background:#3a7d3a;width:200px">Less than 120/80</div><div class="bp-value" style="color:#3a7d3a;font-weight:600">Goal range</div></div>
+      <div class="bp-row"><div class="bp-label">Elevated</div><div class="bp-bar" style="background:#78a83a;width:240px">120–129 / less than 80</div><div class="bp-value">Lifestyle changes now</div></div>
+      <div class="bp-row"><div class="bp-label">High — Stage 1</div><div class="bp-bar" style="background:#c8930a;width:280px">130–139 / 80–89</div><div class="bp-value">May need medication</div></div>
+      <div class="bp-row"><div class="bp-label">High — Stage 2</div><div class="bp-bar" style="background:#d46020;width:320px">140+ / 90+</div><div class="bp-value">See provider soon</div></div>
+      <div class="bp-row"><div class="bp-label">Crisis</div><div class="bp-bar" style="background:#c44040;width:360px">Higher than 180 / higher than 120</div><div class="bp-value" style="color:#c44040;font-weight:600">ER immediately</div></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">6 lifestyle changes that actually lower blood pressure</div>
+      <div class="tips">
+        <div class="tip"><div class="tip-icon">🧂</div><div class="tip-text"><strong>Reduce sodium</strong>Cut to under 2,300mg/day. Watch processed foods — they contain 70% of dietary sodium</div></div>
+        <div class="tip"><div class="tip-icon">🚶</div><div class="tip-text"><strong>Move daily</strong>30 min of moderate exercise 5x/week lowers BP by 5–8 mmHg. Walking counts</div></div>
+        <div class="tip"><div class="tip-icon">🥦</div><div class="tip-text"><strong>DASH diet</strong>Rich in potassium, magnesium, and fiber. Fruits, vegetables, whole grains, low-fat dairy</div></div>
+        <div class="tip"><div class="tip-icon">🍷</div><div class="tip-text"><strong>Limit alcohol</strong>No more than 1 drink/day for women, 2 for men. Alcohol raises BP significantly</div></div>
+        <div class="tip"><div class="tip-icon">😴</div><div class="tip-text"><strong>Sleep 7–9 hours</strong>Sleep apnea is a major hidden cause of high blood pressure. Get screened</div></div>
+        <div class="tip"><div class="tip-icon">🧘</div><div class="tip-text"><strong>Manage stress</strong>Chronic stress keeps BP elevated. Exercise, prayer, connection — find what works</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="myth-box">
+        <div class="myth-title">Common myths vs facts</div>
+        <div class="myth-row"><div class="myth-x">✗</div><div>"I feel fine so my blood pressure is fine" — hypertension has NO symptoms until it causes stroke or heart attack</div></div>
+        <div class="myth-row"><div class="myth-x">✗</div><div>"I only need to take my medication when I feel bad" — BP medication must be taken daily to work</div></div>
+        <div class="myth-row"><div class="myth-check">✓</div><div>Home monitoring is accurate — check at the same time daily, sitting quietly for 5 minutes first</div></div>
+        <div class="myth-row"><div class="myth-check">✓</div><div>Diabetes doubles your cardiovascular risk — treating both is essential, not optional</div></div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <div class="cta-left">
+        <p>Virtual primary care</p>
+        <h3>Book a free 20-min discovery call</h3>
+      </div>
+      <div class="cta-right">
+        <p>Virtual · FL · AZ · NV · CO · NM · UT</p>
+        <strong>352-399-8874</strong>
+        <p style="font-size:11px;margin-top:2px">floridamobilehealth.com</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer-left">© 2026 Florida Mobile Health, PLLC · Michele Li Causi FNP-BC, RD, CDCES<br>This guide is for educational purposes only and does not constitute medical advice.</div>
+    <div class="footer-right">Free to share · floridamobilehealth.com<br>Se habla español · 352-399-8874</div>
+  </div>
+</div>
+</body>
+</html>

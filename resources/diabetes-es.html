@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Guía de Diabetes | Florida Mobile Health</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:system-ui,sans-serif;background:#fff;width:800px;margin:0 auto}
+  .card{width:800px;min-height:1100px;background:#fff}
+  .header{background:#6b2518;padding:32px 40px 24px;color:#fff}
+  .logo-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+  .logo-name{font-family:Georgia,serif;font-size:22px;font-weight:400;letter-spacing:.02em}
+  .logo-sub{font-size:11px;opacity:.75;font-family:system-ui;letter-spacing:.06em;text-transform:uppercase;margin-top:2px}
+  .creds{font-size:11px;opacity:.7;text-align:right;line-height:1.6}
+  .topic-pill{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:11px;padding:4px 14px;border-radius:20px;display:inline-block;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+  .header h1{font-family:Georgia,serif;font-size:34px;font-weight:400;line-height:1.2;margin-bottom:8px}
+  .header h1 span{color:#f5a08a}
+  .header p{font-size:14px;opacity:.8;line-height:1.6;max-width:560px}
+  .body{padding:32px 40px}
+  .stat-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:28px}
+  .stat{background:#fdf2ef;border-radius:12px;padding:16px;text-align:center;border-left:4px solid #6b2518}
+  .stat-num{font-family:Georgia,serif;font-size:28px;color:#6b2518;margin-bottom:4px}
+  .stat-label{font-size:11px;color:#555;line-height:1.4}
+  .section{margin-bottom:24px}
+  .section-title{font-size:13px;font-weight:700;color:#6b2518;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;padding-bottom:6px;border-bottom:2px solid #f5ede3}
+  .tips{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .tip{background:#faf8f4;border-radius:8px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;border:0.5px solid #e8ddd5}
+  .tip-icon{width:28px;height:28px;background:#6b2518;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;flex-shrink:0}
+  .tip-text{font-size:13px;color:#333;line-height:1.5}
+  .tip-text strong{color:#6b2518;display:block;font-size:12px;margin-bottom:2px}
+  .warning-box{background:#fff5f5;border:1.5px solid #e87070;border-radius:10px;padding:16px;margin-bottom:24px}
+  .warning-title{font-size:12px;font-weight:700;color:#c44040;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+  .warning-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .warning-item{font-size:12px;color:#444;padding:4px 0}
+  .a1c-bar{margin-bottom:24px}
+  .a1c-row{display:flex;gap:6px;margin-bottom:8px}
+  .a1c-seg{height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:#fff;padding:0 8px;text-align:center;line-height:1.3}
+  .cta-box{background:#6b2518;border-radius:12px;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+  .cta-left{color:#fff}
+  .cta-left p{font-size:11px;opacity:.75;margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em}
+  .cta-left h3{font-family:Georgia,serif;font-size:17px;font-weight:400}
+  .cta-right{text-align:right;color:#fff}
+  .cta-right p{font-size:12px;opacity:.75;margin-bottom:2px}
+  .cta-right strong{font-size:14px;display:block}
+  .footer{background:#f5ede3;padding:12px 40px;display:flex;justify-content:space-between;align-items:center}
+  .footer-left{font-size:10px;color:#888;line-height:1.5}
+  .footer-right{font-size:10px;color:#888;text-align:right}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="header">
+    <div class="logo-row">
+      <div>
+        <div class="logo-name">FLORIDA MOBILE HEALTH</div>
+        <div class="logo-sub">Atención Virtual · floridamobilehealth.com</div>
+      </div>
+      <div class="creds">Michele Li Causi<br>FNP-BC · RD · CDCES<br>Hablo español</div>
+    </div>
+    <div class="topic-pill">Guía de Salud Gratuita</div>
+    <h1>Comprender la <span>Diabetes Tipo 2</span><br>Lo que significan sus números</h1>
+    <p>Educación en diabetes basada en evidencia de una Especialista Certificada en Educación y Cuidado de la Diabetes (CDCES) con más de 25 años de experiencia.</p>
+  </div>
+  <div class="body">
+    <div class="stat-row">
+      <div class="stat"><div class="stat-num">38.4M</div><div class="stat-label">Americanos con diabetes</div></div>
+      <div class="stat"><div class="stat-num">96M</div><div class="stat-label">Con prediabetes (80% no lo sabe)</div></div>
+      <div class="stat"><div class="stat-num">2×</div><div class="stat-label">Mayor riesgo en adultos hispanos</div></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Entendiendo su A1C</div>
+      <div class="a1c-bar">
+        <div class="a1c-row">
+          <div class="a1c-seg" style="flex:2;background:#3a7d3a">Normal<br>Menos de 5.7%</div>
+          <div class="a1c-seg" style="flex:1.5;background:#c8930a">Prediabetes<br>5.7–6.4%</div>
+          <div class="a1c-seg" style="flex:2;background:#c44040">Diabetes<br>6.5% y más</div>
+        </div>
+        <p style="font-size:11px;color:#666;margin-top:6px">La A1C refleja su azúcar promedio en 3 meses. Cada reducción del 1% en A1C disminuye las complicaciones diabéticas en un 21%.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">5 maneras comprobadas de bajar el azúcar</div>
+      <div class="tips">
+        <div class="tip"><div class="tip-icon">🚶</div><div class="tip-text"><strong>Caminar después de comer</strong>15 minutos después de cada comida reduce los picos de glucosa hasta un 30%</div></div>
+        <div class="tip"><div class="tip-icon">💧</div><div class="tip-text"><strong>Beber agua primero</strong>La deshidratación eleva el azúcar. Beba agua antes de cada comida</div></div>
+        <div class="tip"><div class="tip-icon">🥗</div><div class="tip-text"><strong>Proteína y fibra primero</strong>Comer vegetales y proteína antes de los carbohidratos reduce la absorción de glucosa</div></div>
+        <div class="tip"><div class="tip-icon">😴</div><div class="tip-text"><strong>Dormir bien</strong>Una noche de mal sueño puede elevar la glucosa en ayunas 20–30 mg/dL</div></div>
+        <div class="tip"><div class="tip-icon">😌</div><div class="tip-text"><strong>Manejar el estrés</strong>El cortisol del estrés eleva el azúcar. Incluso 5 min de respiración profunda ayuda</div></div>
+        <div class="tip"><div class="tip-icon">📊</div><div class="tip-text"><strong>Usar un CGM</strong>Ver su glucosa en tiempo real es la forma más rápida de cambiar su comportamiento</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="warning-box">
+        <div class="warning-title">Señales de alerta — consulte a un proveedor AHORA</div>
+        <div class="warning-grid">
+          <div class="warning-item">⚠ Sed excesiva y orinar frecuentemente</div>
+          <div class="warning-item">⚠ Visión borrosa o cambios en la visión</div>
+          <div class="warning-item">⚠ Hormigueo o entumecimiento en pies/manos</div>
+          <div class="warning-item">⚠ Heridas o infecciones que no sanan</div>
+          <div class="warning-item">⚠ Fatiga extrema a pesar del descanso</div>
+          <div class="warning-item">⚠ A1C por encima del 7% a pesar del medicamento</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <div class="cta-left">
+        <p>¿Lista para tomar el control?</p>
+        <h3>Reserve una llamada gratuita de 20 minutos</h3>
+      </div>
+      <div class="cta-right">
+        <p>Virtual · FL · AZ · NV · CO · NM · UT</p>
+        <strong>352-399-8874</strong>
+        <p style="font-size:11px;margin-top:2px">floridamobilehealth.com</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer-left">© 2026 Florida Mobile Health, PLLC · Michele Li Causi FNP-BC, RD, CDCES<br>Esta guía es solo para fines educativos y no constituye asesoramiento médico.</div>
+    <div class="footer-right">Libre para compartir · floridamobilehealth.com<br>Atención bilingüe · 352-399-8874</div>
+  </div>
+</div>
+</body>
+</html>
