@@ -11,6 +11,7 @@ const NAV_HTML = `
       <a href="/about.html" class="lang-en">About</a><a href="/about.html" class="lang-es lang-hidden">Nosotros</a>
       <a href="/services.html" class="lang-en">Services</a><a href="/services.html" class="lang-es lang-hidden">Servicios</a>
       <a href="/programs.html" class="lang-en">Programs</a><a href="/programs.html" class="lang-es lang-hidden">Programas</a>
+      <a href="/community.html" class="lang-en" style="color:var(--olive-500);font-weight:600">Community</a><a href="/community.html" class="lang-es lang-hidden" style="color:var(--olive-500);font-weight:600">Comunidad</a>
       <a href="/metabolic-health.html" class="lang-en" style="color:var(--terra-500);font-weight:600">MetabolicRx™</a><a href="/metabolic-health.html" class="lang-es lang-hidden" style="color:var(--terra-500);font-weight:600">MetabolicRx™</a>
       <a href="/shop.html" class="lang-en">Videos</a><a href="/shop.html" class="lang-es lang-hidden">Videos</a>
       <a href="/pricing.html" class="lang-en">Pricing</a><a href="/pricing.html" class="lang-es lang-hidden">Precios</a>
@@ -29,6 +30,7 @@ const NAV_HTML = `
     <a href="/about.html" class="lang-en">About</a><a href="/about.html" class="lang-es lang-hidden">Nosotros</a>
     <a href="/services.html" class="lang-en">Services</a><a href="/services.html" class="lang-es lang-hidden">Servicios</a>
     <a href="/programs.html" class="lang-en">Care Programs</a><a href="/programs.html" class="lang-es lang-hidden">Programas</a>
+    <a href="/community.html" class="lang-en" style="color:var(--olive-500);font-weight:600">Community Programs</a><a href="/community.html" class="lang-es lang-hidden" style="color:var(--olive-500);font-weight:600">Programas Comunitarios</a>
     <a href="/metabolic-health.html" class="lang-en" style="color:var(--terra-500);font-weight:600">MetabolicRx™</a><a href="/metabolic-health.html" class="lang-es lang-hidden" style="color:var(--terra-500);font-weight:600">MetabolicRx™</a>
     <a href="/shop.html" class="lang-en">Videos</a><a href="/shop.html" class="lang-es lang-hidden">Videos</a>
     <a href="/pricing.html" class="lang-en">Pricing</a><a href="/pricing.html" class="lang-es lang-hidden">Precios</a>
