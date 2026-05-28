@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -156,24 +156,14 @@ app.post('/api/intake', async (req, res) => {
   </div>
 </div></body></html>`;
 
-    // Configure transporter — uses env variables set in Hostinger
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || 'smtp.gmail.com',
-      port: parseInt(process.env.SMTP_PORT || '587'),
-      secure: false,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS
-      }
-    });
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
-    await transporter.sendMail({
-      from: `"FMH Intake Form" <${process.env.SMTP_USER}>`,
-      to: process.env.INTAKE_EMAIL || 'info@floridamobilehealth.com',
-      replyTo: d.email || '',
+    await resend.emails.send({
+      from: 'Florida Mobile Health Intake <intake@floridamobilehealth.com>',
+      to: [process.env.INTAKE_EMAIL || 'info@floridamobilehealth.com'],
+      reply_to: d.email || '',
       subject: `NEW INTAKE: ${d.firstName || ''} ${d.lastName || ''} — ${d.serviceSelected || 'Service TBD'} — ${d.patientState || '??'} — ${new Date().toLocaleDateString('en-US')}`,
-      html: html,
-      text: `New patient intake received.\nPatient: ${d.firstName} ${d.lastName}\nPhone: ${d.phone}\nEmail: ${d.email}\nService: ${d.serviceSelected} (${d.serviceFee})\nState: ${d.patientState}\nChief complaint: ${d.chiefComplaint}\n\nSee HTML email for full details.`
+      html: html
     });
 
     res.json({ success: true, message: 'Intake form submitted successfully.' });
