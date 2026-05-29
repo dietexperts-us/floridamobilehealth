@@ -6,7 +6,6 @@
 <title>Intro Pricing Chart | Florida Mobile Health</title>
 <meta name="description" content="Compare regular vs intro prices for all services. New patient limited-time savings.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<script src="/js/layout.js?v=3" defer></script>
 <style>
 :root{--terra:#6b2518;--terra-dark:#4a1a10;--terra-100:#f9ede3;--olive:#3a5420;--olive-light:#e8f0e0;--cream:#faf5ee;--text:#1a0a05;--muted:#6b5040;--light:#9c7a68;--border:#e8ddd0;--gold:#c9a84c;}
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -49,14 +48,21 @@ tr.bookrow td{background:var(--terra-100);padding:14px;text-align:center;}
 .ein{display:inline;}.eis{display:none;}
 body.S .en{display:none;}body.S .es{display:block;}
 body.S .ein{display:none;}body.S .eis{display:inline;}
+.page-header{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:white;border-bottom:1px solid var(--border);}
+.back-link{font-size:13px;color:var(--muted);text-decoration:none;font-weight:500;}
+.back-link:hover{color:var(--terra);}
+.lang-toggle{display:flex;gap:8px;}
 </style>
 </head>
 <body>
-<div class="lang-bar">
-  <button class="lb on ein" onclick="L('en')">&#127482;&#127480; English</button>
-  <button class="lb eis" onclick="L('en')">&#127482;&#127480; English</button>
-  <button class="lb ein" onclick="L('es')">&#127466;&#127480; Espa&#241;ol</button>
-  <button class="lb on eis" onclick="L('es')">&#127466;&#127480; Espa&#241;ol</button>
+<div class="page-header">
+  <a href="/index.html" class="back-link">&#8592; floridamobilehealth.com</a>
+  <div class="lang-toggle">
+    <button class="lb on ein" onclick="L('en')">&#127482;&#127480; English</button>
+    <button class="lb eis" onclick="L('en')">&#127482;&#127480; English</button>
+    <button class="lb ein" onclick="L('es')">&#127466;&#127480; Espa&#241;ol</button>
+    <button class="lb on eis" onclick="L('es')">&#127466;&#127480; Espa&#241;ol</button>
+  </div>
 </div>
 <div class="hero">
   <div class="badge en">Limited Time &#8212; New Patient Intro Pricing</div>
