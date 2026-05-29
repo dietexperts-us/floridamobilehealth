@@ -196,6 +196,15 @@ document.addEventListener('DOMContentLoaded', function(){
     inp.addEventListener('keydown', function(e){ if(e.key==='Enter') checkCode(); });
     inp.focus();
   }
+  // Auto-unlock if code is in URL (?code=BHRT1)
+  const urlCode = new URLSearchParams(window.location.search).get('code');
+  if(urlCode){
+    const valid = [PATIENT_CODE.toUpperCase(), PROVIDER_CODE.toUpperCase()];
+    if(valid.includes(urlCode.toUpperCase())){
+      document.getElementById('access-gate').style.display='none';
+      sessionStorage.setItem('fmh_gate','1');
+    }
+  }
   // Restore if already unlocked this session
   if(sessionStorage.getItem('fmh_gate')==='1'){
     document.getElementById('access-gate').style.display='none';
