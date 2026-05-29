@@ -129,7 +129,7 @@ const FOOTER_HTML = `
         <h4 class="lang-en">Virtual coverage</h4><h4 class="lang-es lang-hidden" >Cobertura virtual</h4>
         <p style="color:#c4a090">Florida</p>
         <p>Arizona</p>
-        <p>Nuevo México</p>
+        <p>New Mexico</p>
         <p>Colorado</p>
         <p>Utah</p>
         <p style="margin-top:10px"><a href="/for-practices.html" class="lang-en">For practices →</a><a href="/for-practices.html" class="lang-es lang-hidden" >Para consultorios →</a></p>
