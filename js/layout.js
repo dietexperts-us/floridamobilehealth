@@ -1,6 +1,11 @@
 /* Florida Mobile Health — Layout JS (nav, footer, interactions) */
 
 const NAV_HTML = `
+<div id="promo-bar" style="background:linear-gradient(90deg,#6b2518,#4a1a10);color:white;text-align:center;padding:8px 16px;font-size:13px;position:relative">
+  <span class="lang-en">🎁 <strong>New Patient Intro Pricing:</strong> First visit $149 · GLP-1 $199 · Hormones $149 · <a href="/intro-pricing.html" style="color:#c9a84c;font-weight:700;text-decoration:underline">See all deals →</a></span>
+  <span class="lang-es lang-hidden">🎁 <strong>Precios Introductorios:</strong> Primera visita $149 · GLP-1 $199 · Hormonas $149 · <a href="/intro-pricing-es.html" style="color:#c9a84c;font-weight:700;text-decoration:underline">Ver todos →</a></span>
+  <button onclick="document.getElementById('promo-bar').style.display='none'" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,0.6);cursor:pointer;font-size:18px;line-height:1">×</button>
+</div>
 <nav class="nav" id="main-nav">
   <div class="nav-inner">
     <a href="/index.html" class="nav-logo">
@@ -20,13 +25,34 @@ const NAV_HTML = `
           <a href="/community.html" class="lang-en" style="color:var(--olive-500)">Community programs</a><a href="/community.html" class="lang-es lang-hidden" style="color:var(--olive-500)">Programas comunitarios</a>
           <a href="/metabolic.html" class="lang-en" style="color:var(--terra-500);font-weight:600">90-Day Metabolic Reset</a><a href="/metabolic.html" class="lang-es lang-hidden" style="color:var(--terra-500);font-weight:600">Reinicio Metabólico 90 Días</a>
           <a href="/glp1.html" class="lang-en" style="font-weight:600">GLP-1 Program</a><a href="/glp1.html" class="lang-es lang-hidden" style="font-weight:600">Programa GLP-1</a>
-          <a href="/membership.html" class="lang-en" style="color:var(--olive-500);font-weight:600">Monthly Membership</a><a href="/membership.html" class="lang-es lang-hidden" style="color:var(--olive-500);font-weight:600">Membresía Mensual</a>
+          <a href="/membership.html" class="lang-en" style="color:var(--olive-500);font-weight:600">Monthly Membership</a><a href="/membership.html" class="lang-es lang-hidden" style="color:var(--olive-500);font-weight:600">Membersía Mensual</a>
           <a href="/shop.html" class="lang-en">Health Guides &amp; Shop</a><a href="/shop.html" class="lang-es lang-hidden">Guías de Salud y Tienda</a>
           <a href="/local-visits.html" class="lang-en">Local in-person visits</a><a href="/local-visits.html" class="lang-es lang-hidden">Visitas en persona locales</a>
           <a href="/resources.html" class="lang-en" style="color:var(--olive-500)">Free health guides</a><a href="/resources.html" class="lang-es lang-hidden" style="color:var(--olive-500)">Guías gratuitas de salud</a>
         </div>
       </div>
       <a href="/pricing.html" class="lang-en">Pricing</a><a href="/pricing.html" class="lang-es lang-hidden">Precios</a>
+      <div class="nav-dropdown">
+        <span class="nav-dropdown-trigger lang-en" style="color:#c9a84c;font-weight:700">🎁 Promos &#9662;</span>
+        <span class="nav-dropdown-trigger lang-es lang-hidden" style="color:#c9a84c;font-weight:700">🎁 Promos &#9662;</span>
+        <div class="nav-dropdown-menu" style="min-width:280px">
+          <div style="padding:10px 14px 6px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#c9a84c;border-bottom:1px solid #f0e8d5;margin-bottom:4px">Limited Time — New Patients</div>
+          <a href="/intro-pricing.html" class="lang-en" style="font-weight:700;color:#6b2518">⭐ New Patient Visit — <span style="color:#3a5420">$149</span> <span style="color:#9c7a68;font-weight:400;text-decoration:line-through;font-size:12px">$200</span></a>
+          <a href="/intro-pricing-es.html" class="lang-es lang-hidden" style="font-weight:700;color:#6b2518">⭐ Consulta Nuevo Paciente — <span style="color:#3a5420">$149</span> <span style="color:#9c7a68;font-weight:400;text-decoration:line-through;font-size:12px">$200</span></a>          <a href="/intro-pricing.html" class="lang-en" style="color:#6b2518">GLP-1 Consult — <span style="color:#3a5420;font-weight:700">$199</span> <span style="color:#9c7a68;text-decoration:line-through;font-size:12px">$299</span></a>
+          <a href="/intro-pricing-es.html" class="lang-es lang-hidden" style="color:#6b2518">Consulta GLP-1 — <span style="color:#3a5420;font-weight:700">$199</span> <span style="color:#9c7a68;text-decoration:line-through;font-size:12px">$299</span></a>
+          <a href="/intro-pricing.html" class="lang-en" style="color:#6b2518">Hormone Consult — <span style="color:#3a5420;font-weight:700">$149</span> <span style="color:#9c7a68;text-decoration:line-through;font-size:12px">$200</span></a>
+          <a href="/intro-pricing-es.html" class="lang-es lang-hidden" style="color:#6b2518">Consulta Hormonal — <span style="color:#3a5420;font-weight:700">$149</span> <span style="color:#9c7a68;text-decoration:line-through;font-size:12px">$200</span></a>
+          <a href="/intro-pricing.html" class="lang-en" style="color:#6b2518">90-Day Metabolic Reset — <span style="color:#3a5420;font-weight:700">$399</span> <span style="color:#9c7a68;text-decoration:line-through;font-size:12px">$549</span></a>
+          <a href="/intro-pricing-es.html" class="lang-es lang-hidden" style="color:#6b2518">Reinicio Metabólico 90 Días — <span style="color:#3a5420;font-weight:700">$399</span> <span style="color:#9c7a68;text-decoration:line-through;font-size:12px">$549</span></a>
+          <div style="padding:6px 14px 4px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#c9a84c;border-bottom:1px solid #f0e8d5;margin-bottom:4px;margin-top:6px">Monthly Membership</div>
+          <a href="/intro-pricing.html" class="lang-en" style="color:#6b2518">Essential — <span style="color:#3a5420;font-weight:700">$99/mo</span> <span style="color:#9c7a68;text-decoration:line-through;font-size:12px">$149/mo</span></a>
+          <a href="/intro-pricing-es.html" class="lang-es lang-hidden" style="color:#6b2518">Esencial — <span style="color:#3a5420;font-weight:700">$99/mes</span> <span style="color:#9c7a68;text-decoration:line-through;font-size:12px">$149/mes</span></a>
+          <a href="/intro-pricing.html" class="lang-en" style="color:#6b2518">Standard — <span style="color:#3a5420;font-weight:700">$179/mo</span> <span style="color:#9c7a68;text-decoration:line-through;font-size:12px">$249/mo</span></a>
+          <a href="/intro-pricing-es.html" class="lang-es lang-hidden" style="color:#6b2518">Estándar — <span style="color:#3a5420;font-weight:700">$179/mes</span> <span style="color:#9c7a68;text-decoration:line-through;font-size:12px">$249/mes</span></a>
+          <a href="/intro-pricing.html" style="display:block;text-align:center;background:#6b2518;color:white;font-weight:700;font-size:13px;padding:8px;border-radius:6px;margin:8px 14px 6px;text-decoration:none" class="lang-en">See all intro pricing →</a>
+          <a href="/intro-pricing-es.html" style="display:block;text-align:center;background:#6b2518;color:white;font-weight:700;font-size:13px;padding:8px;border-radius:6px;margin:8px 14px 6px;text-decoration:none" class="lang-es lang-hidden">Ver todos los precios →</a>
+        </div>
+      </div>
       <button id="lang-toggle-btn" onclick="toggleLang()" class="lang-toggle-btn">Espanol</button>
       <a href="/book.html" class="nav-cta lang-en">Book a visit</a>
       <a href="/book.html" class="nav-cta lang-es lang-hidden">Agendar cita</a>
@@ -42,14 +68,21 @@ const NAV_HTML = `
     <a href="/programs.html" class="lang-en">Care programs</a><a href="/programs.html" class="lang-es lang-hidden">Programas de salud</a>
     <a href="/metabolic-health.html" class="lang-en" style="color:var(--terra-500);font-weight:600;padding-left:28px">&#8212; DietexpertNP Rx™</a><a href="/metabolic-health.html" class="lang-es lang-hidden" style="color:var(--terra-500);font-weight:600;padding-left:28px">&#8212; DietexpertNP Rx™</a>
     <a href="/menopause-diabetes.html" class="lang-en" style="color:#8a2040;font-weight:600;padding-left:28px">&#8212; MenopauseRx&#8482;</a><a href="/menopause-diabetes.html" class="lang-es lang-hidden" style="color:#8a2040;font-weight:600;padding-left:28px">&#8212; MenopauseRx&#8482;</a>
-    <a href="/community.html" class="lang-en" style="color:var(--olive-500);padding-left:28px">&#8212; Community programs</a><a href="/community.html" class="lang-es lang-hidden" style="color:var(--olive-500);padding-left:28px">&#8212; Programas comunitarios</a>
-    <a href="/local-visits.html" class="lang-en">Local in-person visits (SW Florida)</a><a href="/local-visits.html" class="lang-es lang-hidden">Visitas en persona (Suroeste FL)</a>
+    <a href="/community.html" class="lang-en" style="color:var(--olive-500);padding-left:28px">&#8212; Community programs</a><a href="/community.html" class="lang-es lang-hidden" style="color:var(--olive-500);padding-left:28px">&#8212; Programas comunitarios</a>    <a href="/local-visits.html" class="lang-en">Local in-person visits (SW Florida)</a><a href="/local-visits.html" class="lang-es lang-hidden">Visitas en persona (Suroeste FL)</a>
     <a href="/metabolic.html" class="lang-en" style="color:var(--terra-500);font-weight:600;padding-left:28px">&#8212; 90-Day Metabolic Reset</a><a href="/metabolic.html" class="lang-es lang-hidden" style="color:var(--terra-500);font-weight:600;padding-left:28px">&#8212; Reinicio Metabólico</a>
     <a href="/glp1.html" class="lang-en" style="font-weight:600;padding-left:28px">&#8212; GLP-1 Program</a><a href="/glp1.html" class="lang-es lang-hidden" style="font-weight:600;padding-left:28px">&#8212; Programa GLP-1</a>
-    <a href="/membership.html" class="lang-en" style="color:var(--olive-500);font-weight:600;padding-left:28px">&#8212; Monthly Membership</a><a href="/membership.html" class="lang-es lang-hidden" style="color:var(--olive-500);font-weight:600;padding-left:28px">&#8212; Membresía Mensual</a>
+    <a href="/membership.html" class="lang-en" style="color:var(--olive-500);font-weight:600;padding-left:28px">&#8212; Monthly Membership</a><a href="/membership.html" class="lang-es lang-hidden" style="color:var(--olive-500);font-weight:600;padding-left:28px">&#8212; Membersía Mensual</a>
     <a href="/shop.html" class="lang-en">Health Guides &amp; Shop</a><a href="/shop.html" class="lang-es lang-hidden">Guías de Salud y Tienda</a>
     <a href="/resources.html" class="lang-en">Free health guides</a><a href="/resources.html" class="lang-es lang-hidden">Guías gratuitas de salud</a>
     <a href="/pricing.html" class="lang-en">Pricing</a><a href="/pricing.html" class="lang-es lang-hidden">Precios</a>
+    <a href="/intro-pricing.html" class="lang-en" style="color:#c9a84c;font-weight:700;background:#6b2518;padding:8px 16px;border-radius:6px;margin:4px 0">🎁 Intro Pricing — New Patients</a>
+    <a href="/intro-pricing-es.html" class="lang-es lang-hidden" style="color:#c9a84c;font-weight:700;background:#6b2518;padding:8px 16px;border-radius:6px;margin:4px 0">🎁 Precios Intro — Nuevos Pacientes</a>
+    <a href="/intro-pricing.html" class="lang-en" style="padding-left:28px;color:#3a5420">&#8212; New Patient Visit $149 (reg $200)</a>
+    <a href="/intro-pricing-es.html" class="lang-es lang-hidden" style="padding-left:28px;color:#3a5420">&#8212; Consulta Nuevo Paciente $149</a>
+    <a href="/intro-pricing.html" class="lang-en" style="padding-left:28px;color:#3a5420">&#8212; GLP-1 Consult $199 (reg $299)</a>
+    <a href="/intro-pricing-es.html" class="lang-es lang-hidden" style="padding-left:28px;color:#3a5420">&#8212; Consulta GLP-1 $199</a>
+    <a href="/intro-pricing.html" class="lang-en" style="padding-left:28px;color:#3a5420">&#8212; Hormone Consult $149 (reg $200)</a>
+    <a href="/intro-pricing-es.html" class="lang-es lang-hidden" style="padding-left:28px;color:#3a5420">&#8212; Consulta Hormonal $149</a>
     <a href="/for-practices.html" class="lang-en">For Practices</a><a href="/for-practices.html" class="lang-es lang-hidden">Para Consultorios</a>
     <a href="/partners.html" class="lang-en">Partners</a><a href="/partners.html" class="lang-es lang-hidden">Socios</a>
     <a href="/contact.html" class="lang-en">Contact</a><a href="/contact.html" class="lang-es lang-hidden">Contacto</a>
@@ -76,8 +109,7 @@ const FOOTER_HTML = `
             <i class="ti ti-brand-linkedin" style="font-size:20px"></i> LinkedIn
           </a>
         </div>
-      </div>
-      <div class="footer-col">
+      </div>      <div class="footer-col">
         <h4 class="lang-en">Services</h4><h4 class="lang-es lang-hidden" >Servicios</h4>
         <a href="/services.html#diabetes">Diabetes & GLP-1</a>
         <a href="/services.html#primary" class="lang-en">Primary care</a><a href="/services.html#primary" class="lang-es lang-hidden" >Atención primaria</a>
@@ -88,13 +120,14 @@ const FOOTER_HTML = `
       </div>
       <div class="footer-col">
         <h4 class="lang-en">Access</h4><h4 class="lang-es lang-hidden" >Acceso</h4>
-        <a href="/membership.html" class="lang-en">Monthly Membership</a><a href="/membership.html" class="lang-es lang-hidden">Membresía Mensual</a>
+        <a href="/membership.html" class="lang-en">Monthly Membership</a><a href="/membership.html" class="lang-es lang-hidden">Membersía Mensual</a>
         <a href="/metabolic.html" class="lang-en">90-Day Metabolic Reset</a><a href="/metabolic.html" class="lang-es lang-hidden">Reinicio Metabólico</a>
         <a href="/glp1.html" class="lang-en">GLP-1 Program</a><a href="/glp1.html" class="lang-es lang-hidden">Programa GLP-1</a>
         <a href="/shop.html" class="lang-en">Health Guides &amp; Shop</a><a href="/shop.html" class="lang-es lang-hidden">Guías de Salud</a>
         <a href="/book.html" class="lang-en">Book a virtual visit</a><a href="/book.html" class="lang-es lang-hidden">Agendar cita virtual</a>
         <a href="/messaging.html" class="lang-en">Direct messaging</a><a href="/messaging.html" class="lang-es lang-hidden" >Mensajes directos</a>
         <a href="/pricing.html" class="lang-en">View pricing</a><a href="/pricing.html" class="lang-es lang-hidden" >Ver precios</a>
+        <a href="/intro-pricing.html" class="lang-en" style="color:#c9a84c;font-weight:600">🎁 Intro Pricing</a><a href="/intro-pricing-es.html" class="lang-es lang-hidden" style="color:#c9a84c;font-weight:600">🎁 Precios Intro</a>
         <a href="/blog.html" class="lang-en">Health blog</a><a href="/blog.html" class="lang-es lang-hidden" >Blog de salud</a>
       </div>
       <div class="footer-col">
@@ -113,8 +146,7 @@ const FOOTER_HTML = `
       </div>
     </div>
     <div style="border-top:0.5px solid #5a2818;padding:14px 0;margin-bottom:8px">
-      <p style="font-size:11px;color:#c4a090;line-height:1.8;">
-        All services provided by Michele Li Causi, FNP-BC, RD, CDCES. Licensed for autonomous practice in Florida and licensed in Arizona, Nevada, Colorado, New Mexico, and Utah. Services are delivered within the FNP-BC scope of practice applicable in each licensed state. Florida Mobile Health does not prescribe controlled substances (Schedule II–V) or testosterone. All GLP-1 prescribing (Ozempic, Mounjaro, Wegovy, and related medications) is conducted within the context of a comprehensive primary care evaluation and ongoing care management — not as a standalone prescription service. Weight management, metabolic health, and diabetes management are primary care concerns within this provider's scope. Service availability, specific offerings, and collaboration arrangements may vary by state — not all services are available in all licensed states. Virtual services comply with the telehealth laws of the state where the patient is physically located at the time of service. Out-of-state and out-of-licensure patients cannot be served. This website is for informational purposes only and does not constitute medical advice, diagnosis, or treatment. Individual results vary. For medical emergencies, call 911 or go to your nearest emergency room.
+      <p style="font-size:11px;color:#c4a090;line-height:1.8;">All services provided by Michele Li Causi, FNP-BC, RD, CDCES. Licensed for autonomous practice in Florida and licensed in Arizona, Nevada, Colorado, New Mexico, and Utah. Services are delivered within the FNP-BC scope of practice applicable in each licensed state. Florida Mobile Health does not prescribe controlled substances (Schedule II–V) or testosterone. All GLP-1 prescribing (Ozempic, Mounjaro, Wegovy, and related medications) is conducted within the context of a comprehensive primary care evaluation and ongoing care management — not as a standalone prescription service. Weight management, metabolic health, and diabetes management are primary care concerns within this provider's scope. Service availability, specific offerings, and collaboration arrangements may vary by state — not all services are available in all licensed states. Virtual services comply with the telehealth laws of the state where the patient is physically located at the time of service. Out-of-state and out-of-licensure patients cannot be served. This website is for informational purposes only and does not constitute medical advice, diagnosis, or treatment. Individual results vary. For medical emergencies, call 911 or go to your nearest emergency room.
       </p>
     </div>
     <div class="footer-bottom">
@@ -149,25 +181,20 @@ document.addEventListener('DOMContentLoaded', function () {
       e.stopPropagation();
       var dropdown = trigger.closest('.nav-dropdown');
       var isOpen = dropdown.classList.contains('open');
-      document.querySelectorAll('.nav-dropdown').forEach(function(d) { d.classList.remove('open'); });
+      // close all
+      document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
       if (!isOpen) dropdown.classList.add('open');
     });
   });
   document.addEventListener('click', function() {
-    document.querySelectorAll('.nav-dropdown').forEach(function(d) { d.classList.remove('open'); });
+    document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
   });
 
-  document.querySelectorAll('.nav-links a, .nav-mobile a').forEach(function (a) {
-    const href = a.getAttribute('href').replace('/', '');
-    if (href === path || (path === '' && href === 'index.html')) {
-      a.style.color = '#6b2518';
-      a.style.fontWeight = '600';
-    }
-  });
-
-  document.querySelectorAll('.nav-mobile a').forEach(function (a) {
-    a.addEventListener('click', function () {
+  // Close mobile nav on link click
+  document.querySelectorAll('#nav-mobile a').forEach(function(link) {
+    link.addEventListener('click', function () {
       if (mobile) mobile.classList.remove('open');
     });
   });
 });
+
