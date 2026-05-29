@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.floridamobilehealth.com/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://www.floridamobilehealth.com/menopause-diabetes.html</loc><priority>0.95</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://www.floridamobilehealth.com/metabolic-health.html</loc><priority>0.95</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://www.floridamobilehealth.com/services.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.floridamobilehealth.com/programs.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.floridamobilehealth.com/community.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.floridamobilehealth.com/about.html</loc><priority>0.85</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.floridamobilehealth.com/pricing.html</loc><priority>0.85</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.floridamobilehealth.com/book.html</loc><priority>0.85</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.floridamobilehealth.com/partners.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.floridamobilehealth.com/shop.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://www.floridamobilehealth.com/for-practices.html</loc><priority>0.75</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.floridamobilehealth.com/messaging.html</loc><priority>0.75</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.floridamobilehealth.com/local-visits.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.floridamobilehealth.com/resources.html</loc><priority>0.85</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.floridamobilehealth.com/blog.html</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://www.floridamobilehealth.com/contact.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.floridamobilehealth.com/disclosures.html</loc><priority>0.5</priority><changefreq>yearly</changefreq></url>
-  <url><loc>https://www.floridamobilehealth.com/privacy.html</loc><priority>0.4</priority><changefreq>yearly</changefreq></url>
-  <url><loc>https://www.floridamobilehealth.com/terms.html</loc><priority>0.4</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://www.floridamobilehealth.com/about</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.floridamobilehealth.com/services</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.floridamobilehealth.com/book</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.floridamobilehealth.com/membership</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.floridamobilehealth.com/glp1</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.floridamobilehealth.com/metabolic</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.floridamobilehealth.com/shop</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.floridamobilehealth.com/intro-pricing</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.floridamobilehealth.com/programs</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.floridamobilehealth.com/pricing</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.floridamobilehealth.com/partners</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.floridamobilehealth.com/contact</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.floridamobilehealth.com/metabolic-health</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.floridamobilehealth.com/menopause-diabetes</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.floridamobilehealth.com/local-visits</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.floridamobilehealth.com/community</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.floridamobilehealth.com/resources</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.floridamobilehealth.com/blog</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.floridamobilehealth.com/disclosures</loc><priority>0.4</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://www.floridamobilehealth.com/privacy</loc><priority>0.4</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://www.floridamobilehealth.com/terms</loc><priority>0.4</priority><changefreq>yearly</changefreq></url>
 </urlset>
