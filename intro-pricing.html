@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intro Pricing | Florida Mobile Health</title>
+<meta name="description" content="Limited-time intro pricing for new patients. FNP + RD + CDCES virtual care in FL, AZ, NV, CO, NM, UT. Book your first visit from $149.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="/js/layout.js?v=2" defer></script>
+<script src="/js/lang.js" defer></script>
+<style>
+:root {
+  --terra: #6b2518;
+  --terra-dark: #4a1a10;
+  --terra-50: #fdf3f0;
+  --terra-100: #f9ede3;
+  --olive: #3a5420;
+  --olive-light: #e8f0e0;
+  --cream: #faf5ee;
+  --text: #1a0a05;
+  --text-muted: #6b5040;
+  --text-light: #9c7a68;
+  --border: #e8ddd0;
+  --gold: #c9a84c;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); }
+.promo-hero { background: var(--terra); color: white; text-align: center; padding: 64px 24px 56px; position: relative; overflow: hidden; }
+.badge { display: inline-block; background: var(--gold); color: var(--terra-dark); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; margin-bottom: 20px; }
+.promo-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 5vw, 48px); line-height: 1.2; margin-bottom: 16px; max-width: 680px; margin-left: auto; margin-right: auto; }
+.promo-hero p { font-size: 17px; opacity: 0.85; max-width: 540px; margin: 0 auto 28px; line-height: 1.6; }
+.hero-creds { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 32px; }
+.hero-cred { font-size: 13px; opacity: 0.9; display: flex; align-items: center; gap: 6px; }
+.hero-cred::before { content: '✓'; color: var(--gold); font-weight: 700; }
+.btn-hero { display: inline-block; background: white; color: var(--terra); font-size: 15px; font-weight: 700; padding: 14px 32px; border-radius: 8px; text-decoration: none; }
+.expiry { margin-top: 16px; font-size: 13px; opacity: 0.7; }
+.diff-section { background: white; padding: 48px 24px; text-align: center; border-bottom: 1px solid var(--border); }
+.diff-section h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--terra); margin-bottom: 8px; }
+.diff-section p { color: var(--text-muted); font-size: 15px; max-width: 560px; margin: 0 auto 32px; line-height: 1.6; }
+.creds-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 800px; margin: 0 auto; }
+.cred-card { background: var(--cream); border-radius: 12px; padding: 24px; text-align: left; border: 1px solid var(--border); }
+.cred-card h3 { font-size: 15px; font-weight: 700; color: var(--terra); margin-bottom: 6px; }
+.cred-card p { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+.pricing-section { padding: 56px 24px; max-width: 1000px; margin: 0 auto; }
+.section-label { text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--terra); margin-bottom: 10px; }
+.section-title { font-family: 'Playfair Display', serif; font-size: 32px; text-align: center; margin-bottom: 8px; }
+.section-sub { text-align: center; color: var(--text-muted); font-size: 15px; margin-bottom: 40px; max-width: 500px; margin-left: auto; margin-right: auto; }
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 40px; }
+.price-card { background: white; border-radius: 16px; padding: 28px; border: 1px solid var(--border); position: relative; }
+.price-card.featured { border-color: var(--terra); border-width: 2px; }
+.featured-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--terra); color: white; font-size: 11px; font-weight: 700; padding: 4px 14px; border-radius: 100px; white-space: nowrap; }
+.price-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.price-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px; }
+.price-new { font-size: 32px; font-weight: 700; color: var(--terra); }
+.price-old { font-size: 15px; color: var(--text-light); text-decoration: line-through; }
+.price-save { font-size: 12px; background: var(--olive-light); color: var(--olive); padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+.price-note { font-size: 12px; color: var(--text-muted); margin-bottom: 16px; }
+.price-features { list-style: none; margin-bottom: 20px; }
+.price-features li { font-size: 13px; color: var(--text-muted); padding: 5px 0; display: flex; gap: 8px; }
+.price-features li::before { content: '✓'; color: var(--olive); font-weight: 700; }
+.btn-book { display: block; background: var(--terra); color: white; text-align: center; padding: 12px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; }
+.membership-section { background: var(--terra); color: white; padding: 56px 24px; text-align: center; }
+.membership-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; max-width: 900px; margin: 0 auto 32px; }
+.mem-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 14px; padding: 24px; text-align: left; }
+.mem-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 12px; }
+.mem-price .new { font-size: 28px; font-weight: 700; color: var(--gold); }
+.mem-price .old { font-size: 14px; opacity: 0.6; text-decoration: line-through; margin-left: 6px; }
+.mem-intro { font-size: 12px; opacity: 0.65; margin-bottom: 14px; }
+.mem-features { list-style: none; }
+.mem-features li { font-size: 12px; opacity: 0.8; padding: 4px 0; display: flex; gap: 6px; }
+.mem-features li::before { content: '→'; color: var(--gold); }
+.why-section { padding: 56px 24px; max-width: 900px; margin: 0 auto; }
+.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+.why-card { display: flex; gap: 14px; align-items: flex-start; }
+.why-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--terra-100); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; }
+.why-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.why-card p { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+.cta-section { background: var(--cream); border-top: 1px solid var(--border); padding: 56px 24px; text-align: center; }
+.cta-section h2 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 12px; color: var(--terra); }
+.cta-section p { color: var(--text-muted); font-size: 15px; max-width: 500px; margin: 0 auto 28px; }
+.cta-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.btn-primary { background: var(--terra); color: white; padding: 14px 28px; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none; }
+.btn-secondary { background: transparent; border: 1.5px solid var(--terra); color: var(--terra); padding: 14px 28px; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none; }
+.states { font-size: 13px; color: var(--text-light); margin-top: 16px; }
+</style>
+</head>
+<body>
+<div class="promo-hero">
+  <div class="badge lang-en">Limited Time — Intro Pricing</div>
+  <div class="badge lang-es lang-hidden">Tiempo Limitado — Precio Introductorio</div>
+  <h1 class="lang-en">Total Care From One Provider.<br>At Intro Prices.</h1>
+  <h1 class="lang-es lang-hidden">Atención Total de Una Sola Proveedora.<br>A Precios Introductorios.</h1>
+  <p class="lang-en">Primary care, nutrition, and metabolic expertise — all in one virtual visit. New patient special pricing for a limited time.</p>
+  <p class="lang-es lang-hidden">Atención primaria, nutrición y salud metabólica — en una sola visita virtual. Precios especiales para nuevos pacientes por tiempo limitado.</p>
+  <div class="hero-creds">
+    <span class="hero-cred lang-en">Family Nurse Practitioner</span>
+    <span class="hero-cred lang-en">Registered Dietitian</span>
+    <span class="hero-cred lang-en">Certified Diabetes Educator</span>
+    <span class="hero-cred lang-es lang-hidden">Enfermera Practicante</span>
+    <span class="hero-cred lang-es lang-hidden">Dietista Registrada</span>
+    <span class="hero-cred lang-es lang-hidden">Educadora en Diabetes</span>
+  </div>
+  <a href="/book.html" class="btn-hero lang-en">Book Your Intro Visit →</a>
+  <a href="/book.html" class="btn-hero lang-es lang-hidden">Agendar Visita Introductoria →</a>
+  <p class="expiry lang-en">Intro pricing for new patients only · HSA/FSA accepted · No insurance required</p>
+  <p class="expiry lang-es lang-hidden">Precios introductorios para nuevos pacientes · HSA/FSA aceptado · Sin seguro necesario</p>
+</div>
+
+<div class="diff-section">
+  <h2 class="lang-en">One Appointment Does the Work of Three</h2>
+  <h2 class="lang-es lang-hidden">Una Cita Hace el Trabajo de Tres</h2>
+  <p class="lang-en">Most patients see a primary care doctor, a dietitian, and a diabetes educator separately. With Michele, those three specialists are the same person.</p>
+  <p class="lang-es lang-hidden">La mayoría de los pacientes ven a tres especialistas por separado. Con Michele, esos tres especialistas son la misma persona.</p>
+  <div class="creds-grid">
+    <div class="cred-card"><div class="icon">🩺</div><h3>Family Nurse Practitioner (FNP-BC)</h3><p>Diagnoses, prescribes, orders labs, manages chronic conditions. Primary care for your whole family.</p></div>
+    <div class="cred-card"><div class="icon">🥗</div><h3>Registered Dietitian (RD)</h3><p>Medical nutrition therapy included in every visit. No separate nutrition referral. No extra cost.</p></div>
+    <div class="cred-card"><div class="icon">📊</div><h3>Certified Diabetes Educator (CDCES)</h3><p>Board-certified diabetes and GLP-1 specialist. CGM setup, medication management, A1c reduction.</p></div>
+  </div>
+</div>
+
+<div class="pricing-section">
+  <p class="section-label lang-en">New Patient Intro Pricing</p>
+  <p class="section-label lang-es lang-hidden">Precios Introductorios — Nuevos Pacientes</p>
+  <h2 class="section-title lang-en">Book Your First Visit</h2>
+  <h2 class="section-title lang-es lang-hidden">Reserve su Primera Visita</h2>
+  <p class="section-sub lang-en">Intro pricing for new patients. Regular pricing resumes when the offer ends.</p>
+  <p class="section-sub lang-es lang-hidden">Precios introductorios para nuevos pacientes. Los precios regulares se reanudan cuando termine la oferta.</p>
+  <div class="pricing-grid">
+    <div class="price-card featured">
+      <div class="featured-badge">Most Booked</div>
+      <h3 class="lang-en">New Patient Visit</h3><h3 class="lang-es lang-hidden">Consulta Paciente Nuevo</h3>
+      <p class="price-note lang-en">60 min · Full intake + care plan</p>
+      <div class="price-row"><span class="price-new">$149</span><span class="price-old">$200</span><span class="price-save">Save $51</span></div>
+      <ul class="price-features">
+        <li class="lang-en">Complete health history review</li>
+        <li class="lang-en">Lab review + ordering if needed</li>
+        <li class="lang-en">Personalized care plan</li>
+        <li class="lang-en">Nutrition assessment (RD)</li>
+        <li class="lang-en">Prescription management</li>
+        <li class="lang-es lang-hidden">Revisión completa del historial médico</li>
+        <li class="lang-es lang-hidden">Plan de atención personalizado</li>
+        <li class="lang-es lang-hidden">Evaluación nutricional (RD)</li>
+      </ul>
+      <a href="/book.html" class="btn-book lang-en">Book New Patient Visit</a>
+      <a href="/book.html" class="btn-book lang-es lang-hidden">Agendar Consulta</a>
+    </div>
+    <div class="price-card">
+      <h3 class="lang-en">GLP-1 Consultation</h3><h3 class="lang-es lang-hidden">Consulta GLP-1</h3>
+      <p class="price-note lang-en">45 min · Ozempic · Mounjaro · Wegovy · Zepbound</p>
+      <div class="price-row"><span class="price-new">$199</span><span class="price-old">$299</span><span class="price-save">Save $100</span></div>
+      <ul class="price-features">
+        <li class="lang-en">Eligibility evaluation + prescription</li>
+        <li class="lang-en">Titration schedule</li>
+        <li class="lang-en">Muscle preservation protocol (RD)</li>
+        <li class="lang-en">Side effect management plan</li>
+        <li class="lang-es lang-hidden">Evaluación de elegibilidad + receta</li>
+        <li class="lang-es lang-hidden">Protocolo de preservación muscular (RD)</li>
+      </ul>
+      <a href="/book.html" class="btn-book lang-en">Book GLP-1 Consult</a>
+      <a href="/book.html" class="btn-book lang-es lang-hidden">Agendar Consulta GLP-1</a>
+    </div>
+    <div class="price-card">
+      <h3 class="lang-en">Hormone Consultation</h3><h3 class="lang-es lang-hidden">Consulta Hormonal</h3>
+      <p class="price-note lang-en">45 min · Hormones · Thyroid · Menopause · PCOS</p>
+      <div class="price-row"><span class="price-new">$149</span><span class="price-old">$200</span><span class="price-save">Save $51</span></div>
+      <ul class="price-features">
+        <li class="lang-en">Full hormone panel ordered</li>
+        <li class="lang-en">Thyroid: TSH, Free T3, Free T4, antibodies</li>
+        <li class="lang-en">Estrogen, progesterone, fasting insulin</li>
+        <li class="lang-es lang-hidden">Panel hormonal completo ordenado</li>
+        <li class="lang-es lang-hidden">Tiroides: TSH, T3 libre, T4 libre, anticuerpos</li>
+      </ul>
+      <a href="/book.html" class="btn-book lang-en">Book Hormone Consult</a>
+      <a href="/book.html" class="btn-book lang-es lang-hidden">Agendar Consulta Hormonal</a>
+    </div>
+  </div>  <div style="background:white;border-radius:16px;padding:32px;border:2px solid var(--terra);margin-bottom:20px;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:20px;">
+      <div style="flex:1;min-width:260px;">
+        <div class="badge" style="background:var(--olive-light);color:var(--olive);">90-Day Program</div>
+        <h3 style="font-size:20px;font-weight:700;margin:10px 0 6px;" class="lang-en">Metabolic Reset Program</h3>
+        <h3 style="font-size:20px;font-weight:700;margin:10px 0 6px;" class="lang-es lang-hidden">Programa de Reinicio Metabólico</h3>
+        <p style="font-size:14px;color:var(--text-muted);line-height:1.6;max-width:500px;" class="lang-en">CGM-guided metabolic transformation. Diabetes, prediabetes, insulin resistance, metabolic syndrome, NAFLD/NASH. Clinical oversight + RD nutrition + lab monitoring for 90 days.</p>
+        <p style="font-size:14px;color:var(--text-muted);line-height:1.6;max-width:500px;" class="lang-es lang-hidden">Transformación metabólica guiada por CGM. Diabetes, prediabetes, resistencia a la insulina, hígado graso. Supervisión clínica + nutrición RD + monitoreo de laboratorio por 90 días.</p>
+      </div>
+      <div style="text-align:right;min-width:160px;">
+        <div style="font-size:13px;color:var(--text-muted);text-decoration:line-through;">From $549</div>
+        <div style="font-size:36px;font-weight:700;color:var(--terra);">$399</div>
+        <div style="font-size:12px;background:var(--olive-light);color:var(--olive);padding:3px 10px;border-radius:4px;display:inline-block;margin-bottom:14px;">Save $150</div>
+        <a href="/metabolic.html" class="btn-book lang-en" style="display:block;">See Program →</a>
+        <a href="/metabolic.html" class="btn-book lang-es lang-hidden" style="display:block;">Ver Programa →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="membership-section">
+  <p class="section-label">Monthly Membership</p>
+  <h2 class="section-title lang-en" style="color:white;">Ongoing Care That Pays for Itself</h2>
+  <h2 class="section-title lang-es lang-hidden" style="color:white;">Atención Continua que Vale la Pena</h2>
+  <p class="section-sub lang-en">Intro pricing for first 3 months. Cancel anytime. HSA/FSA eligible.</p>
+  <p class="section-sub lang-es lang-hidden">Precio introductorio por los primeros 3 meses. Cancele cuando quiera. Elegible para HSA/FSA.</p>
+  <div class="membership-grid">
+    <div class="mem-card">
+      <h3>Essential</h3>
+      <div class="mem-price"><span class="new">$99</span><span class="old">$149</span><span class="per">/mo</span></div>
+      <p class="mem-intro lang-en">First 3 months · then $149/mo</p>
+      <p class="mem-intro lang-es lang-hidden">Primeros 3 meses · luego $149/mes</p>
+      <ul class="mem-features">
+        <li class="lang-en">1 visit/month (30 min)</li>
+        <li class="lang-en">Secure messaging</li>
+        <li class="lang-en">Prescription refills</li>
+        <li class="lang-es lang-hidden">1 visita/mes (30 min)</li>
+        <li class="lang-es lang-hidden">Mensajería segura</li>
+      </ul>
+    </div>
+    <div class="mem-card" style="border-color:var(--gold);">
+      <h3>Standard ⭐</h3>
+      <div class="mem-price"><span class="new">$179</span><span class="old">$249</span><span class="per">/mo</span></div>
+      <p class="mem-intro lang-en">First 3 months · then $249/mo</p>
+      <p class="mem-intro lang-es lang-hidden">Primeros 3 meses · luego $249/mes</p>
+      <ul class="mem-features">
+        <li class="lang-en">2 visits/month (45 min)</li>
+        <li class="lang-en">Priority messaging</li>
+        <li class="lang-en">Nutrition check-ins (RD)</li>
+        <li class="lang-en">CGM interpretation</li>
+        <li class="lang-es lang-hidden">2 visitas/mes (45 min)</li>
+        <li class="lang-es lang-hidden">Seguimiento nutricional (RD)</li>
+      </ul>
+    </div>
+    <div class="mem-card">
+      <h3>Premium</h3>
+      <div class="mem-price"><span class="new">$299</span><span class="old">$399</span><span class="per">/mo</span></div>
+      <p class="mem-intro lang-en">First 3 months · then $399/mo</p>
+      <ul class="mem-features">
+        <li class="lang-en">Unlimited visits</li>
+        <li class="lang-en">Same-week scheduling</li>
+        <li class="lang-en">CGM program included</li>
+        <li class="lang-en">Family members included</li>
+      </ul>
+    </div>
+  </div>
+  <a href="/membership.html" class="btn-hero lang-en">See All Membership Options →</a>
+  <a href="/membership.html" class="btn-hero lang-es lang-hidden">Ver Todas las Opciones →</a>
+</div>
+<div class="why-section">
+  <p class="section-label" style="text-align:center;display:block;margin-bottom:8px;">Why Florida Mobile Health</p>
+  <h2 class="section-title lang-en" style="text-align:center;margin-bottom:32px;">What Makes This Different</h2>
+  <h2 class="section-title lang-es lang-hidden" style="text-align:center;margin-bottom:32px;">Lo que Nos Hace Diferentes</h2>
+  <div class="why-grid">
+    <div class="why-card"><div class="why-icon">🎓</div><div><h3 class="lang-en">Three Board Certifications</h3><h3 class="lang-es lang-hidden">Tres Certificaciones</h3><p class="lang-en">FNP-BC + RD + CDCES. No other telehealth provider covers all three in one visit.</p><p class="lang-es lang-hidden">FNP-BC + RD + CDCES. Ningún otro proveedor virtual cubre las tres en una sola visita.</p></div></div>
+    <div class="why-card"><div class="why-icon">🇪🇸</div><div><h3 class="lang-en">Truly Bilingual Care</h3><h3 class="lang-es lang-hidden">Atención Verdaderamente Bilingüe</h3><p class="lang-en">Not a translator. Michele speaks Spanish fluently and provides full clinical care in your language.</p><p class="lang-es lang-hidden">No es una traductora. Michele habla español con fluidez y brinda atención clínica completa en su idioma.</p></div></div>
+    <div class="why-card"><div class="why-icon">💊</div><div><h3 class="lang-en">Prescribe + Nutrition + Diabetes</h3><h3 class="lang-es lang-hidden">Recetas + Nutrición + Diabetes</h3><p class="lang-en">GLP-1, hormones, primary care — managed by the same provider who also designs your nutrition plan.</p><p class="lang-es lang-hidden">GLP-1, hormonas, atención primaria — manejado por la misma proveedora que también diseña su plan nutricional.</p></div></div>
+    <div class="why-card"><div class="why-icon">📍</div><div><h3 class="lang-en">Six States, Zero Waiting Rooms</h3><h3 class="lang-es lang-hidden">Seis Estados, Sin Sala de Espera</h3><p class="lang-en">FL · AZ · NV · CO · NM · UT. 100% virtual. Appointments available within days, not months.</p></div></div>
+    <div class="why-card"><div class="why-icon">🧪</div><div><h3 class="lang-en">Labs, CGM, and Real Data</h3><h3 class="lang-es lang-hidden">Laboratorios, CGM y Datos Reales</h3><p class="lang-en">We order your labs, interpret your CGM data, and make decisions based on your actual numbers.</p></div></div>
+    <div class="why-card"><div class="why-icon">💳</div><div><h3 class="lang-en">HSA/FSA Accepted</h3><h3 class="lang-es lang-hidden">HSA/FSA Aceptado</h3><p class="lang-en">No insurance required. Use your HSA or FSA account. Superbill provided for reimbursement.</p></div></div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <h2 class="lang-en">Ready to Get Started?</h2>
+  <h2 class="lang-es lang-hidden">¿Listo para Comenzar?</h2>
+  <p class="lang-en">Book your intro visit today. Intro pricing for new patients only — available for a limited time.</p>
+  <p class="lang-es lang-hidden">Reserve su visita introductoria hoy. Precios introductorios para nuevos pacientes solamente — disponibles por tiempo limitado.</p>
+  <div class="cta-btns">
+    <a href="/book.html" class="btn-primary lang-en">Book Intro Visit — $149</a>
+    <a href="/book.html" class="btn-primary lang-es lang-hidden">Agendar Visita — $149</a>
+    <a href="tel:3523998874" class="btn-secondary lang-en">Call 352-399-8874</a>
+    <a href="tel:3523998874" class="btn-secondary lang-es lang-hidden">Llamar 352-399-8874</a>
+  </div>
+  <p class="states lang-en">Serving: Florida · Arizona · Nevada · Colorado · New Mexico · Utah</p>
+  <p class="states lang-es lang-hidden">Atendiendo: Florida · Arizona · Nevada · Colorado · Nuevo México · Utah</p>
+</div>
+
+</body>
+</html>
