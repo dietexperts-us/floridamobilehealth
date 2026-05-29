@@ -90,10 +90,29 @@
 .lang-toggle{display:flex;gap:8px;}
 .lb{padding:6px 16px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;border:1.5px solid #e8ddd0;background:white;color:#6b5040;text-decoration:none;display:inline-block;}
 .lb.active{background:#6b2518;color:white;border-color:#6b2518;}
+
+.state-selector{background:#f5f0e8;border-bottom:1px solid #e8ddd0;padding:8px 24px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;position:sticky;top:53px;z-index:99;}
+.state-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#9c7a68;}
+.state-link{font-size:13px;color:#6b5040;text-decoration:none;padding:3px 10px;border-radius:100px;border:1px solid transparent;}
+.state-link:hover{border-color:#e8ddd0;background:white;}
+.state-link.active{background:#6b2518;color:white;font-weight:600;}
+.lb.en-active{background:#6b2518;color:white;border-color:#6b2518;}
 </style>
 </head>
 <body data-title-en="Florida Mobile Health — Nevada Virtual Care | Virtual Care in Nevada" data-title-es="Florida Mobile Health — Nevada Virtual Care | Atenci&oacute;n Virtual en Nevada">
-<div class="page-header"><a href="/index.html" class="back-link">&#8592; floridamobilehealth.com</a><div class="lang-toggle"><span class="lb active">&#127482;&#127480; English</span></div></div>
+<div class="page-header">
+  <a href="/index.html" class="back-link">&#8592; floridamobilehealth.com</a>
+  <div class="lang-toggle"><span class="lb en-active">&#127482;&#127480; English</span></div>
+</div>
+<div class="state-selector">
+  <span class="state-label">Serving:</span>
+  <a href="/index.html" class="state-link">Florida</a>
+  <a href="/arizona.html" class="state-link">Arizona</a>
+  <span class="state-link active">Nevada</span>
+  <a href="/colorado.html" class="state-link">Colorado</a>
+  <a href="/new-mexico.html" class="state-link">New Mexico</a>
+  <a href="/utah.html" class="state-link">Utah</a>
+</div>
 
 
 <div class="state-hero">
