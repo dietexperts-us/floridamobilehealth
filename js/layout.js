@@ -127,11 +127,12 @@ const FOOTER_HTML = `
       </div>
       <div class="footer-col">
         <h4 class="lang-en">Virtual coverage</h4><h4 class="lang-es lang-hidden" >Cobertura virtual</h4>
-        <p style="color:#c4a090">Florida</p>
-        <p>Arizona</p>
-        <p>New Mexico</p>
-        <p>Colorado</p>
-        <p>Utah</p>
+        <a href="/index.html" style="color:#c4a090;display:block;padding:2px 0;text-decoration:none;">Florida</a>
+        <a href="/arizona.html" style="display:block;padding:2px 0;text-decoration:none;color:inherit;">Arizona</a>
+        <a href="/new-mexico.html" style="display:block;padding:2px 0;text-decoration:none;color:inherit;">New Mexico</a>
+        <a href="/colorado.html" style="display:block;padding:2px 0;text-decoration:none;color:inherit;">Colorado</a>
+        <a href="/nevada.html" style="display:block;padding:2px 0;text-decoration:none;color:inherit;">Nevada</a>
+        <a href="/utah.html" style="display:block;padding:2px 0;text-decoration:none;color:inherit;">Utah</a>
         <p style="margin-top:10px"><a href="/for-practices.html" class="lang-en">For practices →</a><a href="/for-practices.html" class="lang-es lang-hidden" >Para consultorios →</a></p>
         <div style="margin-top:16px">
           <p style="font-size:10px;color:#8a6050;margin-bottom:8px" class="lang-en">Scan to visit on mobile</p>
