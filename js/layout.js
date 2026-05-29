@@ -1,11 +1,6 @@
 /* Florida Mobile Health — Layout JS (nav, footer, interactions) */
 
 const NAV_HTML = `
-<div id="promo-bar" style="background:linear-gradient(90deg,#6b2518,#4a1a10);color:white;text-align:center;padding:8px 16px;font-size:13px;position:relative">
-  <span class="lang-en">🎁 <strong>New Patient Intro Pricing</strong> — Limited time savings on all services · <a href="/promotions.html" style="color:#c9a84c;font-weight:700;text-decoration:underline">See the full price chart →</a></span>
-  <span class="lang-es lang-hidden">🎁 <strong>Precios Introductorios para Nuevos Pacientes</strong> — Ahorros por tiempo limitado · <a href="/promotions.html" style="color:#c9a84c;font-weight:700;text-decoration:underline">Ver la tabla de precios →</a></span>
-  <button onclick="document.getElementById('promo-bar').style.display='none'" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,0.6);cursor:pointer;font-size:18px;line-height:1">×</button>
-</div>
 <nav class="nav" id="main-nav">
   <div class="nav-inner">
     <a href="/index.html" class="nav-logo">
