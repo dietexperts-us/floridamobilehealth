@@ -107,9 +107,141 @@ body{font-family:'DM Sans',sans-serif;background:#f5f0e8;color:var(--text);font-
 .flag-alert p{font-size:12px;color:var(--risk);line-height:1.5;}
 @media(max-width:640px){.field-row,.field-row.three,.rb-grid,.sig-row{grid-template-columns:1fr;}.check-grid,.check-grid.three{grid-template-columns:1fr;}}
 @media print{.page-header,.print-bar,.warning-banner{display:none!important;}.form-section{break-inside:avoid;border:1px solid #ccc;}body{background:white;}.form-hero{background:black!important;color:white!important;-webkit-print-color-adjust:exact;}}
+
+/* ACCESS GATE */
+#access-gate{position:fixed;inset:0;background:#1a0a05;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;}
+.gate-box{background:white;border-radius:16px;padding:40px 36px;max-width:440px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.5);}
+.gate-logo{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--terra);margin-bottom:6px;}
+.gate-title{font-family:'Playfair Display',serif;font-size:24px;color:var(--text);margin-bottom:10px;}
+.gate-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:24px;}
+.gate-input{width:100%;border:2px solid var(--border);border-radius:8px;padding:12px 16px;font-size:20px;text-align:center;letter-spacing:6px;font-weight:700;color:var(--text);font-family:'DM Sans',sans-serif;margin-bottom:12px;transition:border .2s;}
+.gate-input:focus{outline:none;border-color:var(--terra);}
+.gate-input.shake{animation:shake .4s ease;}
+@keyframes shake{0%,100%{transform:translateX(0);}20%{transform:translateX(-8px);}40%{transform:translateX(8px);}60%{transform:translateX(-6px);}80%{transform:translateX(6px);}}
+.gate-btn{width:100%;background:var(--terra);color:white;border:none;border-radius:8px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;margin-bottom:10px;}
+.gate-btn:hover{background:var(--terra-dark);}
+.gate-err{font-size:12px;color:var(--red);min-height:18px;margin-bottom:4px;}
+.gate-help{font-size:11px;color:var(--light);line-height:1.6;}
+/* WATERMARK */
+#form-watermark{pointer-events:none;position:fixed;bottom:70px;right:20px;font-size:11px;color:rgba(107,37,24,.12);font-weight:700;text-transform:uppercase;letter-spacing:2px;z-index:50;transform:rotate(-30deg);transform-origin:bottom right;white-space:nowrap;}
+/* ANTI-COPY */
+.container{user-select:none;-webkit-user-select:none;}
 </style>
 </head>
 <body>
+
+<!-- ACCESS GATE - shown until valid code entered -->
+<div id="access-gate">
+  <div class="gate-box">
+    <div class="gate-logo">Florida Mobile Health</div>
+    <h2 class="gate-title">Patient Access Required</h2>
+    <p class="gate-desc">This clinical intake form is only accessible to scheduled patients.<br>Enter the <strong>5-digit access code</strong> included in your appointment confirmation.</p>
+    <input class="gate-input" id="gate-input" type="password" maxlength="5" placeholder="&bull;&bull;&bull;&bull;&bull;" autocomplete="off" inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+    <div class="gate-err" id="gate-err"></div>
+    <button class="gate-btn" onclick="checkCode()">Access My Form</button>
+    <p class="gate-help">Don't have a code? <a href="/book.html" style="color:var(--terra);font-weight:600;">Schedule your appointment</a> first. Your access code will be sent in your confirmation email/text.</p>
+  </div>
+</div>
+<div id="form-watermark">Florida Mobile Health &mdash; Confidential Patient Document</div>
+
+<script>
+// ── DOMAIN LOCK ──
+(function(){
+  const allowed = 'floridamobilehealth.com';
+  const host = window.location.hostname;
+  if(host && !host.includes(allowed) && host !== 'localhost'){
+    document.body.innerHTML = '<div style="font-family:sans-serif;padding:60px;text-align:center;"><h2>Access Denied</h2><p>This form is only accessible from floridamobilehealth.com</p></div>';
+    throw new Error('Domain not authorized');
+  }
+})();
+
+// ── ACCESS CODE GATE ──
+// Codes rotate weekly. Format: WEEKNUM:CODE
+// Michele: update these or add new lines whenever you want to change the code
+// Send the current week's code to patients in their booking confirmation
+const CODES = [
+  '47291','83650','29417','61038','54782',
+  '38904','72615','90327','15864','43709',
+  '86152','27439','64081','39527','81364',
+  '53890','17462','96035','42718','85301',
+  '63947','28104','74560','19283','50746',
+  '37821','92064','48315','75902','21583',
+  '60734','85219','43076','17895','92641',
+  '58302','34167','79423','25810','61394',
+  '47058','83712','29645','16380','54927',
+  '80613','37294','92751','48069','25837',
+  '63512','10784','57293','84160','39725'
+];
+// Current active codes = this week + last week (grace period)
+function getWeekCode(){
+  const d = new Date();
+  const start = new Date(d.getFullYear(),0,1);
+  const week = Math.floor((d - start) / 604800000) % CODES.length;
+  return [CODES[week], CODES[(week - 1 + CODES.length) % CODES.length]];
+}
+
+// Also allow a permanent clinic override code Michele can use for testing
+const CLINIC_CODE = '00000'; // change this anytime in the repo
+
+function checkCode(){
+  const val = document.getElementById('gate-input').value.trim();
+  const valid = getWeekCode().concat([CLINIC_CODE]);
+  if(valid.includes(val)){
+    document.getElementById('access-gate').style.display = 'none';
+    document.getElementById('gate-err').textContent = '';
+    // Add patient watermark once unlocked
+    document.getElementById('form-watermark').style.color = 'rgba(107,37,24,.07)';
+    sessionStorage.setItem('fmh_gate', '1');
+  } else {
+    const input = document.getElementById('gate-input');
+    input.classList.add('shake');
+    setTimeout(()=>input.classList.remove('shake'), 400);
+    document.getElementById('gate-err').textContent = 'Incorrect code. Please check your confirmation message.';
+    input.value = '';
+    input.focus();
+  }
+}
+
+// Allow Enter key
+document.addEventListener('DOMContentLoaded', function(){
+  const inp = document.getElementById('gate-input');
+  if(inp){
+    inp.addEventListener('keydown', function(e){ if(e.key==='Enter') checkCode(); });
+    inp.focus();
+  }
+  // Restore if already unlocked this session
+  if(sessionStorage.getItem('fmh_gate')==='1'){
+    document.getElementById('access-gate').style.display='none';
+  }
+});
+
+// ── ANTI-THEFT PROTECTIONS ──
+// Disable right-click on form content
+document.addEventListener('contextmenu', function(e){
+  if(e.target.closest('.container')){
+    e.preventDefault();
+    return false;
+  }
+});
+// Disable Ctrl+S, Ctrl+A, Ctrl+C on the form
+document.addEventListener('keydown', function(e){
+  if(e.target.closest('.container')){
+    if((e.ctrlKey||e.metaKey) && ['s','a','c','u'].includes(e.key.toLowerCase())){
+      e.preventDefault();
+      return false;
+    }
+  }
+});
+// Disable view-source shortcut
+document.addEventListener('keydown', function(e){
+  if((e.ctrlKey||e.metaKey) && e.shiftKey && e.key.toLowerCase()==='i') e.preventDefault();
+  if((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='u') e.preventDefault();
+});
+// Detect iframe embedding and break out
+if(window.self !== window.top){
+  try{ window.top.location = window.location.href; }catch(e){}
+}
+</script>
 <div class="page-header">
   <a href="/services.html" class="back-link">&#8592; Back to services</a>
   <div class="header-practice"><strong>Florida Mobile Health</strong>Michele Li Causi, FNP-BC, RD, CDCES</div>
