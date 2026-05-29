@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intro Pricing Chart | Florida Mobile Health</title>
+<meta name="description" content="Compare regular vs intro prices for all services. New patient limited-time savings.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="/js/layout.js?v=3" defer></script>
+<style>
+:root{--terra:#6b2518;--terra-dark:#4a1a10;--terra-100:#f9ede3;--olive:#3a5420;--olive-light:#e8f0e0;--cream:#faf5ee;--text:#1a0a05;--muted:#6b5040;--light:#9c7a68;--border:#e8ddd0;--gold:#c9a84c;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);}
+.hero{background:var(--terra);color:white;text-align:center;padding:48px 24px 40px;}
+.badge{display:inline-block;background:var(--gold);color:var(--terra-dark);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:14px;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,40px);line-height:1.2;margin-bottom:10px;}
+.hero p{font-size:15px;opacity:.85;max-width:480px;margin:0 auto;}
+.lang-bar{background:#f5f0e8;border-bottom:1px solid var(--border);padding:10px;display:flex;justify-content:center;gap:10px;}
+.lb{padding:6px 20px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;border:1.5px solid var(--border);background:white;color:var(--muted);}
+.lb.on{background:var(--terra);color:white;border-color:var(--terra);}
+.wrap{padding:40px 20px;max-width:860px;margin:0 auto;}
+.slabel{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--terra);display:block;text-align:center;margin-bottom:6px;}
+.stitle{font-family:'Playfair Display',serif;font-size:26px;text-align:center;margin-bottom:6px;}
+.ssub{text-align:center;color:var(--muted);font-size:13px;margin-bottom:28px;}
+table{width:100%;border-collapse:separate;border-spacing:0;border-radius:14px;overflow:hidden;box-shadow:0 2px 20px rgba(107,37,24,.08);margin-bottom:32px;}
+thead tr{background:var(--terra);color:white;}
+th{padding:13px 18px;font-size:12px;font-weight:700;text-align:left;}
+th.reg{text-align:right;background:rgba(0,0,0,.15);}
+th.promo{text-align:right;background:var(--gold);color:var(--terra-dark);}
+tbody tr{background:white;}
+tbody tr:nth-child(even){background:#fdf8f4;}
+tbody tr.grp{background:var(--terra-100);}
+tbody tr.grp td{padding:9px 18px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--terra);border-top:2px solid var(--border);}
+td{padding:13px 18px;font-size:13px;border-bottom:1px solid var(--border);}
+td small{display:block;color:var(--light);font-size:11px;font-weight:400;margin-top:2px;}
+td.reg{text-align:right;color:var(--light);text-decoration:line-through;font-size:12px;}
+td.promo{text-align:right;color:var(--terra);font-weight:700;font-size:15px;}
+.pill{display:inline-block;background:var(--olive-light);color:var(--olive);font-size:10px;font-weight:700;padding:1px 6px;border-radius:100px;margin-left:5px;vertical-align:middle;}
+tbody tr:last-child td{border-bottom:none;}
+tr.bookrow td{background:var(--terra-100);padding:14px;text-align:center;}
+.bk{display:inline-block;background:var(--terra);color:white;padding:9px 22px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;}
+.note{font-size:11px;color:var(--light);line-height:1.7;text-align:center;padding:0 24px 32px;max-width:700px;margin:0 auto;}
+.cta{background:var(--terra);color:white;padding:36px 24px;text-align:center;}
+.cta h2{font-family:'Playfair Display',serif;font-size:24px;margin-bottom:8px;}
+.cta p{font-size:14px;opacity:.85;max-width:440px;margin:0 auto 18px;}
+.ca{display:inline-block;background:white;color:var(--terra);font-size:13px;font-weight:700;padding:11px 24px;border-radius:8px;text-decoration:none;margin:3px;}
+.co{display:inline-block;background:transparent;border:1.5px solid white;color:white;font-size:13px;font-weight:600;padding:11px 24px;border-radius:8px;text-decoration:none;margin:3px;}
+.en{display:block;}.es{display:none;}
+.ein{display:inline;}.eis{display:none;}
+body.S .en{display:none;}body.S .es{display:block;}
+body.S .ein{display:none;}body.S .eis{display:inline;}
+</style>
+</head>
+<body>
+<div class="lang-bar">
+  <button class="lb on ein" onclick="L('en')">&#127482;&#127480; English</button>
+  <button class="lb eis" onclick="L('en')">&#127482;&#127480; English</button>
+  <button class="lb ein" onclick="L('es')">&#127466;&#127480; Espa&#241;ol</button>
+  <button class="lb on eis" onclick="L('es')">&#127466;&#127480; Espa&#241;ol</button>
+</div>
+<div class="hero">
+  <div class="badge en">Limited Time &#8212; New Patient Intro Pricing</div>
+  <div class="badge es">Tiempo Limitado &#8212; Precios Introductorios</div>
+  <h1 class="en">Regular Price vs. Intro Price</h1>
+  <h1 class="es">Precio Regular vs. Precio Introductorio</h1>
+  <p class="en">New patients only &#183; Save on every service &#183; No insurance required</p>
+  <p class="es">Solo nuevos pacientes &#183; Ahorre en cada servicio &#183; Sin seguro necesario</p>
+</div>
+<div class="wrap">
+  <span class="slabel en">Visits &amp; Consultations</span>
+  <span class="slabel es">Visitas y Consultas</span>
+  <h2 class="stitle en">Visit Pricing</h2>
+  <h2 class="stitle es">Precios de Visitas</h2>
+  <p class="ssub en">Intro price applies to your first visit. Regular pricing resumes after.</p>
+  <p class="ssub es">Precio introductorio para su primera visita. El precio regular se reanuda despu&#233;s.</p>
+  <table>
+    <thead><tr>
+      <th class="en">Service</th><th class="es">Servicio</th>
+      <th class="reg en">Regular Price</th><th class="reg es">Precio Regular</th>
+      <th class="promo en">&#127873; Intro Price</th><th class="promo es">&#127873; Precio Intro</th>
+    </tr></thead>
+    <tbody>
+      <tr class="grp"><td colspan="3" class="en">PRIMARY CARE</td><td colspan="3" class="es">ATENCI&#211;N PRIMARIA</td></tr>
+      <tr><td class="en"><strong>New Patient Visit</strong> (60 min)<small>Full intake &#183; labs &#183; care plan &#183; nutrition (RD included)</small></td>
+          <td class="es"><strong>Consulta Nuevo Paciente</strong> (60 min)<small>Evaluaci&#243;n &#183; laboratorios &#183; plan &#183; nutrici&#243;n (RD incluida)</small></td>
+          <td class="reg">$200</td><td class="promo">$149 <span class="pill en">Save $51</span><span class="pill es">Ahorra $51</span></td></tr>
+      <tr><td class="en"><strong>Follow-Up Visit</strong> (30 min)<small>Ongoing primary care management</small></td>
+          <td class="es"><strong>Visita de Seguimiento</strong> (30 min)<small>Manejo de atenci&#243;n primaria continua</small></td>
+          <td class="reg">$120</td><td class="promo">$89 <span class="pill en">Save $31</span><span class="pill es">Ahorra $31</span></td></tr>
+      <tr><td class="en"><strong>Brief Visit</strong> (15 min)<small>Quick follow-up or single concern</small></td>
+          <td class="es"><strong>Visita Breve</strong> (15 min)<small>Seguimiento r&#225;pido o un solo tema</small></td>
+          <td class="reg">$75</td><td class="promo">$59 <span class="pill en">Save $16</span><span class="pill es">Ahorra $16</span></td></tr>
+      <tr class="grp"><td colspan="3" class="en">SPECIALTY CONSULTATIONS</td><td colspan="3" class="es">CONSULTAS ESPECIALIZADAS</td></tr>
+      <tr><td class="en"><strong>GLP-1 Consultation</strong> (45 min)<small>Ozempic &#183; Mounjaro &#183; Wegovy &#183; Zepbound &#183; Muscle preservation protocol (RD)</small></td>
+          <td class="es"><strong>Consulta GLP-1</strong> (45 min)<small>Ozempic &#183; Mounjaro &#183; Wegovy &#183; Zepbound &#183; Protocolo de preservaci&#243;n muscular (RD)</small></td>
+          <td class="reg">$299</td><td class="promo">$199 <span class="pill en">Save $100</span><span class="pill es">Ahorra $100</span></td></tr>
+      <tr><td class="en"><strong>Hormone Consultation</strong> (45 min)<small>Thyroid &#183; Hormones &#183; Menopause &#183; PCOS &#8212; full panel ordered</small></td>
+          <td class="es"><strong>Consulta Hormonal</strong> (45 min)<small>Tiroides &#183; Hormonas &#183; Menopausia &#183; SOP &#8212; panel completo ordenado</small></td>
+          <td class="reg">$200</td><td class="promo">$149 <span class="pill en">Save $51</span><span class="pill es">Ahorra $51</span></td></tr>
+      <tr><td class="en"><strong>Diabetes / A1c Consultation</strong> (45 min)<small>CDCES &#8212; CGM setup &#183; A1c reduction &#183; insulin management</small></td>
+          <td class="es"><strong>Consulta Diabetes / A1c</strong> (45 min)<small>CDCES &#8212; CGM &#183; reducci&#243;n de A1c &#183; manejo de insulina</small></td>
+          <td class="reg">$200</td><td class="promo">$149 <span class="pill en">Save $51</span><span class="pill es">Ahorra $51</span></td></tr>
+      <tr><td class="en"><strong>Nutrition Counseling</strong> (45 min)<small>Registered Dietitian &#8212; medical nutrition therapy</small></td>
+          <td class="es"><strong>Consejer&#237;a Nutricional</strong> (45 min)<small>Dietista Registrada &#8212; terapia nutricional m&#233;dica</small></td>
+          <td class="reg">$150</td><td class="promo">$99 <span class="pill en">Save $51</span><span class="pill es">Ahorra $51</span></td></tr>
+      <tr class="grp"><td colspan="3" class="en">90-DAY METABOLIC PROGRAM</td><td colspan="3" class="es">PROGRAMA METAB&#211;LICO 90 D&#205;AS</td></tr>
+      <tr><td class="en"><strong>Metabolic Reset &#8212; Starter</strong><small>3 visits &#183; CGM setup &#183; nutrition plan &#183; lab review</small></td>
+          <td class="es"><strong>Reinicio Metab&#243;lico &#8212; B&#225;sico</strong><small>3 visitas &#183; CGM &#183; plan nutricional &#183; revisi&#243;n de laboratorios</small></td>
+          <td class="reg">$549</td><td class="promo">$399 <span class="pill en">Save $150</span><span class="pill es">Ahorra $150</span></td></tr>
+      <tr><td class="en"><strong>Metabolic Reset &#8212; Complete</strong><small>Unlimited visits &#183; CGM &#183; GLP-1 management &#183; full RD + CDCES access</small></td>
+          <td class="es"><strong>Reinicio Metab&#243;lico &#8212; Completo</strong><small>Visitas ilimitadas &#183; CGM &#183; GLP-1 &#183; acceso completo RD + CDCES</small></td>
+          <td class="reg">$1,299</td><td class="promo">$999 <span class="pill en">Save $300</span><span class="pill es">Ahorra $300</span></td></tr>
+      <tr class="bookrow"><td colspan="3"><a href="/book.html" class="bk en">Book a Visit at Intro Pricing &#8594;</a><a href="/book.html" class="bk es">Agendar con Precio Introductorio &#8594;</a></td></tr>
+    </tbody>
+  </table>
+</div>
+<div style="background:white;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:40px 20px;">
+  <div style="max-width:860px;margin:0 auto;">
+    <span class="slabel en">Monthly Membership</span>
+    <span class="slabel es">Membres&#237;a Mensual</span>
+    <h2 class="stitle en">Membership Pricing</h2>
+    <h2 class="stitle es">Precios de Membres&#237;a</h2>
+    <p class="ssub en">Intro rate for your first 3 months. Cancel anytime. HSA/FSA eligible.</p>
+    <p class="ssub es">Precio introductorio los primeros 3 meses. Cancele cuando quiera. Elegible para HSA/FSA.</p>
+    <table>
+      <thead><tr>
+        <th class="en">Plan</th><th class="es">Plan</th>
+        <th class="reg en">Regular / mo</th><th class="reg es">Regular / mes</th>
+        <th class="promo en">&#127873; Intro (first 3 mo)</th><th class="promo es">&#127873; Intro (primeros 3 mes)</th>
+      </tr></thead>
+      <tbody>
+        <tr><td class="en"><strong>Essential</strong><small>1 visit/mo &#183; messaging &#183; Rx refills &#183; lab review</small></td>
+            <td class="es"><strong>Esencial</strong><small>1 visita/mes &#183; mensajer&#237;a &#183; recetas &#183; laboratorios</small></td>
+            <td class="reg">$149/mo</td><td class="promo">$99/mo <span class="pill en">Save $150 total</span><span class="pill es">Ahorra $150</span></td></tr>
+        <tr><td class="en"><strong>Standard &#11088;</strong><small>2 visits/mo &#183; priority messaging &#183; RD check-ins &#183; CGM interpretation &#183; labs included</small></td>
+            <td class="es"><strong>Est&#225;ndar &#11088;</strong><small>2 visitas/mes &#183; mensajer&#237;a prioritaria &#183; RD &#183; CGM &#183; laboratorios incluidos</small></td>
+            <td class="reg">$249/mo</td><td class="promo">$179/mo <span class="pill en">Save $210 total</span><span class="pill es">Ahorra $210</span></td></tr>
+        <tr><td class="en"><strong>Premium</strong><small>Unlimited visits &#183; same-week scheduling &#183; CGM program &#183; family members included</small></td>
+            <td class="es"><strong>Premium</strong><small>Visitas ilimitadas &#183; misma semana &#183; programa CGM &#183; familiares incluidos</small></td>
+            <td class="reg">$399/mo</td><td class="promo">$299/mo <span class="pill en">Save $300 total</span><span class="pill es">Ahorra $300</span></td></tr>
+        <tr class="bookrow"><td colspan="3"><a href="/membership.html" class="bk en">See Membership Details &#8594;</a><a href="/membership.html" class="bk es">Ver Detalles de Membres&#237;a &#8594;</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<p class="note en">Intro pricing applies to new patients only. Regular pricing resumes automatically after the first visit or after the intro membership period ends. HSA/FSA accepted &#8212; superbill provided. No insurance required. Available virtually in FL, AZ, NV, CO, NM, UT.</p>
+<p class="note es">Los precios introductorios aplican solo para nuevos pacientes. Los precios regulares se reanudan autom&#225;ticamente despu&#233;s de la primera visita o del per&#237;odo introductorio de membres&#237;a. Se acepta HSA/FSA. Sin seguro necesario. Disponible virtualmente en FL, AZ, NV, CO, NM, UT.</p>
+<div class="cta">
+  <h2 class="en">Ready to Book?</h2>
+  <h2 class="es">&#191;Listo para Reservar?</h2>
+  <p class="en">Intro pricing &#183; New patients only &#183; FL, AZ, NV, CO, NM, UT</p>
+  <p class="es">Precio introductorio &#183; Solo nuevos pacientes &#183; FL, AZ, NV, CO, NM, UT</p>
+  <a href="/book.html" class="ca en">Book Intro Visit</a>
+  <a href="/book.html" class="ca es">Agendar Visita Introductoria</a>
+  <a href="tel:3523998874" class="co en">Call 352-399-8874</a>
+  <a href="tel:3523998874" class="co es">Llamar 352-399-8874</a>
+</div>
+<script>
+function L(l){
+  document.body.className = l==='es'?'S':'';
+  document.querySelectorAll('.lb').forEach(b=>b.classList.remove('on'));
+  if(l==='es'){document.querySelectorAll('.eis').forEach(b=>{if(b.tagName==='BUTTON')b.classList.add('on');});}
+  else{document.querySelectorAll('.ein').forEach(b=>{if(b.tagName==='BUTTON')b.classList.add('on');});}
+}
+</script>
+</body>
+</html>
