@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Precios Introductorios | Florida Mobile Health</title>
+<meta name="description" content="Precios introductorios para nuevos pacientes. FNP + RD + CDCES atención virtual en FL, AZ, NV, CO, NM, UT. Desde $149.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="/js/layout.js?v=2" defer></script>
+<style>
+:root{--terra:#6b2518;--terra-dark:#4a1a10;--terra-100:#f9ede3;--olive:#3a5420;--olive-light:#e8f0e0;--cream:#faf5ee;--text:#1a0a05;--text-muted:#6b5040;--text-light:#9c7a68;--border:#e8ddd0;--gold:#c9a84c;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);}
+.lang-switch{background:var(--terra-dark);text-align:center;padding:10px;font-size:13px;}
+.lang-switch a{color:var(--gold);text-decoration:none;font-weight:600;}
+.hero{background:var(--terra);color:white;text-align:center;padding:64px 24px 56px;}
+.badge{display:inline-block;background:var(--gold);color:var(--terra-dark);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:20px;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,48px);line-height:1.2;margin-bottom:16px;max-width:680px;margin-left:auto;margin-right:auto;}
+.hero p{font-size:17px;opacity:.85;max-width:540px;margin:0 auto 28px;line-height:1.6;}
+.hero-creds{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:32px;}
+.hero-cred{font-size:13px;opacity:.9;}
+.hero-cred::before{content:'✓ ';color:var(--gold);font-weight:700;}
+.btn-hero{display:inline-block;background:white;color:var(--terra);font-size:15px;font-weight:700;padding:14px 32px;border-radius:8px;text-decoration:none;}
+.expiry{margin-top:14px;font-size:12px;opacity:.7;}
+.diff{background:white;padding:48px 24px;text-align:center;border-bottom:1px solid var(--border);}
+.diff h2{font-family:'Playfair Display',serif;font-size:28px;color:var(--terra);margin-bottom:8px;}
+.diff p{color:var(--text-muted);font-size:15px;max-width:560px;margin:0 auto 32px;line-height:1.6;}
+.creds-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:800px;margin:0 auto;}
+.cred-card{background:var(--cream);border-radius:12px;padding:24px;text-align:left;border:1px solid var(--border);}
+.cred-card h3{font-size:15px;font-weight:700;color:var(--terra);margin-bottom:6px;}
+.cred-card p{font-size:13px;color:var(--text-muted);line-height:1.5;}
+.pricing{padding:56px 24px;max-width:1000px;margin:0 auto;}
+.section-label{text-align:center;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--terra);margin-bottom:10px;display:block;}
+.section-title{font-family:'Playfair Display',serif;font-size:32px;text-align:center;margin-bottom:8px;}
+.section-sub{text-align:center;color:var(--text-muted);font-size:15px;margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-bottom:28px;}
+.card{background:white;border-radius:16px;padding:28px;border:1px solid var(--border);position:relative;}
+.card.featured{border-color:var(--terra);border-width:2px;}
+.featured-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--terra);color:white;font-size:11px;font-weight:700;padding:4px 14px;border-radius:100px;white-space:nowrap;}
+.card h3{font-size:17px;font-weight:700;margin-bottom:4px;}
+.duration{font-size:13px;color:var(--text-muted);margin-bottom:14px;}
+.price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:4px;}
+.price-new{font-size:36px;font-weight:700;color:var(--terra);}
+.price-old{font-size:15px;color:var(--text-light);text-decoration:line-through;}
+.price-save{font-size:12px;background:var(--olive-light);color:var(--olive);padding:2px 8px;border-radius:4px;font-weight:600;}
+.price-note{font-size:12px;color:var(--text-muted);margin-bottom:14px;}
+.features{list-style:none;margin-bottom:20px;}
+.features li{font-size:13px;color:var(--text-muted);padding:5px 0;display:flex;gap:8px;}
+.features li::before{content:'✓';color:var(--olive);font-weight:700;}
+.btn-book{display:block;background:var(--terra);color:white;text-align:center;padding:12px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;}
+.program-card{background:white;border-radius:16px;padding:32px;border:2px solid var(--terra);display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:20px;margin-bottom:28px;}
+.program-card h3{font-size:20px;font-weight:700;margin:10px 0 8px;}
+.program-card p{font-size:14px;color:var(--text-muted);line-height:1.6;max-width:500px;}
+.program-price{text-align:right;min-width:150px;}
+.program-price .was{font-size:13px;color:var(--text-muted);text-decoration:line-through;}
+.program-price .now{font-size:40px;font-weight:700;color:var(--terra);}
+.program-price .save{font-size:12px;background:var(--olive-light);color:var(--olive);padding:3px 10px;border-radius:4px;display:inline-block;margin-bottom:12px;}
+.mem-section{background:var(--terra);color:white;padding:56px 24px;text-align:center;}
+.mem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;max-width:880px;margin:0 auto 32px;}
+.mem-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:24px;text-align:left;}
+.mem-card.popular{border-color:var(--gold);}
+.mem-card h3{font-size:16px;font-weight:700;margin-bottom:10px;}
+.mem-price .new{font-size:30px;font-weight:700;color:var(--gold);}
+.mem-price .old{font-size:14px;opacity:.6;text-decoration:line-through;margin-left:6px;}
+.mem-price .per{font-size:13px;opacity:.7;}
+.mem-note{font-size:12px;opacity:.65;margin-bottom:12px;}
+.mem-feats{list-style:none;}
+.mem-feats li{font-size:12px;opacity:.8;padding:4px 0;display:flex;gap:6px;}
+.mem-feats li::before{content:'→';color:var(--gold);}
+.why{padding:56px 24px;max-width:900px;margin:0 auto;}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;}
+.why-card{display:flex;gap:14px;}
+.why-icon{width:40px;height:40px;border-radius:10px;background:var(--terra-100);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;}
+.why-card h3{font-size:14px;font-weight:700;margin-bottom:4px;}
+.why-card p{font-size:13px;color:var(--text-muted);line-height:1.5;}
+.cta{background:white;border-top:1px solid var(--border);padding:56px 24px;text-align:center;}
+.cta h2{font-family:'Playfair Display',serif;font-size:28px;color:var(--terra);margin-bottom:12px;}
+.cta p{color:var(--text-muted);font-size:15px;max-width:500px;margin:0 auto 28px;}
+.cta-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+.btn-primary{background:var(--terra);color:white;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;}
+.btn-secondary{background:transparent;border:1.5px solid var(--terra);color:var(--terra);padding:14px 28px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;}
+.states{font-size:13px;color:var(--text-light);margin-top:16px;}
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  🇺🇸 Prefer English? <a href="/intro-pricing">View this page in English →</a>
+</div>
+
+<div class="hero">
+  <div class="badge">Tiempo Limitado — Precios Introductorios</div>
+  <h1>Atención Total de Una Sola Proveedora.<br>A Precios Introductorios.</h1>
+  <p>Atención primaria, nutrición y salud metabólica — en una sola visita virtual. Precios especiales para nuevos pacientes, por tiempo limitado.</p>
+  <div class="hero-creds">
+    <span class="hero-cred">Enfermera Practicante Certificada (FNP-BC)</span>
+    <span class="hero-cred">Dietista Registrada (RD)</span>
+    <span class="hero-cred">Educadora Certificada en Diabetes (CDCES)</span>
+  </div>
+  <a href="/book.html" class="btn-hero">Agendar Visita Introductoria →</a>
+  <p class="expiry">Solo para nuevos pacientes · HSA/FSA aceptado · Sin seguro necesario</p>
+</div>
+
+<div class="diff">
+  <h2>Una Cita Hace el Trabajo de Tres</h2>
+  <p>La mayoría de los pacientes necesitan ver a tres especialistas por separado. Con Michele, esos tres especialistas son la misma persona.</p>
+  <div class="creds-grid">
+    <div class="cred-card"><div class="icon">🩺</div><h3>Enfermera Practicante (FNP-BC)</h3><p>Diagnostica, prescribe, ordena laboratorios y maneja condiciones crónicas.</p></div>
+    <div class="cred-card"><div class="icon">🥗</div><h3>Dietista Registrada (RD)</h3><p>Terapia nutricional médica incluida en cada visita — sin referido adicional.</p></div>
+    <div class="cred-card"><div class="icon">📊</div><h3>Educadora en Diabetes (CDCES)</h3><p>Especialista certificada en diabetes y GLP-1. CGM, reducción de A1c.</p></div>
+  </div>
+</div>
+<div class="pricing">
+  <span class="section-label">Precios Introductorios — Nuevos Pacientes</span>
+  <h2 class="section-title">Elija su Primera Visita</h2>
+  <p class="section-sub">Precios introductorios solo para nuevos pacientes.</p>
+  <div class="grid">
+    <div class="card featured">
+      <div class="featured-badge">Más Reservada</div>
+      <h3>Consulta Paciente Nuevo</h3>
+      <p class="duration">60 min · Evaluación completa + plan de atención</p>
+      <div class="price-row"><span class="price-new">$149</span><span class="price-old">$200</span><span class="price-save">Ahorra $51</span></div>
+      <p class="price-note">Precio introductorio · Solo nuevos pacientes</p>
+      <ul class="features">
+        <li>Revisión completa del historial médico</li>
+        <li>Revisión de laboratorios + órdenes si necesario</li>
+        <li>Plan de atención personalizado</li>
+        <li>Evaluación nutricional (RD incluida)</li>
+        <li>Manejo de recetas médicas</li>
+      </ul>
+      <a href="/book.html" class="btn-book">Agendar Consulta</a>
+    </div>
+    <div class="card">
+      <h3>Consulta GLP-1</h3>
+      <p class="duration">45 min · Ozempic · Mounjaro · Wegovy · Zepbound</p>
+      <div class="price-row"><span class="price-new">$199</span><span class="price-old">$299</span><span class="price-save">Ahorra $100</span></div>
+      <p class="price-note">Precio introductorio · Nuevos pacientes GLP-1</p>
+      <ul class="features">
+        <li>Evaluación de elegibilidad + receta si apropiada</li>
+        <li>Programa de titulación personalizado</li>
+        <li>Protocolo de preservación muscular (RD)</li>
+        <li>Plan de manejo de efectos secundarios</li>
+        <li>Órdenes de laboratorio</li>
+      </ul>
+      <a href="/book.html" class="btn-book">Agendar Consulta GLP-1</a>
+    </div>
+    <div class="card">
+      <h3>Consulta Hormonal</h3>
+      <p class="duration">45 min · Tiroides · Hormonas · Menopausia · SOP</p>
+      <div class="price-row"><span class="price-new">$149</span><span class="price-old">$200</span><span class="price-save">Ahorra $51</span></div>
+      <p class="price-note">Precio introductorio · Nuevos pacientes</p>
+      <ul class="features">
+        <li>Panel hormonal completo ordenado</li>
+        <li>Tiroides: TSH, T3 libre, T4 libre, anticuerpos</li>
+        <li>Estrógeno, progesterona, insulina en ayunas</li>
+        <li>Evaluación de TRH si es apropiada</li>
+        <li>Plan nutricional de apoyo (RD)</li>
+      </ul>
+      <a href="/book.html" class="btn-book">Agendar Consulta Hormonal</a>
+    </div>
+  </div>
+  <div class="program-card">
+    <div>
+      <div class="badge" style="background:var(--olive-light);color:var(--olive);">Programa de 90 Días</div>
+      <h3>Programa de Reinicio Metabólico 90 Días</h3>
+      <p>Transformación metabólica guiada por CGM. Para diabetes, prediabetes, resistencia a la insulina, síndrome metabólico, hígado graso (NAFLD/NASH) y manejo de GLP-1.</p>
+    </div>
+    <div class="program-price">
+      <div class="was">Desde $549</div>
+      <div class="now">$399</div>
+      <div class="save">Ahorra $150</div>
+      <a href="/metabolic.html" class="btn-book">Ver Programa →</a>
+    </div>
+  </div>
+</div>
+
+<div class="mem-section">
+  <span class="section-label" style="color:var(--gold);">Membresía Mensual</span>
+  <h2 style="color:white;font-family:'Playfair Display',serif;font-size:32px;text-align:center;margin-bottom:8px;">Atención Continua que Vale la Pena</h2>
+  <p style="color:rgba(255,255,255,.75);text-align:center;font-size:15px;margin-bottom:36px;max-width:500px;margin-left:auto;margin-right:auto;">Precio introductorio por los primeros 3 meses. Cancele cuando quiera. Elegible para HSA/FSA.</p>
+  <div class="mem-grid">
+    <div class="mem-card"><h3>Esencial</h3><div class="mem-price"><span class="new">$99</span><span class="old">$149</span><span class="per">/mes</span></div><p class="mem-note">Primeros 3 meses · luego $149/mes</p><ul class="mem-feats"><li>1 visita/mes (30 min)</li><li>Mensajería segura</li><li>Recetas médicas</li><li>Revisión de laboratorios</li></ul></div>
+    <div class="mem-card popular"><h3>Estándar ⭐</h3><div class="mem-price"><span class="new">$179</span><span class="old">$249</span><span class="per">/mes</span></div><p class="mem-note">Primeros 3 meses · luego $249/mes</p><ul class="mem-feats"><li>2 visitas/mes (45 min)</li><li>Mensajería prioritaria</li><li>Seguimiento nutricional (RD)</li><li>Interpretación CGM</li></ul></div>
+    <div class="mem-card"><h3>Premium</h3><div class="mem-price"><span class="new">$299</span><span class="old">$399</span><span class="per">/mes</span></div><p class="mem-note">Primeros 3 meses · luego $399/mes</p><ul class="mem-feats"><li>Visitas ilimitadas</li><li>Programa CGM incluido</li><li>Familiares incluidos</li></ul></div>
+  </div>
+  <a href="/membership.html" style="display:inline-block;background:white;color:var(--terra);font-size:15px;font-weight:700;padding:14px 32px;border-radius:8px;text-decoration:none;">Ver Todas las Opciones →</a>
+</div>
+
+<div class="why">
+  <span class="section-label">Por Qué Florida Mobile Health</span>
+  <h2 class="section-title" style="text-align:center;margin-bottom:32px;">Lo que Nos Hace Diferentes</h2>
+  <div class="why-grid">
+    <div class="why-card"><div class="why-icon">🎓</div><div><h3>Tres Certificaciones</h3><p>FNP-BC + RD + CDCES. Ningún otro proveedor virtual cubre las tres en una sola visita.</p></div></div>
+    <div class="why-card"><div class="why-icon">🇪🇸</div><div><h3>Atención Verdaderamente Bilingüe</h3><p>Michele habla español con fluidez. Atención clínica completa en su idioma.</p></div></div>
+    <div class="why-card"><div class="why-icon">💊</div><div><h3>Recetas + Nutrición + Diabetes</h3><p>GLP-1, hormonas, atención primaria — todo con la misma proveedora.</p></div></div>
+    <div class="why-card"><div class="why-icon">📍</div><div><h3>Seis Estados, Sin Sala de Espera</h3><p>FL · AZ · NV · CO · NM · UT. 100% virtual. Citas en días, no meses.</p></div></div>
+    <div class="why-card"><div class="why-icon">🧪</div><div><h3>Laboratorios y Datos CGM Reales</h3><p>Ordenamos sus laboratorios, interpretamos su CGM y tomamos decisiones basadas en sus números.</p></div></div>
+    <div class="why-card"><div class="why-icon">💳</div><div><h3>HSA/FSA Aceptado</h3><p>Sin seguro requerido. Use su cuenta HSA o FSA. Superbill disponible.</p></div></div>
+  </div>
+</div>
+
+<div class="cta">
+  <h2>¿Listo para Comenzar?</h2>
+  <p>Reserve su visita introductoria hoy. Precios para nuevos pacientes por tiempo limitado.</p>
+  <div class="cta-btns">
+    <a href="/book.html" class="btn-primary">Agendar Visita — $149</a>
+    <a href="tel:3523998874" class="btn-secondary">Llamar 352-399-8874</a>
+  </div>
+  <p class="states">Florida · Arizona · Nevada · Colorado · Nuevo México · Utah</p>
+</div>
+
+</body>
+</html>
