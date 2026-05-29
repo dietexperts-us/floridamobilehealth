@@ -169,4 +169,37 @@
     <changefreq>yearly</changefreq>
   </url>
 
+
+  <!-- STATE LANDING PAGES -->
+  <url>
+    <loc>https://www.floridamobilehealth.com/arizona</loc>
+    <lastmod>2026-05-29</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.floridamobilehealth.com/colorado</loc>
+    <lastmod>2026-05-29</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.floridamobilehealth.com/nevada</loc>
+    <lastmod>2026-05-29</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.floridamobilehealth.com/new-mexico</loc>
+    <lastmod>2026-05-29</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.floridamobilehealth.com/utah</loc>
+    <lastmod>2026-05-29</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
 </urlset>
