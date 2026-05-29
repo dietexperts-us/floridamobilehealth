@@ -159,33 +159,20 @@ body{font-family:'DM Sans',sans-serif;background:#f5f0e8;color:var(--text);font-
 // Codes rotate weekly. Format: WEEKNUM:CODE
 // Michele: update these or add new lines whenever you want to change the code
 // Send the current week's code to patients in their booking confirmation
-const CODES = [
-  '47291','83650','29417','61038','54782',
-  '38904','72615','90327','15864','43709',
-  '86152','27439','64081','39527','81364',
-  '53890','17462','96035','42718','85301',
-  '63947','28104','74560','19283','50746',
-  '37821','92064','48315','75902','21583',
-  '60734','85219','43076','17895','92641',
-  '58302','34167','79423','25810','61394',
-  '47058','83712','29645','16380','54927',
-  '80613','37294','92751','48069','25837',
-  '63512','10784','57293','84160','39725'
-];
-// Current active codes = this week + last week (grace period)
-function getWeekCode(){
-  const d = new Date();
-  const start = new Date(d.getFullYear(),0,1);
-  const week = Math.floor((d - start) / 604800000) % CODES.length;
-  return [CODES[week], CODES[(week - 1 + CODES.length) % CODES.length]];
-}
+// ── EASY CODE MANAGEMENT ──────────────────────────────────────
+// PATIENT_CODE: the code you send to patients in their booking confirmation
+// Change it to anything you like — 5 digits, a word, anything
+// Just edit this one line and save the file in GitHub
+const PATIENT_CODE = 'BHRT1';
 
-// Also allow a permanent clinic override code Michele can use for testing
-const CLINIC_CODE = '00000'; // change this anytime in the repo
+// PROVIDER_CODE: your personal access code to view the form yourself
+// Keep this private — don't send to patients
+const PROVIDER_CODE = 'FMH99';
+// ───────────────────────────────────────────────────────────────
 
 function checkCode(){
-  const val = document.getElementById('gate-input').value.trim();
-  const valid = getWeekCode().concat([CLINIC_CODE]);
+  const val = document.getElementById('gate-input').value.trim().toUpperCase();
+  const valid = [PATIENT_CODE.toUpperCase(), PROVIDER_CODE.toUpperCase()];
   if(valid.includes(val)){
     document.getElementById('access-gate').style.display = 'none';
     document.getElementById('gate-err').textContent = '';
