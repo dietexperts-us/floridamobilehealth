@@ -135,8 +135,8 @@ body{font-family:'DM Sans',sans-serif;background:#f5f0e8;color:var(--text);font-
   <div class="gate-box">
     <div class="gate-logo">Florida Mobile Health</div>
     <h2 class="gate-title">Patient Access Required</h2>
-    <p class="gate-desc">This clinical intake form is only accessible to scheduled patients.<br>Enter the <strong>5-digit access code</strong> included in your appointment confirmation.</p>
-    <input class="gate-input" id="gate-input" type="password" maxlength="5" placeholder="&bull;&bull;&bull;&bull;&bull;" autocomplete="off" inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+    <p class="gate-desc">This clinical intake form is only accessible to scheduled patients.<br>Enter the <strong>access code</strong> included in your appointment confirmation.</p>
+    <input class="gate-input" id="gate-input" type="password" maxlength="5" placeholder="&bull;&bull;&bull;&bull;&bull;" autocomplete="off" spellcheck="false">
     <div class="gate-err" id="gate-err"></div>
     <button class="gate-btn" onclick="checkCode()">Access My Form</button>
     <p class="gate-help">Don't have a code? <a href="/book.html" style="color:var(--terra);font-weight:600;">Schedule your appointment</a> first. Your access code will be sent in your confirmation email/text.</p>
