@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Metabolic Reset Program | Florida Mobile Health — 90-Day CGM + Clinical Coaching</title>
+<meta name="description" content="Florida's premier virtual metabolic health program. CGM-guided coaching, GLP-1 management, fatty liver (NAFLD/NASH), and registered dietitian support — all in one 90-day program. Bilingual care in FL, AZ, NV, CO, NM, UT.">
+<meta name="keywords" content="metabolic health program Florida, CGM coaching virtual, GLP-1 management telehealth, diabetes coaching online, metabolic reset program, bilingual diabetes care, prediabetes program virtual">
+<link rel="canonical" href="https://www.floridamobilehealth.com/metabolic.html">
+<!-- Open Graph for social sharing -->
+<meta property="og:title" content="90-Day Metabolic Reset Program | Florida Mobile Health">
+<meta property="og:description" content="CGM-guided metabolic coaching with an FNP-BC, RD & CDCES. Reduce your A1c, reverse prediabetes, manage GLP-1s — virtually, bilingually.">
+<meta property="og:url" content="https://www.floridamobilehealth.com/metabolic.html">
+<meta property="og:type" content="website">
+<!-- Schema markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "Metabolic Reset Program",
+  "description": "90-day virtual metabolic health coaching program with CGM, clinical management, and bilingual registered dietitian support.",
+  "url": "https://www.floridamobilehealth.com/metabolic.html",
+  "provider": {
+    "@type": "MedicalClinic",
+    "name": "Florida Mobile Health",
+    "telephone": "352-399-8874",
+    "url": "https://www.floridamobilehealth.com"
+  }
+}
+</script>
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+/* ── METABOLIC PAGE EXTRAS ── */
+.phase-track { display:flex; flex-direction:column; gap:0; position:relative; }
+.phase-track::before { content:''; position:absolute; left:27px; top:28px; bottom:28px; width:2px; background:linear-gradient(to bottom,var(--terra-500),var(--olive-500)); }
+.phase-item { display:grid; grid-template-columns:56px 1fr; gap:20px; align-items:flex-start; padding-bottom:32px; position:relative; }
+.phase-item:last-child { padding-bottom:0; }
+.phase-num { width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:600; font-family:Georgia,serif; flex-shrink:0; position:relative; z-index:1; }
+.phase-num.p1 { background:var(--terra-500); color:#fff; }
+.phase-num.p2 { background:var(--amber); color:#fff; }
+.phase-num.p3 { background:var(--olive-500); color:#fff; }
+.phase-num.p4 { background:var(--terra-700); color:#fff; }
+.phase-content { padding-top:10px; }
+.phase-content h3 { font-size:16px; font-weight:600; font-family:sans-serif; color:var(--text); margin-bottom:4px; }
+.phase-content .week { font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--text-light); margin-bottom:8px; display:block; }
+.phase-content p { font-size:13px; color:var(--text-muted); line-height:1.7; }
+.stat-pill { display:inline-flex; flex-direction:column; align-items:center; background:var(--terra-50); border:.5px solid var(--terra-100); border-radius:var(--radius-lg); padding:18px 24px; min-width:140px; }
+.stat-pill .num { font-size:32px; font-family:Georgia,serif; color:var(--terra-500); line-height:1; margin-bottom:4px; }
+.stat-pill .lbl { font-size:11px; color:var(--text-muted); text-align:center; line-height:1.4; }
+.tier-card { background:#fff; border:.5px solid var(--border); border-radius:var(--radius-lg); padding:28px 24px; display:flex; flex-direction:column; }
+.tier-card.featured { border:2px solid var(--terra-500); position:relative; }
+.tier-badge { position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--terra-500); color:#fff; font-size:11px; padding:4px 14px; border-radius:20px; white-space:nowrap; }
+.tier-card .price { font-size:36px; font-family:Georgia,serif; color:var(--terra-500); margin:12px 0 2px; }
+.tier-card .per { font-size:12px; color:var(--text-light); margin-bottom:16px; }
+.tier-card ul { flex:1; margin-bottom:20px; }
+.tier-card ul li { font-size:13px; color:var(--text-muted); line-height:1.9; display:flex; gap:8px; align-items:flex-start; }
+.tier-card ul li .chk { color:var(--olive-500); flex-shrink:0; margin-top:3px; font-size:13px; }
+.tier-card ul li .x { color:#c44; flex-shrink:0; margin-top:3px; font-size:13px; }
+.tier-card h3 { font-size:20px; font-weight:400; color:var(--text); font-family:Georgia,serif; }
+.cgm-box { background:var(--terra-50); border:.5px solid var(--terra-100); border-radius:var(--radius-lg); padding:20px; }
+.cgm-box h4 { font-size:14px; font-weight:600; font-family:sans-serif; color:var(--terra-700); margin-bottom:8px; }
+.credential-highlight { background:var(--terra-800); border-radius:var(--radius-lg); padding:28px; color:#fff; }
+.credential-highlight h3 { font-size:18px; color:#fff; margin-bottom:4px; }
+.credential-highlight p { color:#c4a090; font-size:13px; line-height:1.7; }
+.cred-badge { background:rgba(255,255,255,.12); border:.5px solid rgba(255,255,255,.2); padding:6px 14px; border-radius:20px; font-size:12px; color:#f0cfc4; display:inline-block; margin:3px 2px; }
+.faq-item { border-bottom:.5px solid var(--border); padding:18px 0; }
+.faq-item:last-child { border-bottom:none; }
+.faq-q { font-size:15px; font-weight:500; font-family:sans-serif; color:var(--text); margin-bottom:8px; cursor:pointer; display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }
+.faq-a { font-size:13px; color:var(--text-muted); line-height:1.75; }
+.who-card { background:#faf8f4; border:.5px solid var(--border); border-radius:var(--radius); padding:16px; display:flex; gap:12px; align-items:flex-start; }
+.who-icon { width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:16px; }
+.compare-row { display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:16px; }
+.compare-cell { padding:12px 16px; font-size:13px; }
+.compare-cell.head { background:var(--terra-800); color:#fff; font-size:11px; text-transform:uppercase; letter-spacing:.07em; padding:10px 16px; font-family:sans-serif; }
+.compare-cell.them { background:#faf8f4; color:var(--text-muted); }
+.compare-cell.us { background:var(--terra-50); color:var(--terra-700); font-weight:500; }
+.compare-cell .icon { margin-right:6px; }
+@media (max-width:768px) {
+  .tier-cards-grid { grid-template-columns:1fr !important; }
+  .stats-row { flex-wrap:wrap; justify-content:center; }
+  .who-grid { grid-template-columns:1fr !important; }
+  .phase-track::before { left:23px; }
+  .phase-num { width:48px; height:48px; font-size:16px; }
+  .phase-item { grid-template-columns:48px 1fr; }
+  .compare-row { grid-template-columns:1fr; }
+  .compare-cell.head:last-child { display:none; }
+}
+</style>
+</head>
+<body data-title-en="Metabolic Reset Program | Florida Mobile Health" data-title-es="Programa de Reinicio Metabólico | Florida Mobile Health">
+<script src="/js/layout.js?v=2"></script>
+<script src="/js/lang.js"></script>
+
+<!-- ══ HERO ══ -->
+<div style="background:var(--terra-800);padding:60px 24px 48px;text-align:center">
+<div class="container">
+  <div class="lang-en">
+    <p style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#c4856a;margin-bottom:12px">New Program · Virtual · Bilingual</p>
+    <h1 style="color:#fff;font-size:clamp(28px,4.5vw,46px);margin-bottom:14px;max-width:680px;margin-left:auto;margin-right:auto;line-height:1.18">The 90-Day Metabolic Reset Program</h1>
+    <p style="color:#c4a090;font-size:16px;max-width:540px;margin:0 auto 10px;line-height:1.75">Real glucose data. Clinical oversight. Personalized nutrition.<br>Everything you need to transform your metabolic health — virtually.</p>
+    <p style="color:#8a6050;font-size:13px;margin-bottom:28px;font-family:Georgia,serif;font-style:italic">Guided by an FNP-BC · Registered Dietitian · Diabetes Specialist</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="book.html" class="btn btn-light" style="font-size:15px;padding:13px 28px">Book a free 15-min consult</a>
+      <a href="#tiers" class="btn" style="background:rgba(255,255,255,.12);color:#fff;border:.5px solid rgba(255,255,255,.3);font-size:15px;padding:13px 28px">See program tiers →</a>
+    </div>
+    <p style="color:#6a4030;font-size:12px;margin-top:14px">HSA/FSA accepted · Superbill provided · No insurance required</p>
+  </div>
+  <div class="lang-es lang-hidden">
+    <p style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#c4856a;margin-bottom:12px">Nuevo Programa · Virtual · Bilingüe</p>
+    <h1 style="color:#fff;font-size:clamp(28px,4.5vw,46px);margin-bottom:14px;max-width:680px;margin-left:auto;margin-right:auto;line-height:1.18">El Programa de Reinicio Metabólico de 90 Días</h1>
+    <p style="color:#c4a090;font-size:16px;max-width:540px;margin:0 auto 10px;line-height:1.75">Datos de glucosa en tiempo real. Supervisión clínica. Nutrición personalizada.<br>Todo lo que necesita para transformar su salud metabólica — virtualmente.</p>
+    <p style="color:#8a6050;font-size:13px;margin-bottom:28px;font-family:Georgia,serif;font-style:italic">Guiado por una FNP-BC · Dietista Registrada · Especialista en Diabetes</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="book.html" class="btn btn-light" style="font-size:15px;padding:13px 28px">Reserve una consulta gratis de 15 min</a>
+      <a href="#tiers" class="btn" style="background:rgba(255,255,255,.12);color:#fff;border:.5px solid rgba(255,255,255,.3);font-size:15px;padding:13px 28px">Ver niveles del programa →</a>
+    </div>
+    <p style="color:#6a4030;font-size:12px;margin-top:14px">HSA/FSA aceptado · Superbill proporcionado · Sin seguro requerido</p>
+  </div>
+</div>
+</div>
+
+<!-- ══ PROOF STATS ══ -->
+<div style="background:var(--terra-500);padding:28px 24px">
+<div class="container">
+  <div class="stats-row" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <div class="stat-pill" style="background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.2)">
+      <span class="num" style="color:#fff">71%</span>
+      <span class="lbl" style="color:#f0cfc4">of patients reduced or eliminated diabetes medications with CGM + coaching*</span>
+    </div>
+    <div class="stat-pill" style="background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.2)">
+      <span class="num" style="color:#fff">9.5%</span>
+      <span class="lbl" style="color:#f0cfc4">average body weight lost in CGM + RD programs at 24 weeks*</span>
+    </div>
+    <div class="stat-pill" style="background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.2)">
+      <span class="num" style="color:#fff">0.62%</span>
+      <span class="lbl" style="color:#f0cfc4">average A1c reduction with CGM-guided clinical coaching in T2D*</span>
+    </div>
+    <div class="stat-pill" style="background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.2)">
+      <span class="num" style="color:#fff">50%</span>
+      <span class="lbl" style="color:#f0cfc4">T2D remission rate in structured intensive programs at 1 year*</span>
+    </div>
+  </div>
+  <p style="text-align:center;font-size:10px;color:rgba(255,255,255,.35);margin-top:14px">*Published clinical research. Individual results vary. Not a guarantee of specific outcomes.</p>
+</div>
+</div>
+
+<!-- ══ WHO THIS IS FOR ══ -->
+<section class="section section-alt">
+<div class="container">
+  <div class="text-center" style="margin-bottom:32px">
+    <div class="lang-en"><p class="section-label">Who this program is for</p><h2 class="section-title">Built for real people with real metabolic challenges</h2></div>
+    <div class="lang-es lang-hidden"><p class="section-label">Para quién es este programa</p><h2 class="section-title">Diseñado para personas reales con desafíos metabólicos reales</h2></div>
+  </div>
+  <div class="who-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px">
+
+    <div class="who-card">
+      <div class="who-icon" style="background:var(--terra-50)"><i class="ti ti-droplet" style="color:var(--terra-500)"></i></div>
+      <div>
+        <div class="lang-en"><h4 style="font-size:14px;font-weight:600;font-family:sans-serif;color:var(--text);margin-bottom:3px">Type 2 Diabetes</h4><p style="font-size:13px;color:var(--text-muted);line-height:1.6">Want to lower your A1c, reduce medications, or understand how food affects your blood sugar in real time.</p></div>
+        <div class="lang-es lang-hidden"><h4 style="font-size:14px;font-weight:600;font-family:sans-serif;color:var(--text);margin-bottom:3px">Diabetes Tipo 2</h4><p style="font-size:13px;color:var(--text-muted);line-height:1.6">Desea bajar su A1c, reducir medicamentos, o entender cómo los alimentos afectan su azúcar en tiempo real.</p></div>
+      </div>
+    </div>
+
+    <div class="who-card">
+      <div class="who-icon" style="background:#faeeda"><i class="ti ti-activity" style="color:var(--amber)"></i></div>
+      <div>
+        <div class="lang-en"><h4 style="font-size:14px;font-weight:600;font-family:sans-serif;color:var(--text);margin-bottom:3px">Prediabetes</h4><p style="font-size:13px;color:var(--text-muted);line-height:1.6">Your labs are trending the wrong way. You want to reverse course before it becomes diabetes.</p></div>
+        <div class="lang-es lang-hidden"><h4 style="font-size:14px;font-weight:600;font-family:sans-serif;color:var(--text);margin-bottom:3px">Prediabetes</h4><p style="font-size:13px;color:var(--text-muted);line-height:1.6">Sus análisis van en la dirección equivocada. Quiere revertirlo antes de que se convierta en diabetes.</p></div>
+      </div>
+    </div>
+
+    <div class="who-card">
+      <div class="who-icon" style="background:var(--olive-50)"><i class="ti ti-scale" style="color:var(--olive-500)"></i></div>
+      <div>
+        <div class="lang-en"><h4 style="font-size:14px;font-weight:600;font-family:sans-serif;color:var(--text);margin-bottom:3px">GLP-1 Users</h4><p style="font-size:13px;color:var(--text-muted);line-height:1.6">Taking Ozempic, Mounjaro, or Wegovy without clinical oversight. You need a provider managing your dosing, nutrition, and side effects.</p></div>
+        <div class="lang-es lang-hidden"><h4 style="font-size:14px;font-weight:600;font-family:sans-serif;color:var(--text);margin-bottom:3px">Usuarios de GLP-1</h4><p style="font-size:13px;color:var(--text-muted);line-height:1.6">Tomando Ozempic, Mounjaro o Wegovy sin supervisión clínica. Necesita un proveedor que maneje su dosis, nutrición y efectos secundarios.</p></div>
+      </div>
+    </div>
+
+    <div class="who-card">
+      <div class="who-icon" style="background:var(--terra-50)"><i class="ti ti-heart-rate-monitor" style="color:var(--terra-500)"></i></div>
+      <div>
+        <div class="lang-en"><h4 style="font-size:14px;font-weight:600;font-family:sans-serif;color:var(--text);margin-bottom:3px">Metabolic Syndrome &amp; Fatty Liver (NAFLD/NASH)</h4><p style="font-size:13px;color:var(--text-muted);line-height:1.6">High blood pressure, belly fat, high triglycerides, low HDL, or a fatty liver diagnosis. Research now confirms hypothyroidism is an independent risk factor for NAFLD — meaning your thyroid may be driving your liver fat. Michele screens for both.</p></div>
+        <div class="lang-es lang-hidden"><h4 style="font-size:14px;font-weight:600;font-family:sans-serif;color:var(--text);margin-bottom:3px">Síndrome Metabólico e Hígado Graso (NAFLD/NASH)</h4><p style="font-size:13px;color:var(--text-muted);line-height:1.6">Presión alta, grasa abdominal, triglicéridos altos, HDL bajo o hígado graso. La investigación confirma que el hipotiroidismo es un factor de riesgo independiente para el NAFLD — su tiroides puede estar causando el hígado graso. Michele evalúa ambos.</p></div>
+      </div>
+    </div>
+
+    <div class="who-card">
+      <div class="who-icon" style="background:#faeeda"><i class="ti ti-woman" style="color:var(--amber)"></i></div>
+      <div>
+        <div class="lang-en"><h4 style="font-size:14px;font-weight:600;font-family:sans-serif;color:var(--text);margin-bottom:3px">Hormonal Weight Gain</h4><p style="font-size:13px;color:var(--text-muted);line-height:1.6">Struggling with weight despite doing everything "right." Insulin resistance or menopause may be the metabolic root cause.</p></div>
+        <div class="lang-es lang-hidden"><h4 style="font-size:14px;font-weight:600;font-family:sans-serif;color:var(--text);margin-bottom:3px">Aumento de Peso Hormonal</h4><p style="font-size:13px;color:var(--text-muted);line-height:1.6">Luchando con el peso a pesar de hacer todo bien. La resistencia a la insulina o la menopausia puede ser la causa.</p></div>
+      </div>
+    </div>
+
+    <div class="who-card">
+      <div class="who-icon" style="background:var(--olive-50)"><i class="ti ti-bolt" style="color:var(--olive-500)"></i></div>
+      <div>
+        <div class="lang-en"><h4 style="font-size:14px;font-weight:600;font-family:sans-serif;color:var(--text);margin-bottom:3px">Optimization-Minded</h4><p style="font-size:13px;color:var(--text-muted);line-height:1.6">Your labs are "normal" but you feel off. You want performance-level data to optimize energy, focus, and longevity.</p></div>
+        <div class="lang-es lang-hidden"><h4 style="font-size:14px;font-weight:600;font-family:sans-serif;color:var(--text);margin-bottom:3px">Enfocado en Optimización</h4><p style="font-size:13px;color:var(--text-muted);line-height:1.6">Sus análisis son "normales" pero no se siente bien. Quiere datos para optimizar energía, enfoque y longevidad.</p></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ══ WHY TRIPLE CREDENTIALS MATTER ══ -->
+<div style="background:var(--terra-800);padding:48px 24px">
+<div class="container">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center">
+    <div class="lang-en">
+      <p style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#c4856a;margin-bottom:10px">Why this is different</p>
+      <h2 style="color:#fff;font-size:clamp(20px,3vw,30px);margin-bottom:14px;line-height:1.3">Most programs give you data. This one gives you a clinician who can act on it.</h2>
+      <p style="color:#c4a090;font-size:14px;line-height:1.75;margin-bottom:16px">Apps like Levels and Nutrisense give you a CGM and a nutrition coach. That's a start. But if your A1c is 7.2% and your dosing needs to change, they can't touch it. Michele can — because she's all three.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
+        <span class="cred-badge">FNP-BC — Can prescribe, diagnose & manage</span>
+        <span class="cred-badge">RD — Nutrition counseling included (not extra)</span>
+        <span class="cred-badge">CDCES — Board-certified diabetes specialist</span>
+        <span class="cred-badge">Bilingual — English + Spanish</span>
+        <span class="cred-badge">6-state licensed</span>
+      </div>
+      <p style="color:#8a6050;font-size:12px;font-style:italic;font-family:Georgia,serif">Other programs need 3 separate specialists to do what Michele does in one visit.</p>
+    </div>
+    <div class="lang-es lang-hidden">
+      <p style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#c4856a;margin-bottom:10px">Por qué esto es diferente</p>
+      <h2 style="color:#fff;font-size:clamp(20px,3vw,30px);margin-bottom:14px;line-height:1.3">La mayoría de programas le dan datos. Éste le da una clínica que puede actuar sobre ellos.</h2>
+      <p style="color:#c4a090;font-size:14px;line-height:1.75;margin-bottom:16px">Apps como Levels y Nutrisense le dan un CGM y un nutricionista. Pero si su A1c es 7.2% y su dosis necesita cambiar, ellos no pueden actuar. Michele sí puede — porque es las tres especialistas en una.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
+        <span class="cred-badge">FNP-BC — Puede prescribir, diagnosticar y manejar</span>
+        <span class="cred-badge">RD — Nutrición incluida (no extra)</span>
+        <span class="cred-badge">CDCES — Especialista certificada en diabetes</span>
+        <span class="cred-badge">Bilingüe — Inglés + Español</span>
+        <span class="cred-badge">Licenciada en 6 estados</span>
+      </div>
+      <p style="color:#8a6050;font-size:12px;font-style:italic;font-family:Georgia,serif">Otros programas necesitan 3 especialistas separados para lo que Michele hace en una visita.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;border-radius:var(--radius-lg);overflow:hidden">
+      <div class="compare-cell head lang-en">Others</div>
+      <div class="compare-cell head lang-en" style="background:var(--terra-500)">This Program</div>
+      <div class="compare-cell head lang-es lang-hidden">Otros</div>
+      <div class="compare-cell head lang-es lang-hidden" style="background:var(--terra-500)">Este Programa</div>
+      <div class="compare-cell them"><span class="icon">❌</span><span class="lang-en">CGM data, no prescription access</span><span class="lang-es lang-hidden">Datos CGM, sin recetas</span></div>
+      <div class="compare-cell us"><span class="icon">✅</span><span class="lang-en">CGM + medication management</span><span class="lang-es lang-hidden">CGM + manejo de medicamentos</span></div>
+      <div class="compare-cell them"><span class="icon">❌</span><span class="icon">Nutrition coach only</span><span class="lang-en">Nutrition coach only</span><span class="lang-es lang-hidden">Solo nutricionista</span></div>
+      <div class="compare-cell us"><span class="icon">✅</span><span class="lang-en">Board-certified RD included</span><span class="lang-es lang-hidden">RD certificada incluida</span></div>
+      <div class="compare-cell them"><span class="icon">❌</span><span class="lang-en">English only</span><span class="lang-es lang-hidden">Solo inglés</span></div>
+      <div class="compare-cell us"><span class="icon">✅</span><span class="lang-en">Bilingual — Se habla español</span><span class="lang-es lang-hidden">Bilingüe — Se habla español</span></div>
+      <div class="compare-cell them"><span class="icon">❌</span><span class="lang-en">No GLP-1 prescribing</span><span class="lang-es lang-hidden">Sin prescripción de GLP-1</span></div>
+      <div class="compare-cell us"><span class="icon">✅</span><span class="lang-en">GLP-1 managed in-program</span><span class="lang-es lang-hidden">GLP-1 manejado dentro del programa</span></div>
+      <div class="compare-cell them"><span class="icon">❌</span><span class="lang-en">$150–200+/month just for sensors</span><span class="lang-es lang-hidden">$150–200+/mes solo por sensores</span></div>
+      <div class="compare-cell us"><span class="icon">✅</span><span class="lang-en">Transparent flat-rate pricing</span><span class="lang-es lang-hidden">Precio plano transparente</span></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══ PROGRAM TIERS ══ -->
+<section class="section" id="tiers">
+<div class="container">
+  <div class="text-center" style="margin-bottom:36px">
+    <div class="lang-en"><p class="section-label">Program tiers</p><h2 class="section-title">Choose the level that matches your goals</h2><p class="section-sub" style="margin:0 auto">All tiers are 90 days. All are 100% virtual. All include Michele's triple-credential oversight.</p></div>
+    <div class="lang-es lang-hidden"><p class="section-label">Niveles del programa</p><h2 class="section-title">Elija el nivel que corresponde a sus metas</h2><p class="section-sub" style="margin:0 auto">Todos los niveles son de 90 días. Todos son 100% virtuales. Todos incluyen la supervisión triple de Michele.</p></div>
+  </div>
+
+  <div class="tier-cards-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start">
+
+    <!-- TIER 1: FOUNDATIONS -->
+    <div class="tier-card">
+      <div class="lang-en">
+        <p style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-light)">Tier 1</p>
+        <h3>Foundations</h3>
+        <p style="font-size:13px;color:var(--text-muted);margin-top:4px;line-height:1.6">For those starting their metabolic health journey. Clinical assessment + personalized nutrition plan.</p>
+      </div>
+      <div class="lang-es lang-hidden">
+        <p style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-light)">Nivel 1</p>
+        <h3>Fundamentos</h3>
+        <p style="font-size:13px;color:var(--text-muted);margin-top:4px;line-height:1.6">Para quienes comienzan su viaje hacia la salud metabólica. Evaluación clínica + plan de nutrición personalizado.</p>
+      </div>
+      <div class="price">$549</div>
+      <p class="per"><span class="lang-en">/ 90-day program · 3 virtual visits included</span><span class="lang-es lang-hidden">/ programa de 90 días · 3 visitas virtuales incluidas</span></p>
+      <ul>
+        <li><span class="chk">✓</span><span class="lang-en">Initial 60-min metabolic assessment</span><span class="lang-es lang-hidden">Evaluación metabólica inicial de 60 min</span></li>
+        <li><span class="chk">✓</span><span class="lang-en">Personalized nutrition plan (RD-designed)</span><span class="lang-es lang-hidden">Plan de nutrición personalizado (diseñado por RD)</span></li>
+        <li><span class="chk">✓</span><span class="lang-en">2 follow-up visits (30 min each)</span><span class="lang-es lang-hidden">2 visitas de seguimiento (30 min cada una)</span></li>
+        <li><span class="chk">✓</span><span class="lang-en">Lab review (A1c, lipids, fasting glucose)</span><span class="lang-es lang-hidden">Revisión de laboratorios (A1c, lípidos, glucosa)</span></li>
+        <li><span class="chk">✓</span><span class="lang-en">Movement + sleep optimization guide</span><span class="lang-es lang-hidden">Guía de movimiento y optimización del sueño</span></li>
+        <li><span class="chk">✓</span><span class="lang-en">30-day async messaging access</span><span class="lang-es lang-hidden">Acceso a mensajería asíncrona 30 días</span></li>
+        <li><span class="chk">✓</span><span class="lang-en">Superbill for insurance reimbursement</span><span class="lang-es lang-hidden">Superbill para reembolso de seguro</span></li>
+        <li><span class="x">✗</span><span class="lang-en" style="color:var(--text-light)">CGM not included</span><span class="lang-es lang-hidden" style="color:var(--text-light)">CGM no incluido</span></li>
+        <li><span class="x">✗</span><span class="lang-en" style="color:var(--text-light)">GLP-1 management not included</span><span class="lang-es lang-hidden" style="color:var(--text-light)">Manejo de GLP-1 no incluido</span></li>
+      </ul>
+      <a href="book.html" class="btn btn-outline btn-full"><span class="lang-en">Start with Foundations</span><span class="lang-es lang-hidden">Comenzar con Fundamentos</span></a>
+    </div>
+
+    <!-- TIER 2: METABOLIC RESET (FEATURED) -->
+    <div class="tier-card featured">
+      <span class="tier-badge lang-en">Most Popular</span>
+      <span class="tier-badge lang-es lang-hidden">Más Popular</span>
+      <div class="lang-en">
+        <p style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--terra-500)">Tier 2</p>
+        <h3 style="color:var(--terra-500)">Metabolic Reset</h3>
+        <p style="font-size:13px;color:var(--text-muted);margin-top:4px;line-height:1.6">The full program. CGM-guided coaching + clinical management + RD nutrition. This is where the transformation happens.</p>
+      </div>
+      <div class="lang-es lang-hidden">
+        <p style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--terra-500)">Nivel 2</p>
+        <h3 style="color:var(--terra-500)">Reinicio Metabólico</h3>
+        <p style="font-size:13px;color:var(--text-muted);margin-top:4px;line-height:1.6">El programa completo. Coaching guiado por CGM + manejo clínico + nutrición RD. Aquí ocurre la transformación.</p>
+      </div>
+      <div class="price">$899</div>
+      <p class="per"><span class="lang-en">/ 90-day program · 5 virtual visits included</span><span class="lang-es lang-hidden">/ programa de 90 días · 5 visitas virtuales incluidas</span></p>
+      <ul>
+        <li><span class="chk">✓</span><span class="lang-en"><strong>Everything in Foundations</strong></span><span class="lang-es lang-hidden"><strong>Todo en Fundamentos</strong></span></li>
+        <li><span class="chk">✓</span><span class="lang-en"><strong>CGM setup + 2 sensors (28 days of data)</strong></span><span class="lang-es lang-hidden"><strong>Configuración CGM + 2 sensores (28 días de datos)</strong></span></li>
+        <li><span class="chk">✓</span><span class="lang-en">CGM data interpretation session (30 min)</span><span class="lang-es lang-hidden">Sesión de interpretación de datos CGM (30 min)</span></li>
+        <li><span class="chk">✓</span><span class="lang-en">Personalized food response report</span><span class="lang-es lang-hidden">Informe personalizado de respuesta a alimentos</span></li>
+        <li><span class="chk">✓</span><span class="lang-en">Glucose spike prevention protocol</span><span class="lang-es lang-hidden">Protocolo de prevención de picos de glucosa</span></li>
+        <li><span class="chk">✓</span><span class="lang-en">5 total clinical visits</span><span class="lang-es lang-hidden">5 visitas clínicas totales</span></li>
+        <li><span class="chk">✓</span><span class="lang-en">90-day async messaging access</span><span class="lang-es lang-hidden">Acceso a mensajería asíncrona 90 días</span></li>
+        <li><span class="chk">✓</span><span class="lang-en">Mid-program lab reassessment</span><span class="lang-es lang-hidden">Reevaluación de laboratorio a mitad del programa</span></li>
+        <li><span class="chk">✓</span><span class="lang-en">Progress report + 90-day maintenance plan</span><span class="lang-es lang-hidden">Informe de progreso + plan de mantenimiento</span></li>
+        <li><span class="x">✗</span><span class="lang-en" style="color:var(--text-light)">GLP-1 management not included</span><span class="lang-es lang-hidden" style="color:var(--text-light)">Manejo de GLP-1 no incluido</span></li>
+      </ul>
+      <a href="book.html" class="btn btn-primary btn-full" style="font-size:15px;padding:13px"><span class="lang-en">Start Metabolic Reset</span><span class="lang-es lang-hidden">Comenzar Reinicio Metabólico</span></a>
+      <p style="font-size:11px;color:var(--text-light);text-align:center;margin-top:8px"><span class="lang-en">Free 15-min consult available before committing</span><span class="lang-es lang-hidden">Consulta gratuita de 15 min disponible antes de comprometerse</span></p>
+    </div>
+
+    <!-- TIER 3: TRANSFORM (GLP-1) -->
+    <div class="tier-card">
+      <div class="lang-en">
+        <p style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--olive-500)">Tier 3</p>
+        <h3 style="color:var(--olive-800)">Complete Transform</h3>
+        <p style="font-size:13px;color:var(--text-muted);margin-top:4px;line-height:1.6">For patients managing diabetes or GLP-1 medications who need full clinical + nutrition + CGM oversight in one place.</p>
+      </div>
+      <div class="lang-es lang-hidden">
+        <p style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--olive-500)">Nivel 3</p>
+        <h3 style="color:var(--olive-800)">Transformación Completa</h3>
+        <p style="font-size:13px;color:var(--text-muted);margin-top:4px;line-height:1.6">Para pacientes con diabetes o GLP-1 que necesitan supervisión clínica, nutricional y CGM completa en un solo lugar.</p>
+      </div>
+      <div class="price" style="color:var(--olive-500)">$1,299</div>
+      <p class="per"><span class="lang-en">/ 90-day program · 7 virtual visits included</span><span class="lang-es lang-hidden">/ programa de 90 días · 7 visitas virtuales incluidas</span></p>
+      <ul>
+        <li><span class="chk">✓</span><span class="lang-en"><strong>Everything in Metabolic Reset</strong></span><span class="lang-es lang-hidden"><strong>Todo en Reinicio Metabólico</strong></span></li>
+        <li><span class="chk">✓</span><span class="lang-en"><strong>GLP-1 medication management + titration</strong></span><span class="lang-es lang-hidden"><strong>Manejo de GLP-1 + titulación</strong></span></li>
+        <li><span class="chk">✓</span><span class="lang-en">Side effect management + dosing adjustments</span><span class="lang-es lang-hidden">Manejo de efectos secundarios + ajustes de dosis</span></li>
+        <li><span class="chk">✓</span><span class="lang-en">Advanced labs (HOMA-IR, hsCRP, insulin)</span><span class="lang-es lang-hidden">Laboratorios avanzados (HOMA-IR, hsCRP, insulina)</span></li>
+        <li><span class="chk">✓</span><span class="lang-en">Cardiovascular risk panel review</span><span class="lang-es lang-hidden">Revisión de panel de riesgo cardiovascular</span></li>
+        <li><span class="chk">✓</span><span class="lang-en">7 total clinical visits</span><span class="lang-es lang-hidden">7 visitas clínicas totales</span></li>
+        <li><span class="chk">✓</span><span class="lang-en">Priority messaging (response within 4 hrs)</span><span class="lang-es lang-hidden">Mensajería prioritaria (respuesta en 4 horas)</span></li>
+        <li><span class="chk">✓</span><span class="lang-en">Muscle preservation nutrition protocol</span><span class="lang-es lang-hidden">Protocolo nutricional de preservación muscular</span></li>
+        <li><span class="chk">✓</span><span class="lang-en">End-of-program comprehensive biomarker report</span><span class="lang-es lang-hidden">Informe completo de biomarcadores al final</span></li>
+        <li><span class="chk">✓</span><span class="lang-en">Post-program maintenance plan (3 months)</span><span class="lang-es lang-hidden">Plan de mantenimiento post-programa (3 meses)</span></li>
+      </ul>
+      <a href="book.html" class="btn btn-olive btn-full" style="font-size:15px;padding:13px"><span class="lang-en">Start Complete Transform</span><span class="lang-es lang-hidden">Comenzar Transformación Completa</span></a>
+      <p style="font-size:11px;color:var(--text-light);text-align:center;margin-top:8px"><span class="lang-en">GLP-1 medication cost not included · prescriptions sent to your preferred pharmacy</span><span class="lang-es lang-hidden">Costo de GLP-1 no incluido · recetas enviadas a su farmacia preferida</span></p>
+    </div>
+
+  </div>
+
+  <!-- Add-on note -->
+  <div class="info-box info-terra" style="margin-top:24px;text-align:center">
+    <div class="lang-en"><strong>CGM devices not included in program price.</strong> Michele will provide a prescription for your CGM sensor. Stelo (OTC, no prescription) runs ~$49/month. LibreLink or Dexcom requires prescription and may be covered by insurance if you have diabetes. Michele will help you get the right one for your situation.</div>
+    <div class="lang-es lang-hidden"><strong>Los dispositivos CGM no están incluidos en el precio del programa.</strong> Michele le proporcionará una receta para su sensor CGM. Stelo (sin receta) cuesta ~$49/mes. LibreLink o Dexcom requieren receta y pueden estar cubiertos por seguro si tiene diabetes. Michele le ayudará a obtener el adecuado para su situación.</div>
+  </div>
+</div>
+</section>
+
+<!-- ══ THE 4-PHASE JOURNEY ══ -->
+<section class="section section-alt">
+<div class="container">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start">
+    <div>
+      <div class="lang-en"><p class="section-label">The program journey</p><h2 class="section-title">Your 90 days, phase by phase</h2><p style="font-size:14px;color:var(--text-muted);margin-top:8px;margin-bottom:28px;line-height:1.7">Every week has a purpose. You'll know exactly where you are and what's coming next — no guessing, no confusion.</p></div>
+      <div class="lang-es lang-hidden"><p class="section-label">El viaje del programa</p><h2 class="section-title">Sus 90 días, fase por fase</h2><p style="font-size:14px;color:var(--text-muted);margin-top:8px;margin-bottom:28px;line-height:1.7">Cada semana tiene un propósito. Sabrá exactamente dónde está y qué viene — sin confusiones.</p></div>
+      <div class="phase-track">
+        <div class="phase-item">
+          <div class="phase-num p1">1</div>
+          <div class="phase-content">
+            <span class="week lang-en">Weeks 1–2 · Assessment Phase</span>
+            <span class="week lang-es lang-hidden">Semanas 1–2 · Fase de Evaluación</span>
+            <h3 class="lang-en">Know Your Baseline</h3>
+            <h3 class="lang-es lang-hidden">Conozca su Punto de Partida</h3>
+            <p class="lang-en">60-min metabolic assessment. Lab review. CGM placed. Michele maps your current metabolic state: A1c, insulin sensitivity, body composition trends, dietary patterns. This is where we learn your body.</p>
+            <p class="lang-es lang-hidden">Evaluación metabólica de 60 min. Revisión de laboratorios. CGM colocado. Michele mapea su estado metabólico actual: A1c, sensibilidad a la insulina, tendencias de composición corporal, patrones dietéticos.</p>
+          </div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-num p2">2</div>
+          <div class="phase-content">
+            <span class="week lang-en">Weeks 3–6 · Data + Intervention Phase</span>
+            <span class="week lang-es lang-hidden">Semanas 3–6 · Fase de Datos e Intervención</span>
+            <h3 class="lang-en">See Your Food in Real Time</h3>
+            <h3 class="lang-es lang-hidden">Vea su Comida en Tiempo Real</h3>
+            <p class="lang-en">CGM data reveals which specific foods, timing patterns, stress, and sleep quality drive your glucose spikes. Michele interprets your data and delivers your personalized food response report. Your nutrition plan gets built around your actual biology — not generic guidelines.</p>
+            <p class="lang-es lang-hidden">Los datos del CGM revelan qué alimentos, patrones de horario, estrés y sueño causan sus picos de glucosa. Michele interpreta sus datos y entrega su informe de respuesta a alimentos personalizado.</p>
+          </div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-num p3">3</div>
+          <div class="phase-content">
+            <span class="week lang-en">Weeks 7–10 · Optimization Phase</span>
+            <span class="week lang-es lang-hidden">Semanas 7–10 · Fase de Optimización</span>
+            <h3 class="lang-en">Dial In the Protocol</h3>
+            <h3 class="lang-es lang-hidden">Ajustar el Protocolo</h3>
+            <p class="lang-en">Mid-program labs + visit. Adjustments made — medication dosing, nutrition targets, movement timing. For Tier 3 patients: GLP-1 titration and muscle preservation plan in full effect. You should be feeling measurably different by week 8.</p>
+            <p class="lang-es lang-hidden">Laboratorios + visita a mitad del programa. Se realizan ajustes: dosificación de medicamentos, metas nutricionales, horario de movimiento. Para pacientes del Nivel 3: titulación de GLP-1 y plan de preservación muscular.</p>
+          </div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-num p4">4</div>
+          <div class="phase-content">
+            <span class="week lang-en">Weeks 11–13 · Results + Maintenance Phase</span>
+            <span class="week lang-es lang-hidden">Semanas 11–13 · Fase de Resultados y Mantenimiento</span>
+            <h3 class="lang-en">Sustain the Results</h3>
+            <h3 class="lang-es lang-hidden">Mantener los Resultados</h3>
+            <p class="lang-en">Final labs. Biomarker comparison report. End-of-program visit reviews every metric from Day 1. Your 90-day maintenance plan ensures you keep the results — without starting over. Ongoing care options discussed.</p>
+            <p class="lang-es lang-hidden">Laboratorios finales. Informe comparativo de biomarcadores. La visita final revisa cada métrica desde el Día 1. Su plan de mantenimiento de 90 días asegura que mantenga los resultados.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="cgm-box" style="margin-bottom:20px">
+        <div class="lang-en"><h4>What is a CGM and why does it matter?</h4><p style="font-size:13px;color:var(--text-muted);line-height:1.75">A Continuous Glucose Monitor is a small sensor (size of a quarter) worn on your arm. It reads your blood sugar every 5 minutes — 288 readings per day — and sends the data to your phone. Unlike a quarterly A1c lab, it shows you <em>exactly</em> what's happening when you eat pasta, go for a walk, or have a bad night's sleep. That real-time feedback is what drives behavior change. Studies show CGM users reduce carbohydrate intake, improve meal timing, and lower A1c significantly compared to patients who only get lab results.</p></div>
+        <div class="lang-es lang-hidden"><h4>¿Qué es un CGM y por qué importa?</h4><p style="font-size:13px;color:var(--text-muted);line-height:1.75">Un Monitor Continuo de Glucosa es un pequeño sensor (del tamaño de una moneda) que se usa en el brazo. Lee su azúcar en sangre cada 5 minutos — 288 lecturas por día — y envía los datos a su teléfono. A diferencia de un análisis de A1c trimestral, le muestra <em>exactamente</em> lo que sucede cuando come pasta, sale a caminar o duerme mal. Esa retroalimentación en tiempo real es lo que impulsa el cambio de comportamiento.</p></div>
+      </div>
+      <div style="background:#fff;border:.5px solid var(--border);border-radius:var(--radius-lg);padding:22px">
+        <div class="lang-en">
+          <h4 style="font-size:15px;font-weight:500;font-family:sans-serif;margin-bottom:14px;color:var(--text)">Virtual tools you'll use</h4>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;gap:12px;align-items:flex-start"><div style="width:32px;height:32px;background:var(--terra-50);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="ti ti-device-watch" style="color:var(--terra-500);font-size:15px"></i></div><div><p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:1px">CGM App (Dexcom / Libre / Stelo)</p><p style="font-size:12px;color:var(--text-muted)">Real-time glucose graphs on your phone 24/7</p></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><div style="width:32px;height:32px;background:#faeeda;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="ti ti-video" style="color:var(--amber);font-size:15px"></i></div><div><p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:1px">Video Visits (HIPAA-compliant)</p><p style="font-size:12px;color:var(--text-muted)">All visits are video — no commute, no waiting rooms</p></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><div style="width:32px;height:32px;background:var(--olive-50);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="ti ti-message-circle" style="color:var(--olive-500);font-size:15px"></i></div><div><p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:1px">Direct Messaging</p><p style="font-size:12px;color:var(--text-muted)">Text-style async messaging with Michele between visits</p></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><div style="width:32px;height:32px;background:var(--terra-50);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="ti ti-flask" style="color:var(--terra-500);font-size:15px"></i></div><div><p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:1px">Lab Ordering</p><p style="font-size:12px;color:var(--text-muted)">Michele orders your labs — go to any Quest or LabCorp</p></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><div style="width:32px;height:32px;background:#faeeda;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="ti ti-file-text" style="color:var(--amber);font-size:15px"></i></div><div><p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:1px">Digital Care Plan</p><p style="font-size:12px;color:var(--text-muted)">Your personalized protocol shared as a living document</p></div></div>
+          </div>
+        </div>
+        <div class="lang-es lang-hidden">
+          <h4 style="font-size:15px;font-weight:500;font-family:sans-serif;margin-bottom:14px;color:var(--text)">Herramientas virtuales que usará</h4>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;gap:12px;align-items:flex-start"><div style="width:32px;height:32px;background:var(--terra-50);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="ti ti-device-watch" style="color:var(--terra-500);font-size:15px"></i></div><div><p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:1px">App CGM (Dexcom / Libre / Stelo)</p><p style="font-size:12px;color:var(--text-muted)">Gráficos de glucosa en tiempo real en su teléfono</p></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><div style="width:32px;height:32px;background:#faeeda;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="ti ti-video" style="color:var(--amber);font-size:15px"></i></div><div><p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:1px">Visitas por Video (HIPAA-compliant)</p><p style="font-size:12px;color:var(--text-muted)">Sin desplazamientos, sin salas de espera</p></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><div style="width:32px;height:32px;background:var(--olive-50);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="ti ti-message-circle" style="color:var(--olive-500);font-size:15px"></i></div><div><p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:1px">Mensajería Directa</p><p style="font-size:12px;color:var(--text-muted)">Mensajería asíncrona con Michele entre visitas</p></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><div style="width:32px;height:32px;background:var(--terra-50);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="ti ti-flask" style="color:var(--terra-500);font-size:15px"></i></div><div><p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:1px">Órdenes de Laboratorio</p><p style="font-size:12px;color:var(--text-muted)">Michele ordena sus laboratorios — vaya a cualquier Quest o LabCorp</p></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><div style="width:32px;height:32px;background:#faeeda;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="ti ti-file-text" style="color:var(--amber);font-size:15px"></i></div><div><p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:1px">Plan de Atención Digital</p><p style="font-size:12px;color:var(--text-muted)">Su protocolo personalizado compartido como documento vivo</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="section">
+<div class="container" style="max-width:720px">
+  <div class="text-center" style="margin-bottom:32px">
+    <div class="lang-en"><p class="section-label">Questions</p><h2 class="section-title">Frequently asked</h2></div>
+    <div class="lang-es lang-hidden"><p class="section-label">Preguntas</p><h2 class="section-title">Preguntas frecuentes</h2></div>
+  </div>
+  <div>
+
+    <div class="faq-item">
+      <p class="faq-q lang-en">Is this covered by insurance? <span style="color:var(--text-light);font-size:20px">+</span></p>
+      <p class="faq-q lang-es lang-hidden">¿Esto está cubierto por seguro? <span style="color:var(--text-light);font-size:20px">+</span></p>
+      <p class="faq-a lang-en">Florida Mobile Health is a direct-pay practice. You pay us directly. We provide a superbill after each visit that you can submit to your insurance for potential reimbursement. HSA and FSA cards are accepted. If you have diabetes, your CGM sensor may be covered separately by insurance with a prescription from Michele.</p>
+      <p class="faq-a lang-es lang-hidden">Florida Mobile Health es una práctica de pago directo. Usted nos paga directamente. Proporcionamos un superbill después de cada visita que puede enviar a su seguro para posible reembolso. Se aceptan tarjetas HSA y FSA. Si tiene diabetes, su sensor CGM puede estar cubierto por separado por su seguro con una receta de Michele.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q lang-en">What states can I enroll from? <span style="color:var(--text-light);font-size:20px">+</span></p>
+      <p class="faq-q lang-es lang-hidden">¿Desde qué estados puedo inscribirme? <span style="color:var(--text-light);font-size:20px">+</span></p>
+      <p class="faq-a lang-en">Michele is licensed and authorized to practice in Florida, Arizona, Nevada, Colorado, New Mexico, and Utah. You must be physically located in one of these states at the time of each virtual visit.</p>
+      <p class="faq-a lang-es lang-hidden">Michele tiene licencia y autorización para ejercer en Florida, Arizona, Nevada, Colorado, Nuevo México y Utah. Debe estar físicamente ubicado en uno de estos estados en el momento de cada visita virtual.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q lang-en">Can I join if I'm already on Ozempic or Mounjaro? <span style="color:var(--text-light);font-size:20px">+</span></p>
+      <p class="faq-q lang-es lang-hidden">¿Puedo unirme si ya estoy tomando Ozempic o Mounjaro? <span style="color:var(--text-light);font-size:20px">+</span></p>
+      <p class="faq-a lang-en">Yes — Tier 3 (Complete Transform) is specifically designed for this. Many GLP-1 patients are self-managing their injections without a clinician adjusting their dose, monitoring for side effects, or optimizing their nutrition for muscle preservation. This program provides the clinical oversight your GLP-1 therapy needs to actually work long-term.</p>
+      <p class="faq-a lang-es lang-hidden">Sí — el Nivel 3 (Transformación Completa) está específicamente diseñado para esto. Muchos pacientes con GLP-1 se autogestionen sus inyecciones sin un clínico que ajuste su dosis, monitoree efectos secundarios u optimice su nutrición. Este programa proporciona la supervisión clínica que necesita su terapia con GLP-1 para funcionar a largo plazo.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q lang-en">Do I need a CGM prescription? <span style="color:var(--text-light);font-size:20px">+</span></p>
+      <p class="faq-q lang-es lang-hidden">¿Necesito una receta para el CGM? <span style="color:var(--text-light);font-size:20px">+</span></p>
+      <p class="faq-a lang-en">It depends on which sensor you use. Stelo by Dexcom is now available over the counter (no prescription needed) for about $49/month — great for prediabetes and optimization patients. If you have diabetes, the Dexcom G7 or FreeStyle Libre 3 is often covered by insurance with a prescription, which Michele will provide. She'll guide you to the right device at your first visit.</p>
+      <p class="faq-a lang-es lang-hidden">Depende del sensor que use. Stelo de Dexcom está ahora disponible sin receta por aproximadamente $49/mes — excelente para pacientes con prediabetes. Si tiene diabetes, el Dexcom G7 o FreeStyle Libre 3 frecuentemente está cubierto por seguro con una receta que Michele proporcionará.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q lang-en">What if I need more time after 90 days? <span style="color:var(--text-light);font-size:20px">+</span></p>
+      <p class="faq-q lang-es lang-hidden">¿Qué pasa si necesito más tiempo después de 90 días? <span style="color:var(--text-light);font-size:20px">+</span></p>
+      <p class="faq-a lang-en">Every program ends with a 90-day maintenance plan and the option to continue as an ongoing patient with regular follow-up visits, messaging plans, or a repeat program cycle. Many patients transition into Michele's standard follow-up care at a lower monthly cost.</p>
+      <p class="faq-a lang-es lang-hidden">Cada programa termina con un plan de mantenimiento de 90 días y la opción de continuar como paciente regular con visitas de seguimiento, planes de mensajería o un nuevo ciclo del programa.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q lang-en">Is the program available in Spanish? <span style="color:var(--text-light);font-size:20px">+</span></p>
+      <p class="faq-q lang-es lang-hidden">¿Está disponible el programa en español? <span style="color:var(--text-light);font-size:20px">+</span></p>
+      <p class="faq-a lang-en">Yes. Michele is fluent in Spanish and conducts visits in English, Spanish, or both — whatever you prefer. All written materials are available in both languages. This program was built with the Hispanic community in mind.</p>
+      <p class="faq-a lang-es lang-hidden">Sí. Michele habla español con fluidez y realiza visitas en inglés, español o ambos — lo que prefiera. Todos los materiales escritos están disponibles en ambos idiomas. Este programa fue construido pensando en la comunidad hispana.</p>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ══ FINAL CTA ══ -->
+<div style="background:var(--terra-800);padding:56px 24px;text-align:center">
+<div class="container" style="max-width:620px">
+  <div class="lang-en">
+    <p style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#c4856a;margin-bottom:10px">Start today</p>
+    <h2 style="color:#fff;font-size:clamp(22px,3vw,32px);margin-bottom:14px;line-height:1.3">Your A1c won't change on its own.<br>Neither will your metabolism.</h2>
+    <p style="color:#c4a090;font-size:14px;line-height:1.75;max-width:480px;margin:0 auto 28px">The 15-minute free consult costs nothing. Michele will tell you which tier fits your situation and answer every question before you commit to anything.</p>
+    <a href="book.html" class="btn btn-light" style="font-size:15px;padding:14px 32px;display:inline-block">Book my free 15-min consult</a>
+    <p style="color:#6a4030;font-size:12px;margin-top:14px">Or call 352-399-8874 · info@floridamobilehealth.com</p>
+  </div>
+  <div class="lang-es lang-hidden">
+    <p style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#c4856a;margin-bottom:10px">Comience hoy</p>
+    <h2 style="color:#fff;font-size:clamp(22px,3vw,32px);margin-bottom:14px;line-height:1.3">Su A1c no cambiará solo.<br>Tampoco su metabolismo.</h2>
+    <p style="color:#c4a090;font-size:14px;line-height:1.75;max-width:480px;margin:0 auto 28px">La consulta gratuita de 15 minutos no cuesta nada. Michele le dirá qué nivel se adapta a su situación y responderá cada pregunta antes de que se comprometa a algo.</p>
+    <a href="book.html" class="btn btn-light" style="font-size:15px;padding:14px 32px;display:inline-block">Reserve mi consulta gratuita de 15 min</a>
+    <p style="color:#6a4030;font-size:12px;margin-top:14px">O llame al 352-399-8874 · info@floridamobilehealth.com</p>
+  </div>
+</div>
+</div>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

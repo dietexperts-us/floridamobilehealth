@@ -18,7 +18,10 @@ const NAV_HTML = `
           <a href="/metabolic-health.html" class="lang-en" style="color:var(--terra-500);font-weight:600">DietexpertNP Rx™</a><a href="/metabolic-health.html" class="lang-es lang-hidden" style="color:var(--terra-500);font-weight:600">DietexpertNP Rx™</a>
           <a href="/menopause-diabetes.html" class="lang-en" style="color:#8a2040;font-weight:600">MenopauseRx&#8482;</a><a href="/menopause-diabetes.html" class="lang-es lang-hidden" style="color:#8a2040;font-weight:600">MenopauseRx&#8482;</a>
           <a href="/community.html" class="lang-en" style="color:var(--olive-500)">Community programs</a><a href="/community.html" class="lang-es lang-hidden" style="color:var(--olive-500)">Programas comunitarios</a>
-          <a href="/shop.html" class="lang-en">Videos &amp; education</a><a href="/shop.html" class="lang-es lang-hidden">Videos y educacion</a>
+          <a href="/metabolic.html" class="lang-en" style="color:var(--terra-500);font-weight:600">90-Day Metabolic Reset</a><a href="/metabolic.html" class="lang-es lang-hidden" style="color:var(--terra-500);font-weight:600">Reinicio Metabólico 90 Días</a>
+          <a href="/glp1.html" class="lang-en" style="font-weight:600">GLP-1 Program</a><a href="/glp1.html" class="lang-es lang-hidden" style="font-weight:600">Programa GLP-1</a>
+          <a href="/membership.html" class="lang-en" style="color:var(--olive-500);font-weight:600">Monthly Membership</a><a href="/membership.html" class="lang-es lang-hidden" style="color:var(--olive-500);font-weight:600">Membresía Mensual</a>
+          <a href="/shop.html" class="lang-en">Health Guides &amp; Shop</a><a href="/shop.html" class="lang-es lang-hidden">Guías de Salud y Tienda</a>
           <a href="/local-visits.html" class="lang-en">Local in-person visits</a><a href="/local-visits.html" class="lang-es lang-hidden">Visitas en persona locales</a>
           <a href="/resources.html" class="lang-en" style="color:var(--olive-500)">Free health guides</a><a href="/resources.html" class="lang-es lang-hidden" style="color:var(--olive-500)">Guías gratuitas de salud</a>
         </div>
@@ -41,8 +44,10 @@ const NAV_HTML = `
     <a href="/menopause-diabetes.html" class="lang-en" style="color:#8a2040;font-weight:600;padding-left:28px">&#8212; MenopauseRx&#8482;</a><a href="/menopause-diabetes.html" class="lang-es lang-hidden" style="color:#8a2040;font-weight:600;padding-left:28px">&#8212; MenopauseRx&#8482;</a>
     <a href="/community.html" class="lang-en" style="color:var(--olive-500);padding-left:28px">&#8212; Community programs</a><a href="/community.html" class="lang-es lang-hidden" style="color:var(--olive-500);padding-left:28px">&#8212; Programas comunitarios</a>
     <a href="/local-visits.html" class="lang-en">Local in-person visits (SW Florida)</a><a href="/local-visits.html" class="lang-es lang-hidden">Visitas en persona (Suroeste FL)</a>
-    <a href="/shop.html" class="lang-en">Videos</a><a href="/shop.html" class="lang-es lang-hidden">Videos</a>
-        <a href="/resources.html" class="lang-en">Free health guides</a><a href="/resources.html" class="lang-es lang-hidden">Guías gratuitas</a>
+    <a href="/metabolic.html" class="lang-en" style="color:var(--terra-500);font-weight:600;padding-left:28px">&#8212; 90-Day Metabolic Reset</a><a href="/metabolic.html" class="lang-es lang-hidden" style="color:var(--terra-500);font-weight:600;padding-left:28px">&#8212; Reinicio Metabólico</a>
+    <a href="/glp1.html" class="lang-en" style="font-weight:600;padding-left:28px">&#8212; GLP-1 Program</a><a href="/glp1.html" class="lang-es lang-hidden" style="font-weight:600;padding-left:28px">&#8212; Programa GLP-1</a>
+    <a href="/membership.html" class="lang-en" style="color:var(--olive-500);font-weight:600;padding-left:28px">&#8212; Monthly Membership</a><a href="/membership.html" class="lang-es lang-hidden" style="color:var(--olive-500);font-weight:600;padding-left:28px">&#8212; Membresía Mensual</a>
+    <a href="/shop.html" class="lang-en">Health Guides &amp; Shop</a><a href="/shop.html" class="lang-es lang-hidden">Guías de Salud y Tienda</a>
     <a href="/resources.html" class="lang-en">Free health guides</a><a href="/resources.html" class="lang-es lang-hidden">Guías gratuitas de salud</a>
     <a href="/pricing.html" class="lang-en">Pricing</a><a href="/pricing.html" class="lang-es lang-hidden">Precios</a>
     <a href="/for-practices.html" class="lang-en">For Practices</a><a href="/for-practices.html" class="lang-es lang-hidden">Para Consultorios</a>
@@ -83,9 +88,11 @@ const FOOTER_HTML = `
       </div>
       <div class="footer-col">
         <h4 class="lang-en">Access</h4><h4 class="lang-es lang-hidden" >Acceso</h4>
-        <a href="/programs.html" class="lang-en">Care programs</a><a href="/programs.html" class="lang-es lang-hidden" >Programas de salud</a>
-        <a href="/shop.html" class="lang-en">Educational videos</a><a href="/shop.html" class="lang-es lang-hidden" >Videos educativos</a>
-        <a href="/book.html" class="lang-en">Book a virtual visit</a><a href="/book.html" class="lang-es lang-hidden" >Agendar cita virtual</a>
+        <a href="/membership.html" class="lang-en">Monthly Membership</a><a href="/membership.html" class="lang-es lang-hidden">Membresía Mensual</a>
+        <a href="/metabolic.html" class="lang-en">90-Day Metabolic Reset</a><a href="/metabolic.html" class="lang-es lang-hidden">Reinicio Metabólico</a>
+        <a href="/glp1.html" class="lang-en">GLP-1 Program</a><a href="/glp1.html" class="lang-es lang-hidden">Programa GLP-1</a>
+        <a href="/shop.html" class="lang-en">Health Guides &amp; Shop</a><a href="/shop.html" class="lang-es lang-hidden">Guías de Salud</a>
+        <a href="/book.html" class="lang-en">Book a virtual visit</a><a href="/book.html" class="lang-es lang-hidden">Agendar cita virtual</a>
         <a href="/messaging.html" class="lang-en">Direct messaging</a><a href="/messaging.html" class="lang-es lang-hidden" >Mensajes directos</a>
         <a href="/pricing.html" class="lang-en">View pricing</a><a href="/pricing.html" class="lang-es lang-hidden" >Ver precios</a>
         <a href="/blog.html" class="lang-en">Health blog</a><a href="/blog.html" class="lang-es lang-hidden" >Blog de salud</a>
