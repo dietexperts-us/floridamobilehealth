@@ -6,7 +6,6 @@
 <title>Precios Introductorios | Florida Mobile Health</title>
 <meta name="description" content="Precios introductorios para nuevos pacientes. FNP + RD + CDCES atención virtual en FL, AZ, NV, CO, NM, UT. Desde $149.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<script src="/js/layout.js?v=2" defer></script>
 <style>
 :root{--terra:#6b2518;--terra-dark:#4a1a10;--terra-100:#f9ede3;--olive:#3a5420;--olive-light:#e8f0e0;--cream:#faf5ee;--text:#1a0a05;--text-muted:#6b5040;--text-light:#9c7a68;--border:#e8ddd0;--gold:#c9a84c;}
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -80,12 +79,23 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .btn-primary{background:var(--terra);color:white;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;}
 .btn-secondary{background:transparent;border:1.5px solid var(--terra);color:var(--terra);padding:14px 28px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;}
 .states{font-size:13px;color:var(--text-light);margin-top:16px;}
+
+.page-header{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:white;border-bottom:1px solid var(--border);}
+.back-link{font-size:13px;color:var(--text-muted);text-decoration:none;font-weight:500;}
+.back-link:hover{color:var(--terra);}
+.lang-toggle{display:flex;gap:8px;}
+.lang-toggle button{padding:6px 16px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;border:1.5px solid var(--border);background:white;color:var(--text-muted);}
+.lang-toggle button.active{background:var(--terra);color:white;border-color:var(--terra);}
 </style>
 </head>
 <body>
 
-<div class="lang-switch">
-  🇺🇸 Prefer English? <a href="/intro-pricing">View this page in English →</a>
+<div class="page-header">
+  <a href="/index.html" class="back-link">&#8592; floridamobilehealth.com</a>
+  <div class="lang-toggle">
+    <button class="lb-en" onclick="setLang('en')">&#127482;&#127480; English</button>
+    <button class="lb-es active" onclick="setLang('es')">&#127466;&#127480; Espa&#241;ol</button>
+  </div>
 </div>
 
 <div class="hero">
