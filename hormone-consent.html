@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hormone Therapy Screening & Consent | Florida Mobile Health</title>
+<meta name="description" content="BHRT screening questionnaire and informed consent for hormone therapy patients.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --terra:#6b2518;--terra-dark:#4a1a10;--olive:#3a5420;--olive-light:#e8f0e0;
+  --cream:#faf5ee;--text:#1a0a05;--muted:#6b5040;--light:#9c7a68;
+  --border:#e8ddd0;--gold:#c9a84c;--warn:#b45309;--warn-bg:#fef3c7;
+  --risk:#7f1d1d;--risk-bg:#fee2e2;--benefit:#1e3a5f;--benefit-bg:#dbeafe;
+  --red:#dc2626;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:#f5f0e8;color:var(--text);font-size:14px;}
+.page-header{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:white;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+.back-link{font-size:13px;color:var(--muted);text-decoration:none;font-weight:500;}
+.back-link:hover{color:var(--terra);}
+.header-practice{font-size:11px;color:var(--light);text-align:right;line-height:1.4;}
+.header-practice strong{display:block;font-size:13px;color:var(--text);}
+.form-hero{background:var(--terra);color:white;padding:32px 24px;text-align:center;}
+.form-hero .badge{display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:12px;}
+.form-hero h1{font-family:'Playfair Display',serif;font-size:clamp(22px,3.5vw,34px);margin-bottom:8px;}
+.form-hero p{font-size:14px;opacity:.85;max-width:580px;margin:0 auto;line-height:1.6;}
+.warning-banner{background:var(--warn-bg);border-left:4px solid var(--warn);padding:14px 20px;display:flex;gap:12px;align-items:flex-start;}
+.warning-banner .icon{font-size:18px;flex-shrink:0;margin-top:1px;}
+.warning-banner p{font-size:13px;color:#92400e;line-height:1.6;}
+.warning-banner strong{color:#78350f;}
+.container{max-width:860px;margin:0 auto;padding:0 20px 60px;}
+.form-section{background:white;border-radius:12px;padding:28px;margin:24px 0;border:1px solid var(--border);}
+.section-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--terra);color:white;border-radius:50%;font-size:12px;font-weight:700;flex-shrink:0;}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--border);}
+.section-header h2{font-size:17px;font-weight:700;color:var(--text);}
+.section-header p{font-size:12px;color:var(--muted);margin-top:2px;}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:14px;}
+.field-row.three{grid-template-columns:1fr 1fr 1fr;}
+.field-row.full{grid-template-columns:1fr;}
+.field-group{display:flex;flex-direction:column;gap:5px;}
+.field-group label{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;}
+.field-group input,.field-group select,.field-group textarea{border:1.5px solid var(--border);border-radius:7px;padding:9px 12px;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--text);background:white;transition:border .2s;}
+.field-group input:focus,.field-group select:focus,.field-group textarea:focus{outline:none;border-color:var(--terra);}
+.field-group textarea{resize:vertical;min-height:70px;}
+.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;}
+.check-grid.three{grid-template-columns:1fr 1fr 1fr;}
+.check-item{display:flex;align-items:flex-start;gap:8px;padding:8px 10px;border:1.5px solid var(--border);border-radius:7px;cursor:pointer;transition:all .15s;line-height:1.4;}
+.check-item:hover{border-color:var(--terra);background:#fdf5f0;}
+.check-item input[type="checkbox"],.check-item input[type="radio"]{width:16px;height:16px;flex-shrink:0;margin-top:1px;accent-color:var(--terra);}
+.check-item label{font-size:13px;cursor:pointer;}
+.check-item.danger{border-color:#fca5a5;}
+.check-item.danger:hover{background:#fff1f1;border-color:var(--red);}
+.yn-row{display:flex;align-items:center;gap:16px;padding:10px 0;border-bottom:1px solid #f5f0e8;}
+.yn-row:last-child{border-bottom:none;}
+.yn-question{flex:1;font-size:13px;color:var(--text);line-height:1.4;}
+.yn-question.flagged{color:var(--risk);font-weight:600;}
+.yn-options{display:flex;gap:8px;flex-shrink:0;}
+.yn-options label{display:flex;align-items:center;gap:5px;font-size:13px;cursor:pointer;padding:5px 10px;border:1.5px solid var(--border);border-radius:6px;}
+.yn-options label:hover{border-color:var(--terra);}
+.yn-options input[type="radio"]{accent-color:var(--terra);}.req-item{display:flex;align-items:flex-start;gap:12px;padding:12px;border:1.5px solid var(--border);border-radius:8px;margin-bottom:8px;}
+.req-item.complete{border-color:#86efac;background:#f0fdf4;}
+.req-check{width:20px;height:20px;flex-shrink:0;accent-color:var(--olive);}
+.req-content h4{font-size:13px;font-weight:700;margin-bottom:3px;}
+.req-content p{font-size:12px;color:var(--muted);line-height:1.5;}
+.req-content .req-input{margin-top:8px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+.req-content .req-input label{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;white-space:nowrap;}
+.req-content .req-input input{border:1.5px solid var(--border);border-radius:6px;padding:5px 10px;font-size:13px;}
+.rb-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px;}
+.rb-card{border-radius:10px;padding:18px;}
+.rb-card.risks{background:var(--risk-bg);border:1.5px solid #fca5a5;}
+.rb-card.benefits{background:var(--benefit-bg);border:1.5px solid #93c5fd;}
+.rb-card h3{font-size:14px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.rb-card.risks h3{color:var(--risk);}
+.rb-card.benefits h3{color:var(--benefit);}
+.rb-list{list-style:none;padding:0;}
+.rb-list li{font-size:12px;line-height:1.6;padding:4px 0;border-bottom:1px solid rgba(0,0,0,.06);display:flex;align-items:flex-start;gap:6px;}
+.rb-list li:last-child{border-bottom:none;}
+.rb-list li::before{content:'\u2022';font-size:16px;flex-shrink:0;margin-top:-1px;}
+.rb-card.risks .rb-list li::before{color:var(--risk);}
+.rb-card.benefits .rb-list li::before{color:var(--benefit);}
+.risk-level{display:inline-block;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:1px 5px;border-radius:100px;margin-left:4px;vertical-align:middle;}
+.risk-level.high{background:#fee2e2;color:#991b1b;}
+.risk-level.moderate{background:#fef3c7;color:#92400e;}
+.risk-level.low{background:#d1fae5;color:#065f46;}
+.contra-block{background:#fff1f1;border:1.5px solid #fca5a5;border-radius:10px;padding:16px;margin-bottom:12px;}
+.contra-block h3{font-size:13px;font-weight:700;color:var(--risk);margin-bottom:8px;display:flex;align-items:center;gap:6px;}
+.contra-list{list-style:none;}
+.contra-list li{font-size:12px;line-height:1.6;padding:3px 0;display:flex;align-items:flex-start;gap:6px;}
+.contra-list li::before{content:'\u2715';color:var(--risk);font-weight:700;flex-shrink:0;}
+.attest-block{background:#f0f5ea;border:2px solid #3a5420;border-radius:10px;padding:20px;margin-top:16px;}
+.attest-block h3{color:var(--olive);font-size:14px;font-weight:700;margin-bottom:12px;}
+.attest-text{font-size:12px;color:#2a3d14;line-height:1.8;margin-bottom:16px;}
+.sig-row{display:grid;grid-template-columns:2fr 1fr;gap:16px;margin-top:16px;}
+.sig-field{border-bottom:1.5px solid var(--olive);padding:8px 0;font-size:14px;min-height:40px;}
+.sig-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--olive);margin-top:4px;}
+.provider-section{background:var(--terra-dark);color:white;border-radius:10px;padding:20px;margin-top:16px;}
+.provider-section h3{font-size:13px;font-weight:700;opacity:.7;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;}
+.note-box{background:#fffbeb;border:1.5px solid var(--gold);border-radius:8px;padding:12px 14px;margin-top:12px;}
+.note-box p{font-size:12px;color:#78350f;line-height:1.6;}
+.print-bar{background:white;border-top:1px solid var(--border);padding:16px 24px;display:flex;justify-content:flex-end;gap:12px;position:sticky;bottom:0;z-index:100;}
+.btn{padding:10px 22px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;}
+.btn-primary{background:var(--terra);color:white;}
+.btn-outline{background:white;color:var(--terra);border:1.5px solid var(--terra);}
+.flag-alert{display:none;background:#fee2e2;border:1.5px solid #fca5a5;border-radius:8px;padding:10px 14px;margin-top:8px;}
+.flag-alert.show{display:block;}
+.flag-alert p{font-size:12px;color:var(--risk);line-height:1.5;}
+@media(max-width:640px){.field-row,.field-row.three,.rb-grid,.sig-row{grid-template-columns:1fr;}.check-grid,.check-grid.three{grid-template-columns:1fr;}}
+@media print{.page-header,.print-bar,.warning-banner{display:none!important;}.form-section{break-inside:avoid;border:1px solid #ccc;}body{background:white;}.form-hero{background:black!important;color:white!important;-webkit-print-color-adjust:exact;}}
+</style>
+</head>
+<body>
+<div class="page-header">
+  <a href="/services.html" class="back-link">&#8592; Back to services</a>
+  <div class="header-practice"><strong>Florida Mobile Health</strong>Michele Li Causi, FNP-BC, RD, CDCES</div>
+</div>
+<div class="form-hero">
+  <div class="badge">Clinical Intake &amp; Informed Consent</div>
+  <h1>Hormone Therapy Screening &amp; Consent</h1>
+  <p>This form must be completed before your hormone consultation. It screens for safety, documents your medical history, and ensures you understand the risks and benefits of hormone therapy.</p>
+</div>
+<div class="warning-banner">
+  <span class="icon">&#9888;&#65039;</span>
+  <p><strong>Important:</strong> This form does not replace a clinical consultation. All responses will be reviewed by Michele Li Causi, FNP-BC. Hormone therapy will only be initiated after a complete clinical evaluation, review of current labs, and shared decision-making. Some medical histories are absolute contraindications to hormone therapy.</p>
+</div>
+<div class="container"><!-- SECTION 1 -->
+<div class="form-section">
+  <div class="section-header"><span class="section-num">1</span><div><h2>Patient Information</h2><p>Basic identifying information</p></div></div>
+  <div class="field-row three">
+    <div class="field-group"><label>Legal First Name *</label><input type="text" placeholder="First name" required></div>
+    <div class="field-group"><label>Last Name *</label><input type="text" placeholder="Last name" required></div>
+    <div class="field-group"><label>Date of Birth *</label><input type="date" required></div>
+  </div>
+  <div class="field-row three">
+    <div class="field-group"><label>Email Address *</label><input type="email" placeholder="your@email.com" required></div>
+    <div class="field-group"><label>Phone Number *</label><input type="tel" placeholder="(555) 555-5555" required></div>
+    <div class="field-group"><label>Today's Date *</label><input type="date" required></div>
+  </div>
+  <div class="field-row">
+    <div class="field-group"><label>State Where You Will Be Located During Visits *</label><select required><option value="">Select state</option><option>Florida</option><option>Arizona</option><option>Nevada</option><option>Colorado</option><option>New Mexico</option><option>Utah</option></select></div>
+    <div class="field-group"><label>Primary Reason for Seeking Hormone Therapy *</label><select required><option value="">Select primary concern</option><option>Hot flashes / night sweats</option><option>Mood changes / anxiety / depression</option><option>Sleep disturbances</option><option>Low libido / sexual dysfunction</option><option>Vaginal dryness / painful intercourse</option><option>Brain fog / cognitive symptoms</option><option>Weight gain / metabolic changes</option><option>Bone density concerns</option><option>Fatigue / low energy</option><option>Multiple of the above</option><option>Other</option></select></div>
+  </div>
+</div>
+<!-- SECTION 2 -->
+<div class="form-section">
+  <div class="section-header"><span class="section-num">2</span><div><h2>Required Pre-Treatment Screening</h2><p>The following must be completed or on file before hormone therapy is initiated</p></div></div>
+  <div class="note-box" style="margin-bottom:16px;"><p>&#9432;&ensp;<strong>Why these are required:</strong> Breast imaging screens for occult malignancy before initiating estrogen. Labs establish your baseline hormone levels, metabolic health, and identify contraindications. These are standard of care requirements &mdash; not optional.</p></div>
+  <div class="req-item" id="mammo-item">
+    <input type="checkbox" class="req-check" id="mammo-check" onchange="toggleReq('mammo-check','mammo-item')">
+    <div class="req-content">
+      <h4>&#128196; Mammogram OR Breast Ultrasound</h4>
+      <p>Required within the past <strong>12 months</strong> for patients 40+ or within 24 months for patients 35&ndash;39. Breast ultrasound is acceptable if mammography is contraindicated or inconclusive. Results must be available at time of consultation.</p>
+      <div class="req-input"><label>Date of most recent:</label><input type="date" id="mammo-date"><select id="mammo-type" style="max-width:180px"><option value="">Type</option><option>Mammogram</option><option>Breast Ultrasound</option><option>Both</option><option>MRI (dense tissue)</option></select></div>
+      <div class="req-input" style="margin-top:6px;"><label>Result:</label><select id="mammo-result"><option value="">Select result</option><option>Normal / Negative (BI-RADS 1 or 2)</option><option>Benign finding, routine follow-up (BI-RADS 3)</option><option>Abnormal &ndash; additional imaging needed</option><option>Biopsy recommended or pending</option><option>Not yet completed</option></select></div>
+      <div id="mammo-flag" class="flag-alert"><p><strong>&#9888; Flag:</strong> Abnormal mammogram or pending biopsy is a temporary contraindication to hormone initiation. Please contact us before proceeding.</p></div>
+    </div>
+  </div>
+  <div class="req-item" id="labs-item">
+    <input type="checkbox" class="req-check" id="labs-check" onchange="toggleReq('labs-check','labs-item')">
+    <div class="req-content">
+      <h4>&#129514; Complete Lab Panel</h4>
+      <p>Labs must be drawn within <strong>90 days</strong> of your consultation. Required: CBC, CMP, lipid panel, HbA1c, TSH, free T4, estradiol, progesterone, testosterone (free + total), DHEA-S, FSH, LH, vitamin D. Additional markers may be ordered based on history.</p>
+      <div class="req-input"><label>Labs drawn on:</label><input type="date" id="labs-date"></div>
+      <div class="field-group" style="margin-top:8px;"><label style="font-size:11px;font-weight:600;color:var(--muted);">Where were labs drawn?</label><input type="text" placeholder="e.g., LabCorp, Quest, primary care physician" style="border:1.5px solid var(--border);border-radius:7px;padding:7px 10px;font-size:13px;"></div>
+    </div>
+  </div>
+  <div class="req-item">
+    <input type="checkbox" class="req-check">
+    <div class="req-content">
+      <h4>&#128203; Uterus Status &mdash; Required for Progesterone Prescribing</h4>
+      <p><strong>If you have a uterus</strong>, you must receive progesterone alongside estrogen. Estrogen alone (unopposed) in the presence of a uterus significantly increases endometrial cancer risk.</p>
+      <div class="check-grid" style="margin-top:10px;grid-template-columns:1fr 1fr 1fr;">
+        <div class="check-item"><input type="radio" name="uterus" id="uterus-yes" value="yes"><label for="uterus-yes">I have a uterus (intact)</label></div>
+        <div class="check-item"><input type="radio" name="uterus" id="uterus-hyst" value="hysterectomy"><label for="uterus-hyst">Hysterectomy (complete)</label></div>
+        <div class="check-item"><input type="radio" name="uterus" id="uterus-partial" value="partial"><label for="uterus-partial">Partial hysterectomy</label></div>
+      </div>
+      <div id="uterus-hyst-details" style="display:none;margin-top:8px;">
+        <div class="req-input"><label>Year:</label><input type="number" placeholder="Year" style="max-width:100px"><label style="margin-left:8px;">Reason:</label><select><option value="">Select</option><option>Fibroids</option><option>Endometriosis</option><option>Prolapse</option><option>Abnormal bleeding</option><option>Cancer</option><option>Other</option></select></div>
+      </div>
+    </div>
+  </div>
+  <div class="req-item">
+    <input type="checkbox" class="req-check">
+    <div class="req-content">
+      <h4>&#128336; Menopause / Hormonal Status</h4>
+      <div class="check-grid" style="margin-top:10px;grid-template-columns:1fr 1fr;">
+        <div class="check-item"><input type="radio" name="meno" value="peri"><label>Perimenopause (irregular cycles, symptoms beginning)</label></div>
+        <div class="check-item"><input type="radio" name="meno" value="meno"><label>Postmenopause (&gt;12 consecutive months without period)</label></div>
+        <div class="check-item"><input type="radio" name="meno" value="surgical"><label>Surgical menopause (ovaries removed)</label></div>
+        <div class="check-item"><input type="radio" name="meno" value="pre"><label>Premenopausal (regular cycles)</label></div>
+      </div>
+      <div class="req-input" style="margin-top:8px;"><label>Date of last menstrual period (approx):</label><input type="month"></div>
+    </div>
+  </div>
+</div><!-- SECTION 3: CARDIOVASCULAR -->
+<div class="form-section">
+  <div class="section-header"><span class="section-num">3</span><div><h2>Cardiovascular &amp; Clotting Risk Screening</h2><p>Blood clot and cardiovascular history are critical safety screens &mdash; please answer every question accurately</p></div></div>
+  <p style="font-size:12px;color:var(--muted);margin-bottom:16px;">Answer YES or NO to each question. A YES does not automatically disqualify you, but may affect which hormones, doses, or delivery methods are appropriate.</p>
+  <div class="yn-row"><span class="yn-question flagged">Have you ever had a blood clot (DVT &mdash; deep vein thrombosis) in your leg?</span><div class="yn-options"><label><input type="radio" name="dvt" value="yes" onchange="showFlag('dvt-flag')"> Yes</label><label><input type="radio" name="dvt" value="no"> No</label></div></div>
+  <div id="dvt-flag" class="flag-alert"><p><strong>&#9888; Clinical note:</strong> History of DVT is a contraindication to oral estrogen. Transdermal estrogen may be considered after thorough evaluation and thrombophilia workup.</p></div>
+  <div class="yn-row"><span class="yn-question flagged">Have you ever had a pulmonary embolism (blood clot in the lungs)?</span><div class="yn-options"><label><input type="radio" name="pe" value="yes" onchange="showFlag('pe-flag')"> Yes</label><label><input type="radio" name="pe" value="no"> No</label></div></div>
+  <div id="pe-flag" class="flag-alert"><p><strong>&#9888; Clinical note:</strong> Pulmonary embolism history is a significant contraindication to hormone therapy. Individual risk-benefit analysis and hematology clearance required.</p></div>
+  <div class="yn-row"><span class="yn-question flagged">Have you been diagnosed with a clotting disorder (e.g., Factor V Leiden, antiphospholipid syndrome, protein C/S deficiency)?</span><div class="yn-options"><label><input type="radio" name="clot_disorder" value="yes" onchange="showFlag('clot-flag')"> Yes</label><label><input type="radio" name="clot_disorder" value="no"> No</label></div></div>
+  <div id="clot-flag" class="flag-alert"><p><strong>&#9888; Clinical note:</strong> Known thrombophilia is a relative-to-absolute contraindication. Hematology co-management required.</p></div>
+  <div class="yn-row"><span class="yn-question flagged">Have you ever had a stroke or TIA (transient ischemic attack)?</span><div class="yn-options"><label><input type="radio" name="stroke" value="yes" onchange="showFlag('stroke-flag')"> Yes</label><label><input type="radio" name="stroke" value="no"> No</label></div></div>
+  <div id="stroke-flag" class="flag-alert"><p><strong>&#9888; Clinical note:</strong> History of stroke or TIA is a relative contraindication to estrogen. Neurologist clearance and transdermal-only route required if proceeding.</p></div>
+  <div class="yn-row"><span class="yn-question flagged">Have you ever had a heart attack (myocardial infarction)?</span><div class="yn-options"><label><input type="radio" name="mi" value="yes" onchange="showFlag('mi-flag')"> Yes</label><label><input type="radio" name="mi" value="no"> No</label></div></div>
+  <div id="mi-flag" class="flag-alert"><p><strong>&#9888; Clinical note:</strong> Hormone therapy initiation within 1 year of MI is contraindicated. Cardiology clearance required after 1 year.</p></div>
+  <div class="yn-row"><span class="yn-question">Do you have known coronary artery disease, heart failure, or uncontrolled hypertension?</span><div class="yn-options"><label><input type="radio" name="cad" value="yes"> Yes</label><label><input type="radio" name="cad" value="no"> No</label></div></div>
+  <div class="yn-row"><span class="yn-question flagged">Do you currently smoke cigarettes or tobacco products?</span><div class="yn-options"><label><input type="radio" name="smoke" value="yes" onchange="showFlag('smoke-flag')"> Yes</label><label><input type="radio" name="smoke" value="no"> No</label></div></div>
+  <div id="smoke-flag" class="flag-alert"><p><strong>&#9888; Clinical note:</strong> Active smoking significantly increases blood clot, stroke, and cardiovascular risk with estrogen. Oral estrogen is contraindicated in active smokers. Transdermal carries lower risk. Smoking cessation counseling will be provided.</p></div>
+  <div class="yn-row"><span class="yn-question">Have you quit smoking within the past 12 months?</span><div class="yn-options"><label><input type="radio" name="smoke_quit" value="yes"> Yes</label><label><input type="radio" name="smoke_quit" value="no"> No</label></div></div>
+  <div class="field-row full" style="margin-top:14px;"><div class="field-group"><label>Cardiac / Vascular History Details (if any YES answers above, describe)</label><textarea placeholder="Please describe: when diagnosed, how treated, current medications, current status..."></textarea></div></div>
+</div>
+<!-- SECTION 4: CANCER -->
+<div class="form-section">
+  <div class="section-header"><span class="section-num">4</span><div><h2>Cancer History &amp; Family History</h2><p>Hormone-sensitive cancer history affects eligibility for hormone therapy</p></div></div>
+  <div class="yn-row"><span class="yn-question flagged">Have you ever been diagnosed with breast cancer?</span><div class="yn-options"><label><input type="radio" name="breast_ca" value="yes" onchange="showFlag('breastca-flag')"> Yes</label><label><input type="radio" name="breast_ca" value="no"> No</label></div></div>
+  <div id="breastca-flag" class="flag-alert"><p><strong>&#9888; Absolute contraindication:</strong> History of breast cancer is generally an absolute contraindication to systemic hormone therapy. Vaginal estrogen (low-dose local) may be considered with oncology approval.</p></div>
+  <div class="yn-row"><span class="yn-question flagged">Have you ever been diagnosed with endometrial (uterine) cancer?</span><div class="yn-options"><label><input type="radio" name="endo_ca" value="yes" onchange="showFlag('endoca-flag')"> Yes</label><label><input type="radio" name="endo_ca" value="no"> No</label></div></div>
+  <div id="endoca-flag" class="flag-alert"><p><strong>&#9888; Clinical note:</strong> History of endometrial cancer requires thorough evaluation. Gynecology/oncology clearance required before any estrogen initiation.</p></div>
+  <div class="yn-row"><span class="yn-question">Have you ever been diagnosed with ovarian cancer?</span><div class="yn-options"><label><input type="radio" name="ovarian_ca" value="yes"> Yes</label><label><input type="radio" name="ovarian_ca" value="no"> No</label></div></div>
+  <div class="yn-row"><span class="yn-question">Have you had BRCA1/BRCA2 genetic testing? If yes, result:</span><div class="yn-options"><label><input type="radio" name="brca" value="positive"> BRCA+ (mutation)</label><label><input type="radio" name="brca" value="negative"> BRCA- (negative)</label><label><input type="radio" name="brca" value="not_tested"> Not tested</label></div></div>
+  <div class="yn-row"><span class="yn-question">Do you have 2 or more first-degree relatives (mother, sister, daughter) diagnosed with breast cancer?</span><div class="yn-options"><label><input type="radio" name="fam_breast" value="yes"> Yes</label><label><input type="radio" name="fam_breast" value="no"> No</label></div></div>
+  <div class="field-row full" style="margin-top:12px;"><div class="field-group"><label>Cancer / Family Cancer History Details</label><textarea placeholder="Year of diagnosis, type, treatment received, current status, family member affected..."></textarea></div></div>
+</div><!-- SECTION 5: MEDICAL HISTORY -->
+<div class="form-section">
+  <div class="section-header"><span class="section-num">5</span><div><h2>Medical History &amp; Current Conditions</h2><p>Check all that apply</p></div></div>
+  <div class="check-grid three" style="margin-bottom:16px;">
+    <div class="check-item"><input type="checkbox"><label>Type 2 diabetes</label></div>
+    <div class="check-item"><input type="checkbox"><label>Prediabetes / insulin resistance</label></div>
+    <div class="check-item"><input type="checkbox"><label>Thyroid disorder (hypo/hyper)</label></div>
+    <div class="check-item"><input type="checkbox"><label>Osteoporosis / osteopenia</label></div>
+    <div class="check-item"><input type="checkbox"><label>Autoimmune disease</label></div>
+    <div class="check-item"><input type="checkbox"><label>Migraines with aura</label></div>
+    <div class="check-item"><input type="checkbox"><label>Migraines without aura</label></div>
+    <div class="check-item"><input type="checkbox"><label>Anxiety / depression</label></div>
+    <div class="check-item"><input type="checkbox"><label>PCOS (polycystic ovary syndrome)</label></div>
+    <div class="check-item"><input type="checkbox"><label>Endometriosis</label></div>
+    <div class="check-item"><input type="checkbox"><label>Uterine fibroids</label></div>
+    <div class="check-item"><input type="checkbox"><label>Gallbladder disease</label></div>
+    <div class="check-item"><input type="checkbox"><label>Liver disease / hepatitis</label></div>
+    <div class="check-item"><input type="checkbox"><label>Kidney disease</label></div>
+    <div class="check-item"><input type="checkbox"><label>High cholesterol / hyperlipidemia</label></div>
+    <div class="check-item"><input type="checkbox"><label>Sleep apnea</label></div>
+    <div class="check-item"><input type="checkbox"><label>Vaginal atrophy / GSM</label></div>
+    <div class="check-item danger"><input type="checkbox"><label>Unexplained vaginal bleeding</label></div>
+    <div class="check-item danger"><input type="checkbox"><label>Active liver disease or liver failure</label></div>
+    <div class="check-item danger"><input type="checkbox"><label>Known estrogen-dependent tumor</label></div>
+  </div>
+  <div class="yn-row"><span class="yn-question flagged">Do you have unexplained vaginal bleeding in the past 6 months (postmenopausal)?</span><div class="yn-options"><label><input type="radio" name="bleeding" value="yes" onchange="showFlag('bleeding-flag')"> Yes</label><label><input type="radio" name="bleeding" value="no"> No</label><label><input type="radio" name="bleeding" value="na"> N/A</label></div></div>
+  <div id="bleeding-flag" class="flag-alert"><p><strong>&#9888; Absolute contraindication:</strong> Unexplained postmenopausal bleeding must be fully worked up with gynecologic evaluation before hormone therapy can be initiated.</p></div>
+  <div class="field-row full" style="margin-top:14px;"><div class="field-group"><label>Other Medical Conditions Not Listed Above</label><textarea placeholder="List any other diagnoses, hospitalizations, or surgeries..."></textarea></div></div>
+</div>
+<!-- SECTION 6: MEDICATIONS -->
+<div class="form-section">
+  <div class="section-header"><span class="section-num">6</span><div><h2>Current Medications &amp; Supplements</h2><p>Including OTC products, herbals, and any current or past hormone therapy</p></div></div>
+  <div class="yn-row"><span class="yn-question">Are you currently taking any prescription medications?</span><div class="yn-options"><label><input type="radio" name="rx_meds" value="yes"> Yes</label><label><input type="radio" name="rx_meds" value="no"> No</label></div></div>
+  <div class="field-row full" style="margin-top:10px;"><div class="field-group"><label>List all prescription medications (name, dose, duration)</label><textarea placeholder="Example: Levothyroxine 50mcg daily for hypothyroidism (5 years); Metformin 500mg twice daily (2 years)..."></textarea></div></div>
+  <div class="yn-row"><span class="yn-question">Are you currently taking anticoagulants (warfarin, Eliquis, Xarelto, heparin)?</span><div class="yn-options"><label><input type="radio" name="anticoag" value="yes"> Yes</label><label><input type="radio" name="anticoag" value="no"> No</label></div></div>
+  <div class="yn-row"><span class="yn-question">Are you taking herbal/OTC products for hormonal symptoms (black cohosh, red clover, wild yam)?</span><div class="yn-options"><label><input type="radio" name="herbal" value="yes"> Yes</label><label><input type="radio" name="herbal" value="no"> No</label></div></div>
+  <div class="yn-row"><span class="yn-question">Have you used hormone therapy (estrogen, progesterone, or testosterone) in the past?</span><div class="yn-options"><label><input type="radio" name="prev_hrt" value="yes"> Yes</label><label><input type="radio" name="prev_hrt" value="no"> No</label></div></div>
+  <div class="field-row full" style="margin-top:10px;"><div class="field-group"><label>Previous hormone therapy details (if applicable)</label><textarea placeholder="What was prescribed, dose, duration, why discontinued, and how did you respond?"></textarea></div></div>
+</div><!-- SECTION 7: RISKS AND BENEFITS -->
+<div class="form-section">
+  <div class="section-header"><span class="section-num">7</span><div><h2>Risks &amp; Benefits of Hormone Therapy &mdash; Informed Consent Disclosure</h2><p>Please read carefully. You will be asked to confirm you have read and understood this section</p></div></div>
+  <div class="note-box" style="margin-bottom:16px;"><p>&#9432;&ensp;The information below reflects current evidence from NAMS, ACOG, and the USPSTF. BHRT uses hormones chemically identical to those produced by the human body (17-beta estradiol, micronized progesterone, testosterone). <strong>Bioidentical does not mean risk-free.</strong> All hormones carry risks that must be understood.</p></div>
+  <div class="contra-block">
+    <h3>&#128683; Absolute Contraindications &mdash; Hormone Therapy Cannot Be Initiated</h3>
+    <ul class="contra-list">
+      <li>Active or history of breast cancer (ER-positive or unknown)</li>
+      <li>Active or history of endometrial cancer (unopposed estrogen)</li>
+      <li>Active or undiagnosed vaginal bleeding</li>
+      <li>Active DVT or pulmonary embolism</li>
+      <li>Active liver disease or liver failure</li>
+      <li>Known estrogen-sensitive tumor (gynecologic or other)</li>
+      <li>Pregnancy (confirm negative prior to initiation)</li>
+    </ul>
+  </div>
+  <div class="contra-block" style="background:#fff7ed;border-color:#fed7aa;">
+    <h3 style="color:#c2410c;">&#9888;&#65039; Relative Contraindications &mdash; Risk-Benefit Analysis Required</h3>
+    <ul class="contra-list">
+      <li style="color:#9a3412;">Personal history of DVT/PE (&gt;12 months ago, now off anticoagulation)</li>
+      <li style="color:#9a3412;">Active cigarette smoking (oral estrogen contraindicated; transdermal options much lower risk)</li>
+      <li style="color:#9a3412;">Migraines with aura (increased stroke risk with oral estrogen)</li>
+      <li style="color:#9a3412;">Uncontrolled hypertension (must be controlled before initiation)</li>
+      <li style="color:#9a3412;">Strong family history of breast cancer (2+ first-degree relatives, or BRCA+ carrier)</li>
+      <li style="color:#9a3412;">Known thrombophilia (e.g., Factor V Leiden)</li>
+      <li style="color:#9a3412;">Gallbladder disease (oral estrogen risk; lower with transdermal)</li>
+      <li style="color:#9a3412;">Hypertriglyceridemia (oral estrogen may worsen; transdermal preferred)</li>
+    </ul>
+  </div>
+  <div class="rb-grid">
+    <div class="rb-card risks">
+      <h3>&#9888;&#65039; Potential Risks</h3>
+      <ul class="rb-list">
+        <li><strong>Breast cancer:</strong> Combined estrogen + synthetic progestin associated with modestly increased risk after 3&ndash;5 years. Micronized progesterone (bioidentical) shows lower risk profile. <span class="risk-level moderate">Moderate</span></li>
+        <li><strong>Blood clots (DVT/PE):</strong> Oral estrogen increases risk 2&ndash;4x. Transdermal estrogen carries minimal increase. Risk higher with obesity, immobility, thrombophilia. <span class="risk-level high">High oral</span> <span class="risk-level low">Low transdermal</span></li>
+        <li><strong>Stroke:</strong> Modest increase with oral estrogen, particularly in women over 60 or &gt;10 years post-menopause. Transdermal estrogen has no demonstrated stroke risk increase. <span class="risk-level moderate">Moderate oral</span></li>
+        <li><strong>Endometrial cancer:</strong> Estrogen alone without progesterone in women with a uterus significantly increases endometrial cancer risk. Progesterone co-therapy eliminates this risk. <span class="risk-level high">High if unopposed</span></li>
+        <li><strong>Cardiovascular events:</strong> Starting HRT within 10 years of menopause or before 60 appears neutral or favorable. Starting &gt;10 years post-menopause may increase cardiac risk ("timing hypothesis"). <span class="risk-level moderate">Timing dependent</span></li>
+        <li><strong>Gallbladder disease:</strong> Oral estrogen increases gallstone risk. Transdermal route much lower risk. <span class="risk-level low">Low transdermal</span></li>
+        <li><strong>Common side effects:</strong> Breast tenderness, bloating, mood changes &mdash; usually dose-related and temporary. <span class="risk-level low">Low</span></li>
+        <li><strong>Testosterone-specific risks:</strong> Acne, hair growth, voice changes, clitoral enlargement, polycythemia. Dose monitoring required. <span class="risk-level low">Low when monitored</span></li>
+      </ul>
+    </div>
+    <div class="rb-card benefits">
+      <h3>&#9989; Established Benefits</h3>
+      <ul class="rb-list">
+        <li><strong>Vasomotor symptom relief:</strong> Most effective treatment for hot flashes and night sweats. Reduces frequency and severity by 75&ndash;90% in most women. FDA-approved indication.</li>
+        <li><strong>Bone density preservation:</strong> Estrogen prevents osteoporosis and reduces fracture risk. Highly effective when started in early menopause.</li>
+        <li><strong>Genitourinary health:</strong> Resolves vaginal atrophy, dryness, painful intercourse, reduces recurrent UTI risk (GSM).</li>
+        <li><strong>Mood and mental health:</strong> Reduces depression, anxiety, and mood instability from hormonal fluctuations. Particularly beneficial in perimenopause.</li>
+        <li><strong>Sleep quality:</strong> Improves sleep by reducing night sweats and stabilizing estrogen levels regulating sleep architecture.</li>
+        <li><strong>Cognitive function:</strong> Observational data suggests potential protective effect against Alzheimer&rsquo;s when started in perimenopause/early menopause.</li>
+        <li><strong>Cardiovascular protection (early):</strong> Women starting within 10 years of menopause may have neutral or favorable cardiovascular and metabolic effects.</li>
+        <li><strong>Testosterone benefits:</strong> Improved libido, energy, lean muscle mass, cognitive sharpness, and wellbeing (off-label use in women).</li>
+        <li><strong>Skin and collagen:</strong> Preserves skin elasticity and collagen content, reduces thinning associated with menopause.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="note-box" style="margin-top:16px;"><p>&#9432;&ensp;<strong>Route of administration matters:</strong> Transdermal estrogen bypasses first-pass liver metabolism &mdash; significantly lower risk of blood clots, gallbladder disease, and stroke vs. oral. Vaginal estrogen (local low-dose) carries minimal systemic absorption and is generally safe in most women. Your provider recommends the safest route based on your individual risk profile.</p></div>
+  <div class="note-box" style="margin-top:10px;background:#f0f5ea;border-color:var(--olive);"><p>&#9432;&ensp;<strong>About the WHI:</strong> The 2002 Women&rsquo;s Health Initiative study used oral conjugated equine estrogen + synthetic medroxyprogesterone acetate in women averaging 63 years old (13 years post-menopause). Subsequent analysis found the absolute risk increase was small and that younger women starting earlier have a fundamentally different risk profile. Current NAMS and ACOG guidelines affirm that for healthy women under 60 or within 10 years of menopause, benefits generally outweigh risks.</p></div>
+</div><!-- SECTION 8: GOALS -->
+<div class="form-section">
+  <div class="section-header"><span class="section-num">8</span><div><h2>Your Goals &amp; Questions</h2><p>Help us understand what matters most to you</p></div></div>
+  <div class="field-row full"><div class="field-group"><label>What symptoms are most affecting your quality of life?</label><textarea style="min-height:80px;" placeholder="e.g., I wake up 5 times a night with hot flashes, my mood is very low, I have no interest in intimacy..."></textarea></div></div>
+  <div class="field-row full"><div class="field-group"><label>What are your primary goals from hormone therapy?</label><textarea placeholder="e.g., I want to sleep through the night, feel like myself again, and protect my bone density..."></textarea></div></div>
+  <div class="field-row full"><div class="field-group"><label>Do you have concerns or hesitations about hormone therapy?</label><textarea placeholder="e.g., I'm worried about breast cancer risk because my mother had it..."></textarea></div></div>
+  <div class="field-row full"><div class="field-group"><label>Delivery method preference (if any)</label><select><option value="">No preference / let provider decide</option><option>Transdermal patch</option><option>Transdermal gel or cream</option><option>Oral capsule</option><option>Vaginal ring / suppository</option><option>Topical testosterone</option><option>Combination &mdash; let provider recommend</option></select></div></div>
+</div>
+<!-- SECTION 9: CONSENT -->
+<div class="form-section">
+  <div class="section-header"><span class="section-num">9</span><div><h2>Informed Consent &amp; Patient Attestation</h2><p>Required &mdash; please read each statement and confirm</p></div></div>
+  <p style="font-size:12px;color:var(--muted);margin-bottom:16px;">Check each box to confirm your understanding. Your electronic signature below constitutes your informed consent.</p>
+  <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">
+    <div class="check-item" style="align-items:flex-start;padding:10px 12px;"><input type="checkbox" id="c1" required><label for="c1">I have read and understand the Risks &amp; Benefits section (Section 7) and have had the opportunity to ask questions.</label></div>
+    <div class="check-item" style="align-items:flex-start;padding:10px 12px;"><input type="checkbox" id="c2" required><label for="c2">I understand that hormone therapy is not right for everyone and that my eligibility will be determined by my provider based on my complete medical history, labs, and imaging.</label></div>
+    <div class="check-item" style="align-items:flex-start;padding:10px 12px;"><input type="checkbox" id="c3" required><label for="c3">I have answered all questions truthfully and completely. I understand that withholding information could result in prescribing decisions that harm me.</label></div>
+    <div class="check-item" style="align-items:flex-start;padding:10px 12px;"><input type="checkbox" id="c4" required><label for="c4">I understand that mammography/breast imaging and up-to-date labs are required before hormone therapy is initiated, and I agree to provide results as directed.</label></div>
+    <div class="check-item" style="align-items:flex-start;padding:10px 12px;"><input type="checkbox" id="c5" required><label for="c5">I understand that hormone therapy requires ongoing monitoring with periodic labs (every 3&ndash;6 months), follow-up visits, and may need dose adjustments over time.</label></div>
+    <div class="check-item" style="align-items:flex-start;padding:10px 12px;"><input type="checkbox" id="c6" required><label for="c6">I understand that Florida Mobile Health prescribes only FDA-approved brand-name medications. No compounded hormones are used unless specifically discussed and clinically justified.</label></div>
+    <div class="check-item" style="align-items:flex-start;padding:10px 12px;"><input type="checkbox" id="c7" required><label for="c7">I understand this form does not create a provider-patient relationship. A clinical evaluation is required before any treatment is initiated.</label></div>
+    <div class="check-item" style="align-items:flex-start;padding:10px 12px;"><input type="checkbox" id="c8" required><label for="c8">I consent to Florida Mobile Health maintaining this health information as part of my confidential medical record, consistent with HIPAA regulations.</label></div>
+    <div class="check-item" style="align-items:flex-start;padding:10px 12px;"><input type="checkbox" id="c9" required><label for="c9">I acknowledge I may withdraw consent for hormone therapy at any time, and that discontinuation may require a tapering plan to avoid abrupt withdrawal symptoms.</label></div>
+  </div>
+  <div class="attest-block">
+    <h3>Patient Electronic Signature</h3>
+    <p class="attest-text">By signing below, I attest that: (1) I have read this entire form; (2) I have answered all questions accurately; (3) I understand the risks, benefits, alternatives, and contraindications of hormone therapy as described; (4) I have had the opportunity to ask questions; and (5) I provide informed consent to proceed with a hormone therapy evaluation with Michele Li Causi, FNP-BC, of Florida Mobile Health.<br><br>I acknowledge that this consent does not guarantee that hormone therapy will be prescribed &mdash; final prescribing decisions rest with the clinician following full evaluation. This is a telehealth practice and applicable telehealth consent laws of my state apply.</p>
+    <div class="sig-row">
+      <div><div class="sig-field" contenteditable="true" style="outline:none;min-height:36px;color:var(--text);"></div><div class="sig-label">Patient Full Legal Name (typed signature)</div></div>
+      <div><div class="sig-field"><input type="date" style="border:none;background:transparent;font-size:14px;width:100%;outline:none;"></div><div class="sig-label">Date</div></div>
+    </div>
+  </div>
+  <div class="provider-section">
+    <h3>&#128203; For Provider Use Only</h3>
+    <div class="field-row three" style="margin-top:8px;">
+      <div class="field-group"><label style="color:rgba(255,255,255,.6);">Date Form Reviewed</label><input type="date" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:white;border-radius:6px;padding:7px 10px;font-size:13px;"></div>
+      <div class="field-group"><label style="color:rgba(255,255,255,.6);">Screening Status</label><select style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:white;border-radius:6px;padding:7px 10px;font-size:13px;"><option>None &mdash; proceed to consultation</option><option>Minor &mdash; discuss at consultation</option><option>Requires additional workup</option><option>Absolute contraindication &mdash; not a candidate</option></select></div>
+      <div class="field-group"><label style="color:rgba(255,255,255,.6);">Provider Initials</label><input type="text" maxlength="5" placeholder="MLC" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:white;border-radius:6px;padding:7px 10px;font-size:13px;"></div>
+    </div>
+    <div class="field-group" style="margin-top:10px;"><label style="color:rgba(255,255,255,.6);">Provider Clinical Notes</label><textarea style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:white;border-radius:6px;padding:9px 12px;font-size:13px;min-height:60px;font-family:'DM Sans',sans-serif;resize:vertical;"></textarea></div>
+  </div>
+  <div style="margin-top:20px;padding:14px;background:#f5f0e8;border-radius:8px;border:1px solid var(--border);"><p style="font-size:11px;color:var(--light);line-height:1.8;text-align:center;">This form was developed in accordance with current NAMS, ACOG, and evidence-based hormone therapy prescribing guidelines. It does not constitute legal advice. Florida Mobile Health recommends annual review of all clinical consent forms with your malpractice carrier and a licensed healthcare attorney. All services are provided by Michele Li Causi, FNP-BC, RD, CDCES &mdash; licensed for autonomous practice in Florida and licensed in Arizona, Nevada, Colorado, New Mexico, and Utah.</p></div>
+</div>
+</div><!-- end container -->
+<div class="print-bar">
+  <button class="btn btn-outline" onclick="window.print()">&#128438; Print / Save PDF</button>
+  <button class="btn btn-primary" onclick="submitForm()">Submit Form &#8594;</button>
+</div>
+<script>
+function toggleReq(checkId, itemId){
+  const item=document.getElementById(itemId);
+  const checked=document.getElementById(checkId).checked;
+  item.classList.toggle('complete',checked);
+}
+function showFlag(flagId){
+  const el=document.getElementById(flagId);
+  if(el)el.classList.add('show');
+}
+document.querySelectorAll('input[name="uterus"]').forEach(r=>{
+  r.addEventListener('change',function(){
+    const d=document.getElementById('uterus-hyst-details');
+    if(d)d.style.display=(this.value==='hysterectomy'||this.value==='partial')?'block':'none';
+  });
+});
+const mr=document.getElementById('mammo-result');
+if(mr)mr.addEventListener('change',function(){
+  const f=document.getElementById('mammo-flag');
+  if(this.value.includes('Abnormal')||this.value.includes('Biopsy'))f.classList.add('show');
+  else f.classList.remove('show');
+});
+function submitForm(){
+  const boxes=['c1','c2','c3','c4','c5','c6','c7','c8','c9'];
+  const unchecked=boxes.filter(id=>!document.getElementById(id).checked);
+  if(unchecked.length>0){alert('Please check all ' + unchecked.length + ' remaining consent acknowledgment box(es) before submitting.');return;}
+  alert('Form submitted! Michele will review your screening information and contact you within 1 business day to confirm your consultation appointment.');
+}
+</script>
+</body>
+</html>
