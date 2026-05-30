@@ -84,8 +84,8 @@ const NAV_HTML = `
     <a href="/intro-pricing.html" class="lang-en" style="padding-left:28px;color:#3a5420">&#8212; New Patient Visit $149 (reg $200)</a>
     <a href="/intro-pricing-es.html" class="lang-es lang-hidden" style="padding-left:28px;color:#3a5420">&#8212; Consulta Nuevo Paciente $149</a>
     <a href="/intro-pricing.html" class="lang-en" style="padding-left:28px;color:#3a5420">&#8212; GLP-1 Consult $199 (reg $299)</a>
-    <a href="/intro-pricing-es.html" class="lang-es lang-hidden" style="padding-left:28px;color:#3a5420">&#8212; Consulta GLP-1 $199</
-        <div class="nav-dropdown-divider" style="height:1px;background:rgba(255,255,255,.15);margin:6px 4px;"></div><a href="/utah.html" class="lang-es lang-hidden" style="font-size:12px;padding-left:20px;">Utah</a>a>
+    <a href="/intro-pricing-es.html" class="lang-es lang-hidden" style="padding-left:28px;color:#3a5420">&#8212; Consulta GLP-1 $199</a>
+        
     <a href="/intro-pricing.html" class="lang-en" style="padding-left:28px;color:#3a5420">&#8212; Hormone Consult $149 (reg $200)</a>
     <a href="/intro-pricing-es.html" class="lang-es lang-hidden" style="padding-left:28px;color:#3a5420">&#8212; Consulta Hormonal $149</a>
     <a href="/for-practices.html" class="lang-en">For Practices</a><a href="/for-practices.html" class="lang-es lang-hidden">Para Consultorios</a>
