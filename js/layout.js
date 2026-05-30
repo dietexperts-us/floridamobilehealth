@@ -24,6 +24,15 @@ const NAV_HTML = `
           <a href="/shop.html" class="lang-en">Health Guides &amp; Shop</a><a href="/shop.html" class="lang-es lang-hidden">Guías de Salud y Tienda</a>
           <a href="/local-visits.html" class="lang-en">Local in-person visits</a><a href="/local-visits.html" class="lang-es lang-hidden">Visitas en persona locales</a>
           <a href="/resources.html" class="lang-en" style="color:var(--olive-500)">Free health guides</a><a href="/resources.html" class="lang-es lang-hidden" style="color:var(--olive-500)">Guías gratuitas de salud</a>
+        <div style="height:1px;background:rgba(255,255,255,.18);margin:6px 4px;"></div>
+        <span class="lang-en" style="display:block;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.45);padding:5px 16px 2px;cursor:default;">Virtual Coverage</span>
+        <span class="lang-es lang-hidden" style="display:block;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.45);padding:5px 16px 2px;cursor:default;">Cobertura Virtual</span>
+        <a href="/index.html" class="lang-en" style="padding:4px 16px 4px 24px!important;font-size:12px;">Florida</a><a href="/index.html" class="lang-es lang-hidden" style="padding:4px 16px 4px 24px!important;font-size:12px;">Florida</a>
+        <a href="/arizona.html" class="lang-en" style="padding:4px 16px 4px 24px!important;font-size:12px;">Arizona Mobile Health</a><a href="/arizona.html" class="lang-es lang-hidden" style="padding:4px 16px 4px 24px!important;font-size:12px;">Arizona Mobile Health</a>
+        <a href="/nevada.html" class="lang-en" style="padding:4px 16px 4px 24px!important;font-size:12px;">Nevada</a><a href="/nevada.html" class="lang-es lang-hidden" style="padding:4px 16px 4px 24px!important;font-size:12px;">Nevada</a>
+        <a href="/colorado.html" class="lang-en" style="padding:4px 16px 4px 24px!important;font-size:12px;">Colorado</a><a href="/colorado.html" class="lang-es lang-hidden" style="padding:4px 16px 4px 24px!important;font-size:12px;">Colorado</a>
+        <a href="/new-mexico.html" class="lang-en" style="padding:4px 16px 4px 24px!important;font-size:12px;">New Mexico</a><a href="/new-mexico.html" class="lang-es lang-hidden" style="padding:4px 16px 4px 24px!important;font-size:12px;">New Mexico</a>
+        <a href="/utah.html" class="lang-en" style="padding:4px 16px 4px 24px!important;font-size:12px;">Utah</a><a href="/utah.html" class="lang-es lang-hidden" style="padding:4px 16px 4px 24px!important;font-size:12px;">Utah</a>
         </div>
       </div>
       <a href="/pricing.html" class="lang-en">Pricing</a><a href="/pricing.html" class="lang-es lang-hidden">Precios</a>
@@ -76,15 +85,7 @@ const NAV_HTML = `
     <a href="/intro-pricing-es.html" class="lang-es lang-hidden" style="padding-left:28px;color:#3a5420">&#8212; Consulta Nuevo Paciente $149</a>
     <a href="/intro-pricing.html" class="lang-en" style="padding-left:28px;color:#3a5420">&#8212; GLP-1 Consult $199 (reg $299)</a>
     <a href="/intro-pricing-es.html" class="lang-es lang-hidden" style="padding-left:28px;color:#3a5420">&#8212; Consulta GLP-1 $199</
-        <div class="nav-dropdown-divider" style="height:1px;background:rgba(255,255,255,.15);margin:6px 4px;"></div>
-        <span style="display:block;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.5);padding:6px 16px 2px;" class="lang-en">Virtual Coverage</span>
-        <span style="display:block;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.5);padding:6px 16px 2px;" class="lang-es lang-hidden">Cobertura Virtual</span>
-        <a href="/index.html" class="lang-en" style="font-size:12px;padding-left:20px;">Florida</a><a href="/index.html" class="lang-es lang-hidden" style="font-size:12px;padding-left:20px;">Florida</a>
-        <a href="/arizona.html" class="lang-en" style="font-size:12px;padding-left:20px;">Arizona Mobile Health</a><a href="/arizona.html" class="lang-es lang-hidden" style="font-size:12px;padding-left:20px;">Arizona Mobile Health</a>
-        <a href="/nevada.html" class="lang-en" style="font-size:12px;padding-left:20px;">Nevada</a><a href="/nevada.html" class="lang-es lang-hidden" style="font-size:12px;padding-left:20px;">Nevada</a>
-        <a href="/colorado.html" class="lang-en" style="font-size:12px;padding-left:20px;">Colorado</a><a href="/colorado.html" class="lang-es lang-hidden" style="font-size:12px;padding-left:20px;">Colorado</a>
-        <a href="/new-mexico.html" class="lang-en" style="font-size:12px;padding-left:20px;">New Mexico</a><a href="/new-mexico.html" class="lang-es lang-hidden" style="font-size:12px;padding-left:20px;">New Mexico</a>
-        <a href="/utah.html" class="lang-en" style="font-size:12px;padding-left:20px;">Utah</a><a href="/utah.html" class="lang-es lang-hidden" style="font-size:12px;padding-left:20px;">Utah</a>a>
+        <div class="nav-dropdown-divider" style="height:1px;background:rgba(255,255,255,.15);margin:6px 4px;"></div><a href="/utah.html" class="lang-es lang-hidden" style="font-size:12px;padding-left:20px;">Utah</a>a>
     <a href="/intro-pricing.html" class="lang-en" style="padding-left:28px;color:#3a5420">&#8212; Hormone Consult $149 (reg $200)</a>
     <a href="/intro-pricing-es.html" class="lang-es lang-hidden" style="padding-left:28px;color:#3a5420">&#8212; Consulta Hormonal $149</a>
     <a href="/for-practices.html" class="lang-en">For Practices</a><a href="/for-practices.html" class="lang-es lang-hidden">Para Consultorios</a>
