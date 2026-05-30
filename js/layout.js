@@ -83,6 +83,15 @@ const NAV_HTML = `
     <a href="/contact.html" class="lang-en">Contact</a><a href="/contact.html" class="lang-es lang-hidden">Contacto</a>
     <a href="/book.html" style="color:#6b2518;font-weight:600" class="lang-en">&#9654; Book a visit</a><a href="/book.html" style="color:#6b2518;font-weight:600" class="lang-es lang-hidden">&#9654; Agendar cita</a>
   </div>
+    <div class="nav-dropdown-divider"></div>
+    <span class="nav-dropdown-section-label lang-en">Virtual Coverage</span>
+    <span class="nav-dropdown-section-label lang-es lang-hidden">Cobertura Virtual</span>
+    <a href="/index.html" class="lang-en nav-state-link">&#127944; Florida</a><a href="/index.html" class="lang-es lang-hidden nav-state-link">&#127944; Florida</a>
+    <a href="/arizona.html" class="lang-en nav-state-link">&#127968; Arizona Mobile Health</a><a href="/arizona.html" class="lang-es lang-hidden nav-state-link">&#127968; Arizona Mobile Health</a>
+    <a href="/nevada.html" class="lang-en nav-state-link">&#9857; Nevada</a><a href="/nevada.html" class="lang-es lang-hidden nav-state-link">&#9857; Nevada</a>
+    <a href="/colorado.html" class="lang-en nav-state-link">&#9968; Colorado</a><a href="/colorado.html" class="lang-es lang-hidden nav-state-link">&#9968; Colorado</a>
+    <a href="/new-mexico.html" class="lang-en nav-state-link">&#127774; New Mexico</a><a href="/new-mexico.html" class="lang-es lang-hidden nav-state-link">&#127774; New Mexico</a>
+    <a href="/utah.html" class="lang-en nav-state-link">&#127956; Utah</a><a href="/utah.html" class="lang-es lang-hidden nav-state-link">&#127956; Utah</a>
 </nav>
 `;
 
