@@ -75,35 +75,23 @@ const NAV_HTML = `
     <a href="/intro-pricing.html" class="lang-en" style="padding-left:28px;color:#3a5420">&#8212; New Patient Visit $149 (reg $200)</a>
     <a href="/intro-pricing-es.html" class="lang-es lang-hidden" style="padding-left:28px;color:#3a5420">&#8212; Consulta Nuevo Paciente $149</a>
     <a href="/intro-pricing.html" class="lang-en" style="padding-left:28px;color:#3a5420">&#8212; GLP-1 Consult $199 (reg $299)</a>
-    <a href="/intro-pricing-es.html" class="lang-es lang-hidden" style="padding-left:28px;color:#3a5420">&#8212; Consulta GLP-1 $199</a>
+    <a href="/intro-pricing-es.html" class="lang-es lang-hidden" style="padding-left:28px;color:#3a5420">&#8212; Consulta GLP-1 $199</
+        <div class="nav-dropdown-divider" style="height:1px;background:rgba(255,255,255,.15);margin:6px 4px;"></div>
+        <span style="display:block;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.5);padding:6px 16px 2px;" class="lang-en">Virtual Coverage</span>
+        <span style="display:block;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.5);padding:6px 16px 2px;" class="lang-es lang-hidden">Cobertura Virtual</span>
+        <a href="/index.html" class="lang-en" style="font-size:12px;padding-left:20px;">Florida</a><a href="/index.html" class="lang-es lang-hidden" style="font-size:12px;padding-left:20px;">Florida</a>
+        <a href="/arizona.html" class="lang-en" style="font-size:12px;padding-left:20px;">Arizona Mobile Health</a><a href="/arizona.html" class="lang-es lang-hidden" style="font-size:12px;padding-left:20px;">Arizona Mobile Health</a>
+        <a href="/nevada.html" class="lang-en" style="font-size:12px;padding-left:20px;">Nevada</a><a href="/nevada.html" class="lang-es lang-hidden" style="font-size:12px;padding-left:20px;">Nevada</a>
+        <a href="/colorado.html" class="lang-en" style="font-size:12px;padding-left:20px;">Colorado</a><a href="/colorado.html" class="lang-es lang-hidden" style="font-size:12px;padding-left:20px;">Colorado</a>
+        <a href="/new-mexico.html" class="lang-en" style="font-size:12px;padding-left:20px;">New Mexico</a><a href="/new-mexico.html" class="lang-es lang-hidden" style="font-size:12px;padding-left:20px;">New Mexico</a>
+        <a href="/utah.html" class="lang-en" style="font-size:12px;padding-left:20px;">Utah</a><a href="/utah.html" class="lang-es lang-hidden" style="font-size:12px;padding-left:20px;">Utah</a>a>
     <a href="/intro-pricing.html" class="lang-en" style="padding-left:28px;color:#3a5420">&#8212; Hormone Consult $149 (reg $200)</a>
     <a href="/intro-pricing-es.html" class="lang-es lang-hidden" style="padding-left:28px;color:#3a5420">&#8212; Consulta Hormonal $149</a>
     <a href="/for-practices.html" class="lang-en">For Practices</a><a href="/for-practices.html" class="lang-es lang-hidden">Para Consultorios</a>
     <a href="/partners.html" class="lang-en">Partners</a><a href="/partners.html" class="lang-es lang-hidden">Socios</a>
     <a href="/contact.html" class="lang-en">Contact</a><a href="/contact.html" class="lang-es lang-hidden">Contacto</a>
     <a href="/book.html" style="color:#6b2518;font-weight:600" class="lang-en">&#9654; Book a visit</a><a href="/book.html" style="color:#6b2518;font-weight:600" class="lang-es lang-hidden">&#9654; Agendar cita</a>
-  </div>
-    <div class="nav-dropdown-divider"></div>
-    <span class="nav-dropdown-section-label lang-en">Virtual Coverage</span>
-    <span class="nav-dropdown-section-label lang-es lang-hidden">Cobertura Virtual</span>
-    <a href="/index.html" class="lang-en nav-state-link">&#127944; Florida</a><a href="/index.html" class="lang-es lang-hidden nav-state-link">&#127944; Florida</a>
-    <a href="/arizona.html" class="lang-en nav-state-link">&#127968; Arizona Mobile Health</a><a href="/arizona.html" class="lang-es lang-hidden nav-state-link">&#127968; Arizona Mobile Health</a>
-    <a href="/nevada.html" class="lang-en nav-state-link">&#9857; Nevada</a><a href="/nevada.html" class="lang-es lang-hidden nav-state-link">&#9857; Nevada</a>
-    <a href="/colorado.html" class="lang-en nav-state-link">&#9968; Colorado</a><a href="/colorado.html" class="lang-es lang-hidden nav-state-link">&#9968; Colorado</a>
-    <a href="/new-mexico.html" class="lang-en nav-state-link">&#127774; New Mexico</a><a href="/new-mexico.html" class="lang-es lang-hidden nav-state-link">&#127774; New Mexico</a>
-    <a href="/utah.html" class="lang-en nav-state-link">&#127956; Utah</a><a href="/utah.html" class="lang-es lang-hidden nav-state-link">&#127956; Utah</a>
-</nav>
-`;
-
-const FOOTER_HTML = `
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <p class="footer-headline">Florida Mobile Health</p>
-        <p class="lang-en">Personalized virtual care for your whole family.</p><p class="lang-es lang-hidden" >Atención virtual personalizada para toda la familia.</p>
-        <p style="margin-top:10px;color:#c4a090">352-399-8874</p>
-        <p><a href="mailto:info@floridamobilehealth.com">info@floridamobilehealth.com</a></p>
+  </div></p>
         <p style="margin-top:10px;color:#f0cfc4;font-weight:600" class="lang-en">Spanish spoken</p><p style="margin-top:10px;color:#f0cfc4;font-weight:600" class="lang-es lang-hidden" >Se habla español</p>
         <div style="display:flex;gap:14px;margin-top:12px">
           <a href="https://www.facebook.com/profile.php?id=56789241306672" target="_blank" rel="noopener" style="color:#f0cfc4;font-size:13px;display:flex;align-items:center;gap:5px;text-decoration:none">
