@@ -363,3 +363,9 @@ ul { list-style: none; }
 .nav-dropdown-menu a:last-child { border-bottom: none; }
 .nav-dropdown-menu a:hover { background: var(--bg-alt); }
 .nav-dropdown-trigger { cursor: pointer; }
+
+
+/* --- Header nav alignment fix --- */
+.nav-links{align-items:center;}
+.nav-links .nav-dropdown-trigger{font-size:13px;color:#5a5850;line-height:1.65;white-space:nowrap;}
+.nav-inner .nav-cta{white-space:nowrap;}
