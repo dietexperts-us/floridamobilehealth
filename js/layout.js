@@ -27,13 +27,13 @@ const NAV_HTML = `
           <a href="/community.html" class="lang-en" style="color:var(--olive-500)">Community programs</a><a href="/community.html" class="lang-es lang-hidden" style="color:var(--olive-500)">Programas comunitarios</a>
           <a href="/metabolic.html" class="lang-en" style="color:var(--terra-500);font-weight:600">90-Day Metabolic Reset</a><a href="/metabolic.html" class="lang-es lang-hidden" style="color:var(--terra-500);font-weight:600">Reinicio Metabólico 90 Días</a>
           <a href="/glp1.html" class="lang-en" style="font-weight:600">GLP-1 Program</a><a href="/glp1.html" class="lang-es lang-hidden" style="font-weight:600">Programa GLP-1</a>
-          <a href="/membership.html" class="lang-en" style="color:var(--olive-500);font-weight:600">Monthly Membership</a><a href="/membership.html" class="lang-es lang-hidden" style="color:var(--olive-500);font-weight:600">Membersía Mensual</a>
-          <a href="/shop.html" class="lang-en">Health Guides &amp; Shop</a><a href="/shop.html" class="lang-es lang-hidden">Guías de Salud y Tienda</a>
+          
+          
           <a href="/local-visits.html" class="lang-en">Local in-person visits</a><a href="/local-visits.html" class="lang-es lang-hidden">Visitas en persona locales</a>
           <a href="/resources.html" class="lang-en" style="color:var(--olive-500)">Free health guides</a><a href="/resources.html" class="lang-es lang-hidden" style="color:var(--olive-500)">Guías gratuitas de salud</a>
         </div>
       </div>
-      <a href="/pricing.html" class="lang-en">Pricing</a><a href="/pricing.html" class="lang-es lang-hidden">Precios</a>
+      <div class="nav-dropdown"><span class="nav-dropdown-trigger lang-en">Memberships ▾</span><span class="nav-dropdown-trigger lang-es lang-hidden">Membresías ▾</span><div class="nav-dropdown-menu"><a href="/membership.html" class="lang-en">Monthly Membership</a><a href="/membership.html" class="lang-es lang-hidden">Membresía Mensual</a><a href="/for-employers.html" class="lang-en">For Employers / Teams</a><a href="/for-employers.html" class="lang-es lang-hidden">Para Empleadores / Equipos</a></div></div><a href="/shop.html" class="lang-en">Shop</a><a href="/shop.html" class="lang-es lang-hidden">Tienda</a><a href="/pricing.html" class="lang-en">Pricing</a><a href="/membership.html" class="lang-en">Memberships</a><a href="/membership.html" class="lang-es lang-hidden">Membresías</a><a href="/for-employers.html" class="lang-en" style="padding-left:28px">— For Employers / Teams</a><a href="/for-employers.html" class="lang-es lang-hidden" style="padding-left:28px">— Para Empleadores / Equipos</a><a href="/shop.html" class="lang-en">Shop</a><a href="/shop.html" class="lang-es lang-hidden">Tienda</a><a href="/pricing.html" class="lang-es lang-hidden">Precios</a>
       <div class="nav-dropdown">
         <span class="nav-dropdown-trigger lang-en" style="color:#c9a84c;font-weight:700">🎁 Promos &#9662;</span>
         <span class="nav-dropdown-trigger lang-es lang-hidden" style="color:#c9a84c;font-weight:700">🎁 Promos &#9662;</span>
@@ -74,8 +74,8 @@ const NAV_HTML = `
     <a href="/community.html" class="lang-en" style="color:var(--olive-500);padding-left:28px">&#8212; Community programs</a><a href="/community.html" class="lang-es lang-hidden" style="color:var(--olive-500);padding-left:28px">&#8212; Programas comunitarios</a>    <a href="/local-visits.html" class="lang-en">Local in-person visits (SW Florida)</a><a href="/local-visits.html" class="lang-es lang-hidden">Visitas en persona (Suroeste FL)</a>
     <a href="/metabolic.html" class="lang-en" style="color:var(--terra-500);font-weight:600;padding-left:28px">&#8212; 90-Day Metabolic Reset</a><a href="/metabolic.html" class="lang-es lang-hidden" style="color:var(--terra-500);font-weight:600;padding-left:28px">&#8212; Reinicio Metabólico</a>
     <a href="/glp1.html" class="lang-en" style="font-weight:600;padding-left:28px">&#8212; GLP-1 Program</a><a href="/glp1.html" class="lang-es lang-hidden" style="font-weight:600;padding-left:28px">&#8212; Programa GLP-1</a>
-    <a href="/membership.html" class="lang-en" style="color:var(--olive-500);font-weight:600;padding-left:28px">&#8212; Monthly Membership</a><a href="/membership.html" class="lang-es lang-hidden" style="color:var(--olive-500);font-weight:600;padding-left:28px">&#8212; Membersía Mensual</a>
-    <a href="/shop.html" class="lang-en">Health Guides &amp; Shop</a><a href="/shop.html" class="lang-es lang-hidden">Guías de Salud y Tienda</a>
+    
+    
     <a href="/resources.html" class="lang-en">Free health guides</a><a href="/resources.html" class="lang-es lang-hidden">Guías gratuitas de salud</a>
     <a href="/pricing.html" class="lang-en">Pricing</a><a href="/pricing.html" class="lang-es lang-hidden">Precios</a>
     <a href="/intro-pricing.html" class="lang-en" style="color:#c9a84c;font-weight:700;background:#6b2518;padding:8px 16px;border-radius:6px;margin:4px 0">🎁 Intro Pricing — New Patients</a>
