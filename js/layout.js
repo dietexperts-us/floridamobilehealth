@@ -9,7 +9,7 @@ const NAV_HTML = `
     </a>
     <div class="nav-links">
       <a href="/about.html" class="lang-en">About</a><a href="/about.html" class="lang-es lang-hidden">Nosotros</a>
-      <a href="/services.html" class="lang-en">Services</a><a href="/services.html" class="lang-es lang-hidden">Servicios</a>
+      <a href="/services.html" class="lang-en">Services</a><a href="/services.html" class="lang-es lang-hidden">Servicios</a><a href="/for-practices.html" class="lang-en">Partner &amp; Contract</a><a href="/for-practices.html" class="lang-es lang-hidden">Alianzas y Contratos</a>
       <div class="nav-dropdown">
         <span class="nav-dropdown-trigger lang-en">Programs &#9662;</span>
         <span class="nav-dropdown-trigger lang-es lang-hidden">Programas &#9662;</span>
@@ -59,7 +59,7 @@ const NAV_HTML = `
   <div class="nav-mobile" id="nav-mobile">
     <a href="/index.html" class="lang-en">Home</a><a href="/index.html" class="lang-es lang-hidden">Inicio</a>
     <a href="/about.html" class="lang-en">About</a><a href="/about.html" class="lang-es lang-hidden">Nosotros</a>
-    <a href="/services.html" class="lang-en">Services</a><a href="/services.html" class="lang-es lang-hidden">Servicios</a>
+    <a href="/services.html" class="lang-en">Services</a><a href="/services.html" class="lang-es lang-hidden">Servicios</a><a href="/for-practices.html" class="lang-en">Partner &amp; Contract</a><a href="/for-practices.html" class="lang-es lang-hidden">Alianzas y Contratos</a>
     <a href="/programs.html" class="lang-en">Care programs</a><a href="/programs.html" class="lang-es lang-hidden">Programas de salud</a>
     <a href="/metabolic-health.html" class="lang-en" style="color:var(--terra-500);font-weight:600;padding-left:28px">&#8212; DietexpertNP Rx™</a><a href="/metabolic-health.html" class="lang-es lang-hidden" style="color:var(--terra-500);font-weight:600;padding-left:28px">&#8212; DietexpertNP Rx™</a>
     <a href="/menopause-diabetes.html" class="lang-en" style="color:#8a2040;font-weight:600;padding-left:28px">&#8212; MenopauseRx&#8482;</a><a href="/menopause-diabetes.html" class="lang-es lang-hidden" style="color:#8a2040;font-weight:600;padding-left:28px">&#8212; MenopauseRx&#8482;</a>
