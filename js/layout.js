@@ -9,7 +9,14 @@ const NAV_HTML = `
     </a>
     <div class="nav-links">
       <a href="/about.html" class="lang-en">About</a><a href="/about.html" class="lang-es lang-hidden">Nosotros</a>
-      <a href="/services.html" class="lang-en">Services</a><a href="/services.html" class="lang-es lang-hidden">Servicios</a><a href="/for-practices.html" class="lang-en">Partner &amp; Contract</a><a href="/for-practices.html" class="lang-es lang-hidden">Alianzas y Contratos</a>
+      <a href="/services.html" class="lang-en">Services</a><a href="/services.html" class="lang-es lang-hidden">Servicios</a><div class="nav-dropdown">
+        <span class="nav-dropdown-trigger lang-en">Partner &amp; Contract &#9662;</span>
+        <span class="nav-dropdown-trigger lang-es lang-hidden">Partner &amp; Contract &#9662;</span>
+        <div class="nav-dropdown-menu">
+          <a href="/for-practices.html" class="lang-en">For medical practices</a><a href="/for-practices.html" class="lang-es lang-hidden">Para consultorios médicos</a>
+          <a href="/partners.html" class="lang-en">Referrals &amp; collaboration</a><a href="/partners.html" class="lang-es lang-hidden">Referidos y colaboración</a>
+        </div>
+      </div>
       <div class="nav-dropdown">
         <span class="nav-dropdown-trigger lang-en">Programs &#9662;</span>
         <span class="nav-dropdown-trigger lang-es lang-hidden">Programas &#9662;</span>
@@ -59,7 +66,8 @@ const NAV_HTML = `
   <div class="nav-mobile" id="nav-mobile">
     <a href="/index.html" class="lang-en">Home</a><a href="/index.html" class="lang-es lang-hidden">Inicio</a>
     <a href="/about.html" class="lang-en">About</a><a href="/about.html" class="lang-es lang-hidden">Nosotros</a>
-    <a href="/services.html" class="lang-en">Services</a><a href="/services.html" class="lang-es lang-hidden">Servicios</a><a href="/for-practices.html" class="lang-en">Partner &amp; Contract</a><a href="/for-practices.html" class="lang-es lang-hidden">Alianzas y Contratos</a>
+    <a href="/services.html" class="lang-en">Services</a><a href="/services.html" class="lang-es lang-hidden">Servicios</a><a href="/for-practices.html" class="lang-en">Partner &amp; Contract</a><a href="/for-practices.html" class="lang-es lang-hidden">Partner &amp; Contract</a>
+    <a href="/partners.html" class="lang-en" style="padding-left:28px">&#8212; Referrals &amp; collaboration</a><a href="/partners.html" class="lang-es lang-hidden" style="padding-left:28px">&#8212; Referidos y colaboración</a>
     <a href="/programs.html" class="lang-en">Care programs</a><a href="/programs.html" class="lang-es lang-hidden">Programas de salud</a>
     <a href="/metabolic-health.html" class="lang-en" style="color:var(--terra-500);font-weight:600;padding-left:28px">&#8212; DietexpertNP Rx™</a><a href="/metabolic-health.html" class="lang-es lang-hidden" style="color:var(--terra-500);font-weight:600;padding-left:28px">&#8212; DietexpertNP Rx™</a>
     <a href="/menopause-diabetes.html" class="lang-en" style="color:#8a2040;font-weight:600;padding-left:28px">&#8212; MenopauseRx&#8482;</a><a href="/menopause-diabetes.html" class="lang-es lang-hidden" style="color:#8a2040;font-weight:600;padding-left:28px">&#8212; MenopauseRx&#8482;</a>
